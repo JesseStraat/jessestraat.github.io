@@ -92,3 +92,5 @@ exclude:
   - switch_theme.sh
   - tags
   - Rakefile
+
+future: true # Necessary because GitHub action may be in different timezone
