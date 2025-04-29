@@ -28,10 +28,15 @@ contact: >
 # Pages shown in navbar
 nav_pages:
   - name: About
+    location: about
   - name: Publications
+    location: publications
   - name: Research
+    location: research
   - name: LaTeX
+    location: latex
   - name: Blog
+    location: blog
 
 include:
   - .htaccess
