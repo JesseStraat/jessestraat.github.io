@@ -17,12 +17,9 @@ permissions:
   contents: write
 
 jobs:
-  test:
+  compile_website:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version: ['2.6', '2.7', '3.0']
 
     steps:
     - uses: actions/checkout@v4
@@ -33,7 +30,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1 # automatically updates
       with:
-        ruby-version: ${{ matrix.ruby-version }}
+        ruby-version: 3.0
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Publish website
       env:
