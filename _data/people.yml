@@ -1,24 +1,17 @@
-- name: Student Here
-  location: Univesity Here
-  degree: Ph.D. 
-  year: 2022
+- name: Jesse Straat
+  photo: jesse.jpeg
+  info: Mathematics and Theoretical Physics student, Utrecht University
+  github: https://github.com/JesseStraat
+  # cv: cv/cv.pdf
+  # Change the items in "education" you have (up to 6)
+  education:
+    [
+      "(2022) BSc Physics, Utrecht University",
+      "(2022) BSc Mathematics, Utrecht University"
+    ]
 
-- name: Student Here
-  location: Univesity Here
-  degree: Ph.D. 
-  year: 2021
-
-- name: Student Here
-  location: Univesity Here
-  degree: Ph.D. 
-  year: 2020
-
-- name: Student Here
-  location: Univesity Here
-  degree: M.S.
-  year: 2020
-
-- name: Student Here
-  location: Univesity Here
-  degree: B.S.
-  year: 2020
+  educationshort:
+    [
+      "(2022) BSc Physics, UU",
+      "(2022) BSc Mathematics, UU"
+    ]

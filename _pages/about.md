@@ -7,7 +7,7 @@ permalink: /about/
 
 ## About
 
-{% for member in site.data.pi %}
+{% for member in site.data.people %}
 
 <div class="jumbotron">
 <div class="row">
@@ -33,46 +33,3 @@ permalink: /about/
 </div>
 </div>
 {% endfor %}
-
-{% if site.data.grants %}
-
-<div class="jumbotron">
-  <h3>Grants</h3>
-  <ul>
-    {% for grant in site.data.grants %}
-      <li>{{ grant.name }}</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
-{% if site.data.awards %}
-
-<div class="jumbotron">
-  <h3>Awards</h3>
-  <ul>
-    {% for award in site.data.awards %}
-      <li>{{ award.name | replace: "-","&#8211;" }}</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
-{% if site.data.people %}
-
-<div class="jumbotron">
-  <h3>Students and Mentoring</h3>
-  <ul>
-    {% for student in site.data.people %}
-      <li>{{ student.name }}, {{ student.location }} ({{ student.degree }}, {{ student.year }})</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
-<div class="jumbotron">
-  <h4>Sponsors</h4>
-  <div style='display:block; text-align:center; margin-left:auto; margin-right:auto;'>
-  {% for funder in site.data.funders %}<a href="{{ funder.url }}" target="_blank"><img src='{{ site.url }}{{ site.baseurl }}/images/{{ funder.image }}' style='max-height: 80px; max-width: 200px; margin: 1%'/></a>{% endfor %}
-  </div>
-</div>
