@@ -1,0 +1,12 @@
+<div class="code-with-download">
+
+{% capture full_filepath %}code_snippets/{{ include.filepath }}{% endcapture %}
+
+```{{ include.lang }}
+{% include {{ full_filepath }} %}
+```
+
+<a href="{{ full_filepath | relative_url }}" target="_blank">
+  <button class="download-button"><i class="fa fa-solid fa-download"></i> Download</button>
+</a>
+</div>
