@@ -64,7 +64,7 @@ if __name__ == "__main__":
     def str_to_math(x: str) -> str:
         return f"\\\({x}\\\)"
     def str_to_boldmath(x: str) -> str:
-        return str_to_math(f"\mathbf{{{x}}}")
+        return str_to_math(f"\\boldsymbol{{{x}}}")
     results = results.rename(str_to_boldmath).rename(columns=str_to_boldmath).map(str_to_math)
     results.columns.name = str_to_boldmath("n\\setminus d")
 
