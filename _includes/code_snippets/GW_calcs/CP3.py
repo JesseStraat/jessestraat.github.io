@@ -59,5 +59,14 @@ def GW_table(max_degree: int) -> pd.DataFrame:
     return table
 
 if __name__ == "__main__":
+    results = GW_table(6).astype(str)
+    # Add math mode to all cells
+    def str_to_math(x: str) -> str:
+        return f"\\\({x}\\\)"
+    def str_to_boldmath(x: str) -> str:
+        return str_to_math(f"\mathbf{{{x}}}")
+    results = results.rename(str_to_boldmath).rename(columns=str_to_boldmath).map(str_to_math)
+    results.columns.name = str_to_boldmath("n\\setminus d")
+
     with open("CP3.md", "w") as f:
-        f.write(GW_table(6).astype(str).transpose().to_markdown())
+        f.write(results.transpose().to_markdown())
