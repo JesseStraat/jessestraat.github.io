@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction"
 date: 2025-04-30
-categories: "meta"
+categories: "Meta"
 ---
 
 Welcome the Blog portion of my (as of writing this post) brand-new website. I intend to use it to share personal news and potentially some discussions about niche topics, such as LaTeX, geometry, or something completely arbitrary.

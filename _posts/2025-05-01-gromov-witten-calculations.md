@@ -2,7 +2,7 @@
 layout: post
 title: "Tree-level Gromov–Witten invariants of projective space"
 date: 2025-05-01
-categories: "appendices"
+categories: "Appendices"
 ---
 
 I am currently writing my master's thesis on Gromov--Witten invariants \\(GW_{g,n,\beta}^X(\gamma_1\otimes\cdots\otimes\gamma_n)\\). They roughly correspond to the number of genus \\(g\\) holomorphic curves in a projective variety \\(X\\) that map to a \\(\beta\in H_2(X;\mathbb{Z})\\), together with \\(n\\) marked points such that the \\(i\\)-th marked point passes through the rational cohomology class \\(\gamma_i\\). Thanks to the mapping to a point and divisor axioms (Kontsevich--Manin, 1994), it is possible to simplify the calculation of Gromov--Witten invariants to some countable set of rational numbers
