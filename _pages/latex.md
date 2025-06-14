@@ -23,6 +23,7 @@ This is a collection of projects I have developed in LaTeX. For more information
 
 <div class="jumbotron">
 <h4><b>aeskwadraat</b></h4>
+<a href="https://ctan.org/pkg/aeskwadraat" target="_blank"><button class="btn btn-info btn-sm">CTAN</button></a>
 <a href="https://gitlab.com/iba-aes/latex-packages" target="_blank"><button class="btn btn-warning btn-sm">GIT</button></a>
 
 This is a package catalogue for my study association A--Eskwadraat. It consists of packages for meeting notes, invoices, beamer presentations, and much more.
@@ -32,7 +33,7 @@ I largely rewrote a big chunk of the packages, added documentation and even conv
 
 <div class="jumbotron">
 <h4><b>reptheorem</b></h4>
-<a href="https://ctan.org/pkg/reptheorem?lang=en" target="_blank"><button class="btn btn-info btn-sm">CTAN</button></a>
+<a href="https://ctan.org/pkg/reptheorem" target="_blank"><button class="btn btn-info btn-sm">CTAN</button></a>
 <a href="https://github.com/jessestraat/reptheorem" target="_blank"><button class="btn btn-warning btn-sm">GIT</button></a>
 
 When writing a large manuscript, it is sometimes beneficial to repeat a theorem (or lemma or...) at an earlier or later point for didactical purposes. However, thmtools’s built-in restatable only allows replicating theorems after they have been stated, and only in the same document.
