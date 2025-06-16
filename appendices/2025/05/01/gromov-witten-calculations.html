@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tree-level Gromov–Witten invariants of projective space - Jesse Straat</title>
+  <meta name="description" content="Academic webpage of Jesse Straat">
+  <meta name="keywords" content="Jesse, Straat, mathematics, physics, personal, webpage">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/molokai-style.css">
+  <link rel="stylesheet" href="/assets/codeblock.css">
+  <link rel="stylesheet" href="/assets/tables.css">
+  <link rel="canonical" href="/appendices/2025/05/01/gromov-witten-calculations.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+
+
+<!-- Google Analytics (original) -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [ ['\\(', '\\)'] ],
+            tags: "ams"
+        }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<style>
+    .math {
+        overflow-x: auto;
+        overflow-y: hidden
+    }
+</style>
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+     <img src="/favicon.png" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Jesse Straat
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/">Home</a>
+                   
+                <a class="nav-item nav-link" href="/about">About</a>
+                   
+                <a class="nav-item nav-link" href="/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="/latex">LaTeX</a>
+                   
+                <a class="nav-item nav-link" href="/blog">Blog</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Tree-level Gromov–Witten invariants of projective space</h1>
+    <p class="post-meta"><time datetime="2025-05-01T00:00:00+00:00" itemprop="datePublished">May 1, 2025</time></p>
+    <p class="post-meta">Category: 
+      
+      <a href="/blog/categories/#">Appendices</a>
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I am currently writing my master’s thesis on Gromov–Witten invariants \(GW_{g,n,\beta}^X(\gamma_1\otimes\cdots\otimes\gamma_n)\). They roughly correspond to the number of genus \(g\) holomorphic curves in a projective variety \(X\) that map to a \(\beta\in H_2(X;\mathbb{Z})\), together with \(n\) marked points such that the \(i\)-th marked point passes through the rational cohomology class \(\gamma_i\). Thanks to the mapping to a point and divisor axioms (Kontsevich–Manin, 1994), it is possible to simplify the calculation of Gromov–Witten invariants to some countable set of rational numbers</p>
+<div class="math">
+  <p>\begin{equation}
+    GW_{g,n,\beta}^X(q_1^{\otimes n_1}\otimes\cdots\otimes q_D^{\otimes n_D}) = \prod_{i=1}^r \langle q_i,\beta\rangle^{n_i} N_g(n_{r+2},\dots,n_D;\beta).
+\end{equation}</p>
+</div>
+<p>Here, \(\beta\) is assumed to be nonzero and torsion-free, and \(q_0\dots,q_D\) are integral generators of \(H^*(X;\mathbb{Q})\) such that \(q_0=1\) and \(q_1,\dots,q_r\) generate \(H^2(X;\mathbb{Q})\).</p>
+
+<p>An important tool in calculating genus zero (tree-level) Gromov–Witten invariants is the Witten–Dijkgraaf–Verlinde–Verlinde (WDVV) equation. It is a differential equation on a generating function of the Gromov–Witten invariants known as the Gromov–Witten potential \(\Phi(x_0,\dots,x_D)\), such that, roughly,</p>
+<div class="math">
+  <p>\[\partial_{i_1}\cdots\partial_{i_k}\Phi(0) = \sum_{\beta\in H_2(X;\mathbb{Z})}GW_{0,k,\beta}^X(q_{i_1}\otimes\cdots\otimes q_{i_k}).\]</p>
+</div>
+<p>The WDVV equation is a method of generating recursive methods. However, it does not directly provide a formula, which makes it challenging to work with. If we then know some initial value of the tree-level Gromov–Witten invariants of \(X\), we may we able to calculate all others using the WDVV equation.</p>
+
+<h3 id="complex-projective-space">Complex projective space</h3>
+
+<p>Consider now \(X=\mathbb{CP}^n\), and let \(q\) be the standard positive generator of \(H^*(X;\mathbb{Q})\), and identify \(H_2(X;\mathbb{Z})\) with \(\mathbb{Z}\) such that \(\langle q,1\rangle=1\). The Gromov–Witten invariants are numbers \(N_0(k_3,\dots,k_n;d)\). We already know some initial values:</p>
+<div class="math">
+  <p>\begin{equation}
+    GW_{0,3,0}^X(q^i\otimes q^j\otimes q^k) = \delta_{n,i+j+k},\quad GW_{0,3,1}^X(q^i\otimes q^j\otimes q^k) = \delta_{2n+1,i+j+k},\label{eq:initvals}
+\end{equation}</p>
+</div>
+<p>the latter of which is found by proving that all such Gromov–Witten invariants are equal to \(GW_{0,3,1}^X(q\otimes q^n\otimes q^n)\), which is the number of lines through two points.</p>
+
+<h4 id="n1">\(n=1\)</h4>
+
+<p>First, since \(3&gt;n\), we discover that the Gromov–Witten invariants of interest are \(N_0(d)\) for \(d&gt;0\). By equation \eqref{eq:initvals}, we already know that \(N_0(1)=1\). Furthermore, due to the grading axiom, all other \(N_0(d)\) are zero, so we are done.</p>
+
+<h4 id="n2">\(n=2\)</h4>
+
+<p>Again, \(3&gt;n\), so we want to find \(N_0(d)\) for \(d&gt;0\) with initial value \(N_0(1)=1\). The WDVV equation tells us that</p>
+<div class="math">
+  <p>\begin{equation}
+    N_0(d) = \sum_{k+l=d} k^2lN_0(k)N_0(l)\left[l\binom{3d-4}{3k-2} - k\binom{3d-4}{3k-1}\right],
+\end{equation}</p>
+</div>
+<p>known as Kontsevich’s formula. It is a straightforward formula that, while difficult to calculate by hand, is perfect for numerical calculations (see implementation below). Up to \(d=8\), they are given by</p>
+
+<div style="overflow-x:auto;"><table style="margin: 0px auto;">
+  <thead>
+    <tr>
+      <th style="text-align: left">\(\boldsymbol{d}\)</th>
+      <th style="text-align: left">\(\boldsymbol{1}\)</th>
+      <th style="text-align: left">\(\boldsymbol{2}\)</th>
+      <th style="text-align: left">\(\boldsymbol{3}\)</th>
+      <th style="text-align: left">\(\boldsymbol{4}\)</th>
+      <th style="text-align: left">\(\boldsymbol{5}\)</th>
+      <th style="text-align: left">\(\boldsymbol{6}\)</th>
+      <th style="text-align: left">\(\boldsymbol{7}\)</th>
+      <th style="text-align: left">\(\boldsymbol{8}\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{N_0(d)}\)</td>
+      <td style="text-align: left">\(1\)</td>
+      <td style="text-align: left">\(1\)</td>
+      <td style="text-align: left">\(12\)</td>
+      <td style="text-align: left">\(620\)</td>
+      <td style="text-align: left">\(87304\)</td>
+      <td style="text-align: left">\(26312976\)</td>
+      <td style="text-align: left">\(14616808192\)</td>
+      <td style="text-align: left">\(13525751027392\)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h4 id="n3">\(n=3\)</h4>
+
+<p>This case is immediately more complicated, since the Gromov–Witten invariants of interest are \(N_0(n;d)\): the number of \(d\)-fold curves that pass through \(n\) points and \(4d-2n\) lines.
+The following equations hold for \(n\leq 2d-2\):</p>
+<div class="math">
+  <p>\(\begin{multline}
+    N_0(n;d) - 2dN_0(n+1;d) = \sum_{k+l=d}\sum_{a+b=n}\binom{n}{a}k^2N_0(a;k)N_0(b;l)\\
+    \cdot\left[l\binom{4d-2n-3}{4k-2a-1} - k\binom{4d-2n-3}{4k-2a}\right],\label{eq:cp31}
+\end{multline}\)</p>
+</div>
+<div class="math">
+  <p>\(\begin{multline}
+    N_0(n+1;d) - dN_0(n+2;d) = \sum_{k+l=d}\sum_{a+b=n}\binom{n}{a}kN_0(a;k)N_0(b+1;l)\\
+    \cdot\left[l^2\binom{4d-2n-4}{4k-2a-2} - k^2\binom{4d-2n-4}{4k-2a}\right].\label{eq:cp32}
+\end{multline}\)</p>
+</div>
+<p>This equation holds for \(d\geq 2\) and \(n\leq 2d-3\):</p>
+<div class="math">
+  <p>\(\begin{multline}
+    N_0(n+2;d) = \sum_{k+l=d}\sum_{a+b=n}\binom{n}{a}\left\{2k^2l\binom{4d-2n-5}{4k-2a-2}N_0(a+1;k)N_0(b+1;l)\right.\\
+    \left.{}- k^2N_0(a;k)N_0(b+2;l)\left[k\binom{4d-2n-5}{4k-2a} + l\binom{4d-2n-5}{4k-2a-1}\right]\right\}.\label{eq:cp33}
+\end{multline}\)</p>
+</div>
+<p>The initial value in equation \eqref{eq:initvals} is \(N_0(2;1)=1\). Inductively, these three equations give us all other invariants. Indeed, let us assume that for some \(d\geq 1\) we know \(N_0(2;d)\) and \(N_0(a;k)\) for all \(k\lt d\). By \eqref{eq:cp32} with \(n=0\), we find that</p>
+<div class="math">
+  <p>\begin{equation}
+    N_0(1;d) = dN_0(2;d) + \sum_{k+l=d} kN_0(0;k)N_0(1;l)\left[l^2\binom{4d-4}{4k-2} - k^2\binom{4d-4}{4k}\right],
+\end{equation}</p>
+</div>
+<p>and by \eqref{eq:cp31} with \(n=0\),</p>
+<div class="math">
+  <p>\begin{equation}
+    N_0(0;d) - 2dN_0(1;d) = \sum_{k+l=d}k^2N_0(0;k)N_0(0;l)\left[l\binom{4d-3}{4k-1} - k\binom{4d-3}{4k}\right].
+\end{equation}</p>
+</div>
+<p>Equation \eqref{eq:cp32} then gives all other \(N_0(n;d)\). Finally, we complete the induction by using \eqref{eq:cp33} with \(n=0\) to find</p>
+<div class="math">
+  <p>\(\begin{multline}
+    N_0(2;d+1) = \sum_{k+l=d+1}2k^2l\binom{4d-1}{4k-2}N_0(1;k)N_0(1;l)\\
+    {}- k^2N_0(0;k)N_0(2;l)\left[k\binom{4d-1}{4k} + l\binom{4d-1}{4k-1}\right].
+\end{multline}\)</p>
+</div>
+<p>This algorithm is even more complicated, but perfectly doable for Python. Up to \(d=6\), we find</p>
+
+<div style="overflow-x:auto;"><table style="margin: 0px auto;">
+  <thead>
+    <tr>
+      <th style="text-align: left">\(\boldsymbol{n\setminus d}\)</th>
+      <th style="text-align: left">\(\boldsymbol{1}\)</th>
+      <th style="text-align: left">\(\boldsymbol{2}\)</th>
+      <th style="text-align: left">\(\boldsymbol{3}\)</th>
+      <th style="text-align: left">\(\boldsymbol{4}\)</th>
+      <th style="text-align: left">\(\boldsymbol{5}\)</th>
+      <th style="text-align: left">\(\boldsymbol{6}\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{0}\)</td>
+      <td style="text-align: left">\(2\)</td>
+      <td style="text-align: left">\(92\)</td>
+      <td style="text-align: left">\(80160\)</td>
+      <td style="text-align: left">\(383306880\)</td>
+      <td style="text-align: left">\(6089786376960\)</td>
+      <td style="text-align: left">\(244274488980962304\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{1}\)</td>
+      <td style="text-align: left">\(1\)</td>
+      <td style="text-align: left">\(18\)</td>
+      <td style="text-align: left">\(9864\)</td>
+      <td style="text-align: left">\(34382544\)</td>
+      <td style="text-align: left">\(429750191232\)</td>
+      <td style="text-align: left">\(14207926965714432\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{2}\)</td>
+      <td style="text-align: left">\(1\)</td>
+      <td style="text-align: left">\(4\)</td>
+      <td style="text-align: left">\(1312\)</td>
+      <td style="text-align: left">\(3259680\)</td>
+      <td style="text-align: left">\(31658432256\)</td>
+      <td style="text-align: left">\(855909223176192\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{3}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(1\)</td>
+      <td style="text-align: left">\(190\)</td>
+      <td style="text-align: left">\(327888\)</td>
+      <td style="text-align: left">\(2440235712\)</td>
+      <td style="text-align: left">\(53486265350784\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{4}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(30\)</td>
+      <td style="text-align: left">\(35104\)</td>
+      <td style="text-align: left">\(197240400\)</td>
+      <td style="text-align: left">\(3472451647488\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{5}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(5\)</td>
+      <td style="text-align: left">\(4000\)</td>
+      <td style="text-align: left">\(16744080\)</td>
+      <td style="text-align: left">\(234526910784\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{6}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(1\)</td>
+      <td style="text-align: left">\(480\)</td>
+      <td style="text-align: left">\(1492616\)</td>
+      <td style="text-align: left">\(16492503552\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{7}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(58\)</td>
+      <td style="text-align: left">\(139098\)</td>
+      <td style="text-align: left">\(1207360512\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{8}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(4\)</td>
+      <td style="text-align: left">\(13354\)</td>
+      <td style="text-align: left">\(91797312\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{9}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(1265\)</td>
+      <td style="text-align: left">\(7200416\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{10}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(105\)</td>
+      <td style="text-align: left">\(573312\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{11}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(44416\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{12}\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(0\)</td>
+      <td style="text-align: left">\(2576\)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>Here, I describe the script I used to calculate the Gromov–Witten invariants of \(\mathbb{CP}^2\) and \(\mathbb{CP}^3\).</p>
+
+<h4 id="n2-1">\(n=2\)</h4>
+
+<div class="code-with-download">
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">comb</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="n">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span> <span class="c1"># GW invariants are rational, so this is more precise
+</span>
+<span class="k">def</span> <span class="nf">combb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+    <span class="c1"># A binomial that returns zero whenever arguments are illegal
+</span>    <span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">r</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">calc_GW</span><span class="p">(</span><span class="n">max_degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">:</span>
+    <span class="c1"># max_degree: maximum degree
+</span>    <span class="c1"># Output: N[d] is N_0(d)
+</span>    <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="n">max_degree</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">Fraction</span><span class="p">)</span>
+    
+    <span class="c1"># Initial values
+</span>    <span class="n">N</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+    <span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nc">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">N</span><span class="p">)):</span>
+        <span class="c1"># Calculating N_0(d)
+</span>        <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">d</span><span class="o">-</span><span class="n">k</span>
+            <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">N</span>
+
+
+<span class="k">def</span> <span class="nf">GW_table</span><span class="p">(</span><span class="n">max_degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="c1"># Turn GWs into table
+</span>    <span class="n">N</span> <span class="o">=</span> <span class="nf">calc_GW</span><span class="p">(</span><span class="n">max_degree</span><span class="p">)</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+                         <span class="n">index</span> <span class="o">=</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">max_degree</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+                         <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">N_0(d)</span><span class="sh">"</span><span class="p">])</span>
+    <span class="n">table</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">d</span><span class="sh">"</span>
+    <span class="k">return</span> <span class="n">table</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="nc">GW_table</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span><span class="nf">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="c1"># Add math mode to all cells
+</span>    <span class="k">def</span> <span class="nf">str_to_math</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="se">\\</span><span class="s">\(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="se">\\</span><span class="s">\)</span><span class="sh">"</span>
+    <span class="k">def</span> <span class="nf">str_to_boldmath</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">str_to_math</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\\</span><span class="s">boldsymbol}</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="p">.</span><span class="nf">rename</span><span class="p">(</span><span class="n">str_to_boldmath</span><span class="p">).</span><span class="nf">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">str_to_boldmath</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="n">str_to_math</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="nf">str_to_boldmath</span><span class="p">(</span><span class="sh">"</span><span class="s">d</span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">CP2.md</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">results</span><span class="p">.</span><span class="nf">transpose</span><span class="p">().</span><span class="nf">to_markdown</span><span class="p">())</span>
+</code></pre></div>  </div>
+
+  <p><a href="/code_snippets/GW_calcs/CP2.py" target="_blank">
+  <button class="download-button"><i class="fa fa-solid fa-download"></i> Download</button>
+</a></p>
+</div>
+
+<h4 id="n3-1">\(n=3\)</h4>
+
+<div class="code-with-download">
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">comb</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="n">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span> <span class="c1"># GW invariants are rational, so this is more precise
+</span>
+<span class="k">def</span> <span class="nf">combb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+    <span class="c1"># A binomial that returns zero whenever arguments are illegal
+</span>    <span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">r</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">comb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">calc_GW</span><span class="p">(</span><span class="n">max_degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">:</span>
+    <span class="c1"># max_degree: maximum degree
+</span>    <span class="c1"># Output: N[d][n] is N_0(n;d)
+</span>    <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="n">max_degree</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">max_degree</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">Fraction</span><span class="p">)</span>
+    
+    <span class="c1"># Initial values
+</span>    <span class="n">N</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+    <span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="nc">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">N</span><span class="p">)):</span>
+        <span class="c1"># Calculating N_0(1;d)
+</span>        <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">d</span><span class="o">-</span><span class="n">k</span>
+            <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="p">))</span>
+        
+        <span class="c1"># Calculating N_0(0;d)
+</span>        <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">d</span><span class="o">-</span><span class="n">k</span>
+            <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="p">))</span>
+        
+        <span class="c1"># Calculating all other N_0(n;d)
+</span>        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">d</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+                <span class="n">l</span> <span class="o">=</span> <span class="n">d</span><span class="o">-</span><span class="n">k</span>
+                <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                    <span class="n">b</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">a</span>
+                    <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">-=</span> <span class="nf">combb</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">a</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="n">d</span>
+        
+        <span class="c1"># Calculating N_0(2;d+1)
+</span>        <span class="k">if</span> <span class="n">d</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">max_degree</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">l</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">k</span>
+                <span class="n">N</span><span class="p">[</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">N</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="n">l</span><span class="o">*</span><span class="nf">combb</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">N</span>
+
+
+<span class="k">def</span> <span class="nf">GW_table</span><span class="p">(</span><span class="n">max_degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="c1"># Turn GWs into table
+</span>    <span class="n">N</span> <span class="o">=</span> <span class="nf">calc_GW</span><span class="p">(</span><span class="n">max_degree</span><span class="p">)</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+                         <span class="n">index</span> <span class="o">=</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">max_degree</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+                         <span class="n">columns</span> <span class="o">=</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">max_degree</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">table</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">d</span><span class="se">\\</span><span class="s">n</span><span class="sh">"</span>
+    <span class="k">return</span> <span class="n">table</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="nc">GW_table</span><span class="p">(</span><span class="mi">6</span><span class="p">).</span><span class="nf">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="c1"># Add math mode to all cells
+</span>    <span class="k">def</span> <span class="nf">str_to_math</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="se">\\</span><span class="s">\(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="se">\\</span><span class="s">\)</span><span class="sh">"</span>
+    <span class="k">def</span> <span class="nf">str_to_boldmath</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">str_to_math</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\\</span><span class="s">boldsymbol}</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="p">.</span><span class="nf">rename</span><span class="p">(</span><span class="n">str_to_boldmath</span><span class="p">).</span><span class="nf">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">str_to_boldmath</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="n">str_to_math</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="nf">str_to_boldmath</span><span class="p">(</span><span class="sh">"</span><span class="s">n</span><span class="se">\\</span><span class="s">setminus d</span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">CP3.md</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">results</span><span class="p">.</span><span class="nf">transpose</span><span class="p">().</span><span class="nf">to_markdown</span><span class="p">())</span>
+</code></pre></div>  </div>
+
+  <p><a href="/code_snippets/GW_calcs/CP3.py" target="_blank">
+  <button class="download-button"><i class="fa fa-solid fa-download"></i> Download</button>
+</a></p>
+</div>
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		    <h5>About</h5>	
+            <p>Jesse Straat<br/> Mathematics and Theoretical Physics student<br/> Utrecht University
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><i class="fa fa-envelope fa-1x"></i> j.r.h.[surname]&ltat&gtuu.nl <br/> <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Address</h5>	
+            <p>Hans Freudenthalgebouw<br/> Budapestlaan 6<br/> 3584 CD Utrecht
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2025 Jesse Straat </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>

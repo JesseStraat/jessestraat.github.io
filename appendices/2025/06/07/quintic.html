@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Gromov–Witten invariants of a quintic threefold - Jesse Straat</title>
+  <meta name="description" content="Academic webpage of Jesse Straat">
+  <meta name="keywords" content="Jesse, Straat, mathematics, physics, personal, webpage">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/molokai-style.css">
+  <link rel="stylesheet" href="/assets/codeblock.css">
+  <link rel="stylesheet" href="/assets/tables.css">
+  <link rel="canonical" href="/appendices/2025/06/07/quintic.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+
+
+<!-- Google Analytics (original) -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [ ['\\(', '\\)'] ],
+            tags: "ams"
+        }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<style>
+    .math {
+        overflow-x: auto;
+        overflow-y: hidden
+    }
+</style>
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+     <img src="/favicon.png" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Jesse Straat
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/">Home</a>
+                   
+                <a class="nav-item nav-link" href="/about">About</a>
+                   
+                <a class="nav-item nav-link" href="/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="/latex">LaTeX</a>
+                   
+                <a class="nav-item nav-link" href="/blog">Blog</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Gromov–Witten invariants of a quintic threefold</h1>
+    <p class="post-meta"><time datetime="2025-06-07T00:00:00+00:00" itemprop="datePublished">Jun 7, 2025</time></p>
+    <p class="post-meta">Category: 
+      
+      <a href="/blog/categories/#">Appendices</a>
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>As mentioned in my blog post on the <a href="/appendices/2025/05/01/gromov-witten-calculations.html">Gromov–Witten invariants of complex projective space</a>, I am currently writing a thesis on Gromov–Witten invariants. I’ll leave an explanation of what they are to that post; in this post, I want to focus on my numerical calculation of the Gromov–Witten invariants of the quintic and a slight nod to the physical application of Gromov–Witten invariants.</p>
+
+<h3 id="gromovwitten-invariants-in-physics">Gromov–Witten invariants in physics</h3>
+
+<p>Of course, for the entire story of the relevance of Gromov–Witten in physics, one would have to read my thesis (or any other source). Long story short, the correlators in an A-twisted topological string theory on a manifold \(X\) look like</p>
+<div class="math">
+  <p>\begin{equation}
+    \langle\mathcal{O}_1\cdots\mathcal{O}_n\rangle = \sum_{g\geq 0}\sum_{\beta\in H_2(X;\mathbb{Z})}g_s^{2g-2}e^{-\langle\omega,\beta\rangle}GW_{g,n,\beta}^X(\alpha_1\otimes\cdots\otimes\alpha_n),
+\end{equation}</p>
+</div>
+<p>where the \(\mathcal{O}_i\) are operator insertions that correspond to some cohomology classes \(\alpha_i\), \(\omega\) is the complexified Kähler form and \(g_s\) is the string coupling constant. There also exists another twist, the B-twist, whose (genus zero) correlators are straightforwardly calculated as</p>
+<div class="math">
+  <p>\begin{equation}
+    \langle\mathcal{O}_1\cdots\mathcal{O}_n\rangle_{g=0} = g_s^{-2}\int_X \Omega\smile\Omega(\alpha_1\smile\cdots\smile\alpha_n),
+\end{equation}</p>
+</div>
+<p>where the \(\mathcal{O}_i\) now correspond to \(\Lambda^\bullet TX\)-valed antiholomorhic forms \(\alpha_i\), and \(\Omega\) is a nowhere-vanishing holomorphic top-form on \(X\) (which is therefore required to be Calabi–Yau).</p>
+
+<p>Conjecturally, there is a relationship between an A-twisted theory on one Calabi–Yau threefold and a B-twisted theory on another called mirror symmetry. This relationship allows one to compute Gromov–Witten invariants using B-twisted correlators on the mirror manifold. The most (mathematically) useful way of stating mirror symmetry is an active area of research, and it remains unknown what a minimal requirement on a Calabi–Yau threefold is to assure it admits mirror symmetry. The most prominent “mirror theorems”, i.e., theorem that states whether a manifold admits mirror symmetry, are developed by Givental, for example <a href="https://doi.org/10.48550/arXiv.alg-geom/9701016">(Givental, 1997)</a>, which was on toric complete intersections. The origin of mirror symmetry, however, lies in <a href="https://doi.org/10.1016/0550-3213(90)90622-K">(Greene–Plesser, 1990)</a>, and the first Gromov–Witten invariant computations were done in <a href="https://doi.org/10.1016/0550-3213(91)90292-6">(Candelas et al., 1991)</a>. The latter considers the quintic threefold (a degree five projective variety in \(\mathbb{CP}^4\)), and conjectures its mirror manifold, from which the Gromov–Witten invariants are computed. This method was proven by Givental in <a href="https://doi.org/10.48550/arXiv.alg-geom/9603021">(Givental, 1996)</a>.</p>
+
+<h3 id="the-quintic">The quintic</h3>
+
+<p>The goal of this blog post is not at all to explore this method in detail (read my thesis for that!), but rather to sketch how I computed the Gromov–Witten invariants numerically. We will start from the following expression,</p>
+<div class="math">
+  <p>\begin{equation}
+    q(b) = b\exp\left(5\frac{\sum_{n=1}^\infty \frac{(5n)!}{(n!)^5}\left(\sum_{j=n+1}^{5n}\frac{1}{j}\right)b^n}{1 + \sum_{n=1}^\infty\frac{(5n)!}{(n!)^5}b^n}\right),
+\end{equation}</p>
+</div>
+<p>which is the mirror map. In our Python script below, this is <code class="language-plaintext highlighter-rouge">q_func</code>. It describes a map from the complex moduli space of the quintic mirror (the B-twisted structure) to the Kähler moduli space of the quintic (the A-twisted structure). We now want to invert this to a \(b(q)\), denoted <code class="language-plaintext highlighter-rouge">b_func</code> in our script. We’ll be doing a numerical calculation, so we should first express \(q(b)\) as a power series, and then use a smart theorem that allows us to invert a power series into another power series.</p>
+
+<p>First, turning \(q(b)\) into a power series is quite straightforward — one simply uses the Taylor series of the exponential and \(\frac{1}{1+x}\), which are known to most undergrads.</p>
+
+<p>The aforementioned smart theorem is the Lagrange inversion theorem. For \(q(b) = \sum_{n\geq 1}q_nb^n\) as above, we can use \(q(0)=0\) to find its inverse \(b(q) = \sum_{n\geq 1}b_nq^n\) with</p>
+<div class="math">
+  <p>\begin{equation}
+    b_n = \lim_{b\to 0}\frac{\mathrm{d}^{n-1}}{\mathrm{d}b^{n-1}}\left(\frac{b}{f(b)}\right)^n.
+\end{equation}</p>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Lagrange_inversion_theorem#Statement">Wikipedia</a> lists the following variant, citing C.A. Charalambides’s <em>Enumerative Combinatorics</em> (to which I sadly don’t have access),</p>
+<div class="math">
+  <p>\begin{equation}
+    b_n = \frac{1}{q_1^n}\sum_{k=1}^{n-1}(-1)^k\frac{(n+k-1)!}{(n-1)!}B_{n-1,k}(\hat{q}_1,\dots,\hat{q}_{n-k}),
+\end{equation}</p>
+</div>
+<p>for \(B_{n-1,k}\) a <a href="https://en.wikipedia.org/wiki/Bell_polynomials">Bell polynomial</a> and</p>
+<div class="math">
+  <p>\begin{equation}
+    \hat{q}_k = \frac{q_{k+1}}{(k+1)q_1}.
+\end{equation}</p>
+</div>
+<p>The Bell polynomial can simply be imported from <code class="language-plaintext highlighter-rouge">sympy</code>, significantly simplifying the process. This gives us a power series for \(b(q)\) that is precise up to some degree of our choosing.</p>
+
+<p>Next up, we should calculate the correlators. In the B-twist, we can derive that the three-point function is given by</p>
+<div class="math">
+  <p>\begin{equation}
+    \langle\mathcal{O}_\theta\mathcal{O}_\theta\mathcal{O}_\theta\rangle = \frac{5/(2\pi i)^3}{(1-5^5b)\left(1 + \sum_{n=1}^\infty\frac{(5n)!}{(n!)^5}b^n\right)^2}.
+\end{equation}</p>
+</div>
+<p>We then derive that the A-twist three-point function is</p>
+<div class="math">
+  <p>\begin{equation}
+    \langle\mathcal{O}_H\mathcal{O}_H\mathcal{O}_H\rangle = \frac{5}{(1-5^5b(q))\left(1 + \sum_{n=1}^\infty\frac{(5n)!}{(n!)^5}b(q)^n\right)^2}\left(\frac{q}{b(q)}\frac{\mathrm{d}b(q)}{\mathrm{d}q}\right)^3.
+\end{equation}</p>
+</div>
+<p>For this, we use more numerical evaluation of products, fractions and derivatives to construct a power series of \(\langle\mathcal{O}_H\mathcal{O}_H\mathcal{O}_H\rangle\), which is very doable. We then find the following:</p>
+<div class="math">
+  <p>\begin{equation}
+    \langle\mathcal{O}_H\mathcal{O}_H\mathcal{O}_H\rangle = 5 + 2{,}875q + 4{,}876{,}875q^2 + 8{,}564{,}575{,}000q^3+\dots.
+\end{equation}</p>
+</div>
+
+<p>The final step is to take the power series above and compute the Gromov–Witten invariants \(N_0(d)\) and instanton numbers \(n_0(d)\). We find the following results up to degree five:</p>
+
+<div style="overflow-x:auto;"><table style="margin: 0px auto;">
+  <thead>
+    <tr>
+      <th style="text-align: left">\(\boldsymbol{d}\)</th>
+      <th style="text-align: left">\(\boldsymbol{1}\)</th>
+      <th style="text-align: left">\(\boldsymbol{2}\)</th>
+      <th style="text-align: left">\(\boldsymbol{3}\)</th>
+      <th style="text-align: left">\(\boldsymbol{4}\)</th>
+      <th style="text-align: left">\(\boldsymbol{5}\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{N_0(d)}\)</td>
+      <td style="text-align: left">\(2{,}875\)</td>
+      <td style="text-align: left">\(\frac{4{,}876{,}875}{8}\)</td>
+      <td style="text-align: left">\(\frac{8{,}564{,}575{,}000}{27}\)</td>
+      <td style="text-align: left">\(\frac{15{,}517{,}926{,}796{,}875}{64}\)</td>
+      <td style="text-align: left">\(229{,}305{,}888{,}887{,}648\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\boldsymbol{n_0(d)}\)</td>
+      <td style="text-align: left">\(2{,}875\)</td>
+      <td style="text-align: left">\(609{,}250\)</td>
+      <td style="text-align: left">\(317{,}206{,}375\)</td>
+      <td style="text-align: left">\(242{,}467{,}530{,}000\)</td>
+      <td style="text-align: left">\(229{,}305{,}888{,}887{,}625\)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>It takes our program very little time to derive these. In fact, up to degree \(15\), the program proves very fast. Beyond this, however, the speed decreases quickly.</p>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>Below, you can find my implementation. A good first step to improvement is to increase calculation speed is to sequentially calculate each degree, outputting intermediate results and allowing those values to be used for future calculations. In the current form, the entire calculation has to be redone for every degree if you want to find another degree. However, for the purpose of my thesis, finding the numbers up to degree five is plenty.</p>
+
+<div class="code-with-download">
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">bell</span><span class="p">,</span> <span class="n">expand</span>
+<span class="kn">from</span> <span class="n">sympy.polys.polytools</span> <span class="kn">import</span> <span class="n">Poly</span>
+<span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">factorial</span>
+<span class="kn">from</span> <span class="n">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
+<span class="kn">from</span> <span class="n">collections.abc</span> <span class="kn">import</span> <span class="n">Callable</span>
+
+<span class="k">class</span> <span class="nc">TaylorSeries</span><span class="p">:</span>
+    <span class="c1"># Creates a Taylor series, allowing for polynomial representations
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">nthterm</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">],</span><span class="n">Fraction</span><span class="p">]):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">nthterm</span> <span class="o">=</span> <span class="n">nthterm</span>
+    
+    <span class="k">def</span> <span class="nf">as_polynomial</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Poly</span><span class="p">:</span>
+        <span class="n">polynomial</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">polynomial</span> <span class="o">+=</span> <span class="n">self</span><span class="p">.</span><span class="nf">nthterm</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">variable</span><span class="o">**</span><span class="n">n</span>
+        <span class="k">return</span> <span class="nc">Poly</span><span class="p">(</span><span class="n">polynomial</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">truncate_poly</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Poly</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Poly</span><span class="p">:</span>
+    <span class="c1"># Truncates a polynomial to some degree
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">monomials</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">monoms</span><span class="p">()</span>
+    <span class="n">coeffs</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">coeffs</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">monomials</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nf">all</span><span class="p">(</span><span class="n">d</span> <span class="o">&lt;=</span> <span class="n">degree</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">monomials</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">monomials</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">coeffs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Poly</span><span class="p">.</span><span class="nf">from_dict</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">*</span><span class="n">f</span><span class="p">.</span><span class="n">gens</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Poly</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span><span class="n">Poly</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Poly</span><span class="p">:</span>
+    <span class="c1"># Divides two Taylor series up to some degree
+</span>    <span class="n">g_const</span> <span class="o">=</span> <span class="n">g</span><span class="p">.</span><span class="nf">coeff_monomial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">g_new</span> <span class="o">=</span> <span class="n">g</span> <span class="o">-</span> <span class="n">g_const</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="nc">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">g_const</span><span class="o">**</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">g_new</span><span class="o">**</span><span class="n">n</span>
+    <span class="k">return</span> <span class="nf">truncate_poly</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="n">result</span><span class="p">,</span> <span class="n">degree</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">exponentiation</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Poly</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Poly</span><span class="p">:</span>
+    <span class="c1"># Exponentiates some polynomial up to some degree
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">f</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="nc">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nf">truncate_poly</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">degree</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lagrange_bell_invert</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Poly</span><span class="p">,</span> <span class="n">old_variable</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">new_variable</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Poly</span><span class="p">:</span>
+    <span class="c1"># An implementation of the Lagrange inversion theorem using Bell polynomials
+</span>    <span class="n">deg</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">degree</span><span class="p">(</span><span class="n">gen</span><span class="o">=</span><span class="n">old_variable</span><span class="p">)</span>
+    <span class="n">f_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">.</span><span class="nf">as_expr</span><span class="p">().</span><span class="nf">coeff</span><span class="p">(</span><span class="n">old_variable</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="nf">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">deg</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">deg</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">f_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">f_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">fhat_list</span> <span class="o">=</span> <span class="p">[</span><span class="nc">Fraction</span><span class="p">(</span><span class="n">f_list</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">k</span><span class="o">*</span><span class="n">f_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">f_list</span><span class="p">))]</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="n">new_variable</span><span class="o">*</span><span class="nc">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">f_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">f_list</span><span class="p">)):</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+                    <span class="n">funct_tup</span> <span class="o">=</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">fhat_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+                    <span class="n">res</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">k</span><span class="o">*</span><span class="nc">Fraction</span><span class="p">(</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="nf">bell</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">funct_tup</span><span class="p">)</span>
+                <span class="n">g</span> <span class="o">+=</span> <span class="n">res</span><span class="o">*</span><span class="nc">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">f_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">*</span><span class="n">new_variable</span><span class="o">**</span><span class="n">n</span>
+            <span class="k">return</span> <span class="n">g</span><span class="p">.</span><span class="nf">as_poly</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nc">Exception</span><span class="p">(</span><span class="sh">"</span><span class="s">This function has a nonzero constant term, so the algorithm doesn</span><span class="sh">'</span><span class="s">t apply.</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">Exception</span><span class="p">(</span><span class="sh">"</span><span class="s">This function isn</span><span class="sh">'</span><span class="s">t invertible.</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="c1"># b/q are the complex/Kähler moduli coordinates
+</span>    <span class="n">b</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="nf">symbols</span><span class="p">(</span><span class="sh">'</span><span class="s">b q</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="c1"># Max degree to calculate GWs for
+</span>    <span class="n">degree</span> <span class="o">=</span> <span class="mi">5</span>
+    
+    <span class="c1"># The period
+</span>    <span class="n">omega0</span> <span class="o">=</span> <span class="nc">TaylorSeries</span><span class="p">(</span><span class="n">nthterm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span> <span class="p">:</span> <span class="nc">Fraction</span><span class="p">(</span><span class="nf">factorial</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="p">),(</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">**</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="c1"># The perturbation of the second period
+</span>    <span class="k">def</span> <span class="nf">sum_of_recips</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Fraction</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="nc">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="nc">TaylorSeries</span><span class="p">(</span><span class="n">nthterm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span> <span class="p">:</span> <span class="nc">Fraction</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="nf">factorial</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="p">),(</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="nf">sum_of_recips</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+    <span class="c1"># Mirror map q(b)
+</span>    <span class="n">q_func</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="nf">exponentiation</span><span class="p">(</span><span class="nf">division</span><span class="p">(</span><span class="n">psi</span><span class="p">.</span><span class="nf">as_polynomial</span><span class="p">(</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">omega0</span><span class="p">.</span><span class="nf">as_polynomial</span><span class="p">(</span><span class="n">degree</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">degree</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">degree</span><span class="p">)</span>
+    <span class="c1"># Mirror map b(q)
+</span>    <span class="n">b_func</span> <span class="o">=</span> <span class="nf">lagrange_bell_invert</span><span class="p">(</span><span class="n">q_func</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>
+    <span class="c1"># Yukawa &lt;θθθ&gt;(b) (in B-model)
+</span>    <span class="n">yukawa_B</span> <span class="o">=</span> <span class="nf">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">omega0</span><span class="p">.</span><span class="nf">as_polynomial</span><span class="p">(</span><span class="n">degree</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">degree</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+    <span class="c1"># Yukawa &lt;HHH&gt;(q) (in A-model)
+</span>    <span class="n">yukawa_A</span> <span class="o">=</span> <span class="nf">truncate_poly</span><span class="p">(</span><span class="nc">Poly</span><span class="p">(</span><span class="nf">truncate_poly</span><span class="p">(</span><span class="nf">truncate_poly</span><span class="p">(</span><span class="n">yukawa_B</span><span class="o">*</span><span class="p">(</span><span class="n">q_func</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span><span class="n">degree</span><span class="p">).</span><span class="nf">compose</span><span class="p">(</span><span class="n">b_func</span><span class="p">),</span><span class="n">degree</span><span class="p">),</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">b_func</span><span class="p">.</span><span class="nf">diff</span><span class="p">()</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span><span class="n">degree</span><span class="p">)</span>
+
+    <span class="c1"># Results
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">q(b) = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">q_func</span><span class="p">.</span><span class="nf">as_expr</span><span class="p">()))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">b(q) = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">b_func</span><span class="p">.</span><span class="nf">as_expr</span><span class="p">()))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">&lt;θθθ&gt; = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">yukawa_B</span><span class="p">.</span><span class="nf">as_expr</span><span class="p">()))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">&lt;HHH&gt; = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">yukawa_A</span><span class="p">.</span><span class="nf">as_expr</span><span class="p">()))</span>
+
+    <span class="c1"># Gromov-Witten invariants
+</span>    <span class="n">N</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">yukawa_A</span><span class="p">.</span><span class="nf">as_expr</span><span class="p">().</span><span class="nf">coeff</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">yukawa_A</span><span class="p">.</span><span class="nf">as_expr</span><span class="p">().</span><span class="nf">coeff</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">N = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+
+    <span class="c1"># Instanton numbers
+</span>    <span class="n">N_temp</span> <span class="o">=</span> <span class="n">N</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="n">N</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">degree</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">n</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">N_temp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">degree</span><span class="o">//</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">N_temp</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">N_temp</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="nc">Fraction</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">k</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">n = </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div>  </div>
+
+  <p><a href="/code_snippets/GW_calcs/quintic.py" target="_blank">
+  <button class="download-button"><i class="fa fa-solid fa-download"></i> Download</button>
+</a></p>
+</div>
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		    <h5>About</h5>	
+            <p>Jesse Straat<br/> Mathematics and Theoretical Physics student<br/> Utrecht University
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><i class="fa fa-envelope fa-1x"></i> j.r.h.[surname]&ltat&gtuu.nl <br/> <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Address</h5>	
+            <p>Hans Freudenthalgebouw<br/> Budapestlaan 6<br/> 3584 CD Utrecht
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2025 Jesse Straat </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>
