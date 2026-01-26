@@ -36,6 +36,6 @@ iframe {
 <div class="col-md-12 col-sm-12">
 <h4>Floer Theory and Quantum Mechanics</h4>
 
-Floer theory consists the existence and construction of periodic solutions of (classical) Hamiltonian systems. In particular, we like to get lower bounds on the number of solutions, known as cuplength estimates. I aim to expand the framework to the quantum realm, by providing approximations and methods. The ultimate goal is to improve our understanding of quantum mechanics through the mathematics.
+Floer theory concerns the existence and construction of periodic solutions of (classical) Hamiltonian systems. In particular, we like to get lower bounds on the number of solutions, known as cuplength estimates. I aim to expand the framework to the quantum realm, by providing approximations and methods. The ultimate goal is to improve our understanding of quantum mechanics through the mathematics.
 </div>
 </div>
