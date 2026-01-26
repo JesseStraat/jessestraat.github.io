@@ -33,6 +33,8 @@ nav_pages:
     location: publications
   - name: Research
     location: research
+  - name: Talks & conferences
+    location: talks-conferences
   - name: LaTeX
     location: latex
   - name: Blog

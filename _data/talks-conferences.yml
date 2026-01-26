@@ -1,0 +1,72 @@
+- name: VIII Iberoamerican Meeting on Geometry, Dynamics, and Field Theory
+  type: conference
+  website: https://wp.ull.es/8ibmgmft/
+  start_date: 2026-01-19
+  end_date: 2026-01-23
+  role: attended
+  # attended / invited / contributed / organised / speaker (for seminars) / regular (for seminars)
+  location: Universidad de La Laguna
+  #talk_title: title
+- name: Master Class Algebraic Geometry & Physics
+  type: masterclass
+  website: http://ronan.terpereau.perso.math.cnrs.fr/Master_Class_2023_Dijon.html
+  start_date: 2023-08-28
+  end_date: 2023-09-01
+  role: attended
+  location: Université de Bourgogne
+- name: Friday Fish Seminar
+  type: seminar
+  website: https://friday-fish.github.io/
+  start_date: 2024-12-13
+  start_date: 2025-01-31
+  role: speaker
+  location: Universiteit Utrecht
+  talk_title: An Algebro-Geometric Construction of Gromov–Witten Invariants
+- name: Friday Fish Seminar
+  type: seminar
+  website: https://friday-fish.github.io/
+  start_date: 2025-05-16
+  role: speaker
+  location: Universiteit Utrecht
+  talk_title: A Geometric Introduction to Topological String Theory and Mirror Symmetry
+- name: Friday Fish Seminar
+  type: seminar
+  website: https://friday-fish.github.io/
+  start_date: 2024-09-01
+  end_date: 2025-11-21
+  role: regular
+  location: Universiteit Utrecht
+- name: Symplectic Dirty Hands Seminar
+  type: seminar
+  website: https://www.nikadal.xyz/symplectic-dirty-hand-seminar
+  start_date: 2024-11-01
+  end_date: 2024-12-13
+  role: regular
+  location: Universiteit Leiden, Universiteit Utrecht and Vrije Universiteit Amsterdam
+- name: Poisson aan de Waal 4
+  type: workshop
+  website: https://sites.google.com/view/poisson-aan-de-waal-4/
+  start_date: 2024-06-27
+  end_date: 2024-06-28
+  role: attended
+  location: Radboud Universiteit Nijmegen, Universiteit Utrecht
+- name: CTAAAG
+  type: seminar
+  website: https://www.few.vu.nl/~trt800/arbeitsgemeinschaft.html
+  start_date: 2025-12-02
+  role: speaker
+  location: Vrije Universiteit Amsterdam
+  talk_title: The Symplectic Diffeomorphism Group
+  location: Vrije Universiteit Amsterdam
+- name: CTAAAG
+  type: seminar
+  website: https://www.few.vu.nl/~trt800/arbeitsgemeinschaft.html
+  start_date: 2025-10-15
+  role: regular
+  location: Vrije Universiteit Amsterdam
+- name: DDT&G
+  type: seminar
+  website: https://www.few.vu.nl/~trt800/ddtg.html
+  start_date: 2025-03-07
+  role: regular
+  location: Universiteit Leiden, Universiteit Utrecht, Vrije Universiteit Amsterdam
