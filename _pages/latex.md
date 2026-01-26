@@ -1,7 +1,6 @@
 ---
 title: "LaTeX"
 layout: gridlay
-sitemap: false
 permalink: /latex/
 ---
 

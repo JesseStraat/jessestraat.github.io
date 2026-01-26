@@ -1,7 +1,6 @@
 ---
 title: "Blogs by category"
 layout: page
-sitemap: false
 permalink: /blog/categories/
 ---
 

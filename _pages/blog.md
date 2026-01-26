@@ -1,7 +1,6 @@
 ---
 title: "Blog"
 layout: page
-sitemap: false
 permalink: /blog/
 ---
 
