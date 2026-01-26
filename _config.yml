@@ -13,16 +13,16 @@ url: ""
 # Footer info
 affiliation: >
   Jesse Straat<br/>
-  Mathematics and Theoretical Physics student<br/>
-  Utrecht University
+  Mathematics PhD candidate<br/>
+  Vrije Universiteit Amsterdam
 
 location: >
-  Hans Freudenthalgebouw<br/>
-  Budapestlaan 6<br/>
-  3584 CD Utrecht
+  Nieuwe Universiteitsgebouw<br/>
+  De Boelelaan 1111<br/>
+  1081 HV Amsterdam
 
 contact: >
-  <i class="fa fa-envelope fa-1x"></i> j.r.h.[surname]&ltat&gtuu.nl <br/>
+  <i class="fa fa-envelope fa-1x"></i> j.r.h.[surname]&ltat&gtvu.nl <br/>
   <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
 
 # Pages shown in navbar

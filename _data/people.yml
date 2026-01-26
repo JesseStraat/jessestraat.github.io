@@ -1,17 +1,21 @@
 - name: Jesse Straat
   photo: jesse.jpeg
-  info: Mathematics and Theoretical Physics student, Utrecht University
+  info: Mathematics PhD candidate, Vrije Universiteit Amsterdam
   github: https://github.com/JesseStraat
   # cv: cv/cv.pdf
   # Change the items in "education" you have (up to 6)
   education:
     [
+      "(2025) MSc Mathematical Sciences, Utrecht University",
+      "(2025) MSc Theoretical Physics, Utrecht University",
       "(2022) BSc Physics, Utrecht University",
       "(2022) BSc Mathematics, Utrecht University"
     ]
 
   educationshort:
     [
+      "(2025) MSc Mathematical Sciences, UU",
+      "(2025) MSc Theoretical Physics, UU",
       "(2022) BSc Physics, UU",
       "(2022) BSc Mathematics, UU"
     ]
