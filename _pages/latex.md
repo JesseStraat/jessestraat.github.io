@@ -41,6 +41,13 @@ This package solves the issue by making use of the .aux file, and also introduce
 </div>
 
 <div class="jumbotron">
+<h4><b>orgstyle</b></h4>
+<a href="https://github.com/jessestraat/orgstyle" target="_blank"><button class="btn btn-warning btn-sm">GIT</button></a>
+
+This (work in progress) package automates the process of adapting a LaTeX document to an organisation's official style. Its modular approach allows the user to add their own organisation styles. I'm planning on publishing to CTAN. Contributions of custom organisation styles are welcome.
+</div>
+
+<div class="jumbotron">
 <h4><b>morederivatives</b></h4>
 <a href="https://github.com/jessestraat/MoreDerivatives" target="_blank"><button class="btn btn-warning btn-sm">GIT</button></a>
 
