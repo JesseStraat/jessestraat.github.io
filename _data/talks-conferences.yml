@@ -70,3 +70,11 @@
   start_date: 2025-03-07
   role: regular
   location: Universiteit Leiden, Universiteit Utrecht, Vrije Universiteit Amsterdam
+- name: CTAAAG
+  type: seminar
+  website: https://www.few.vu.nl/~trt800/arbeitsgemeinschaft.html
+  start_date: 2026-03-10
+  role: speaker
+  location: Vrije Universiteit Amsterdam
+  talk_title: Gromov–Witten Invariants in Quantum Cohomology and Floer Theory
+  location: Vrije Universiteit Amsterdam
