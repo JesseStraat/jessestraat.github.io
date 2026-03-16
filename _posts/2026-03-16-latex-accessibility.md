@@ -292,6 +292,8 @@ Speaking of theorems, `thmtools` is incompatible. The numbering is simply wrong.
 
 For those still using it (you shouldn't!!!), `physics` will not be supported. It's likely that some of its functionalities produce errors.
 
+Macros such as `\textbf` and `\bfseries` aren't supported in regular text. Instead, one should use `\emph` to emphasise text. Even outside the tagging project, it's advised to use `\emph` for more consistent documents.
+
 Beyond these, I have not (yet) run into any incompatibilities with the packages that I regularly use.
 
 # The future of PDF accessibility
