@@ -2,6 +2,7 @@
 layout: post
 title: "LaTeX setup and tools"
 date: 2026-03-02
+last_modified_at: 2026-03-16
 categories:
 - LaTeX
 ---
@@ -219,6 +220,8 @@ Additionally, like Adobe Acrobat Reader, it can run JavaScript in your PDF. As f
 This is my personal choice. Okular is open-source and has many of the useful features that Adobe Acrobat Reader does. It has a ton of metadata, no rendering issues (as far as I know), and doesn't support JavaScript (which is a good thing, as I mentioned). However, the annotations aren't very intuitive, and it renders a document one page at a time (so no scrolling through!). I remember rendering being very slow, but I haven't had the issue in years (maybe SSDs fixed it). Both Okular and pdf.js are compatible with PDF layers, which can also be switched on/off manually. This is used by packages such as `ocgx` to display optional content, and by `hyperref`'s `ocgcolorlinks` to make links black when a document is printed. The feature may also be used to remove watermarks from documents, as well as other obstructing things that were wrongfully separated as a layer (recently, [the FBI accidentally did this](https://allaboutpdf.com/blog/2025/12/23/epstein-files-redaction-fail)).
 
 A very big advantage of Okular: it automatically reloads PDF files after changing them. So if you rerun a `.tex` file, the changes are automatically reflected in Okular.
+
+A big disadvantage of Okular (as of writing) is that it does not yet support any of the new accessibility features included in PDF 2.0. This means it gives no insight into the tagging setup and alt texts. This isn't a huge deal for regular end users, especially since LaTeX's accessibility features are used very rarely, but is quite annoying for anyone interested. Especially since all major PDF reader lock these features behind a paywall.
 
 ## Zotero built-in PDF reader
 I only put this here because the Zotero reader has reference previews, which are especially useful for citations. I don't know why the big players haven't implemented this, yet. It's absolutely amazing.
