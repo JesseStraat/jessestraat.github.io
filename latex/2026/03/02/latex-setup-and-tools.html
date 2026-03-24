@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LaTeX setup and tools - Jesse Straat</title>
+  <meta name="description" content="Academic webpage of Jesse Straat">
+  <meta name="keywords" content="Jesse, Straat, mathematics, physics, personal, webpage">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/molokai-style.css">
+  <link rel="stylesheet" href="/assets/codeblock.css">
+  <link rel="stylesheet" href="/assets/tables.css">
+  <link rel="canonical" href="https://jessestraat.github.io/latex/2026/03/02/latex-setup-and-tools.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="https://jessestraat.github.io/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <meta name="google-site-verification" content="yF0MwVgSoJmhDzzSPR6zkRnAaaSMvEroGD1xSPI1lnE" />
+
+
+
+<!-- Google Analytics (original) -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [ ['\\(', '\\)'] ],
+            tags: "ams"
+        }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<style>
+    .math {
+        overflow-x: auto;
+        overflow-y: hidden
+    }
+</style>
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="https://jessestraat.github.io/">
+     <img src="https://jessestraat.github.io/favicon.png" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Jesse Straat
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="https://jessestraat.github.io/">Home</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/about">About</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/talks-conferences">Talks & conferences</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/latex">LaTeX</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/blog">Blog</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">LaTeX setup and tools</h1>
+    <p class="post-meta">
+      <time datetime="2026-03-02T00:00:00+00:00" itemprop="datePublished">Mar 2, 2026</time>
+      (last modified: <time datetime="2026-03-16T00:00:00+00:00" itemprop="datePublished">Mar 16, 2026</time>)
+      
+    </p>
+    <p class="post-meta">Category: 
+      
+      <a href="/blog/categories/#">LaTeX</a>
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I consider myself a LaTeX guru. I’m very comfortable with the language, use it for everything possible and write my own packages. Peers often ask for TeX support, which sadly won’t lead to any co-authorships or citations, but may land me in some acknowledgements, if I’m lucky. Sadly, I am a very forgetful person, so whenever I set up a new PC, I forget what programs I should download, and what websites I should bookmark. This page is a personal reminder of everything useful LaTeX; hopefully it is useful to not just me, but to other people, too.</p>
+
+<p>First, a disclaimer: I personally use Windows for all my machines. Most of the advice here works still, but those who use Linux or Mac should keep in mind that installation of programs may work differently. Since most tutorials online work only for Linux users, I do not feel guilty about this at all; I consider it retribution.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#latex-installation" id="markdown-toc-latex-installation">LaTeX installation</a>    <ul>
+      <li><a href="#to-overleaf-or-not-to-overleaf" id="markdown-toc-to-overleaf-or-not-to-overleaf">To Overleaf or not to Overleaf</a></li>
+      <li><a href="#distribution" id="markdown-toc-distribution">Distribution</a>        <ul>
+          <li><a href="#introducing-international-latex-update-day" id="markdown-toc-introducing-international-latex-update-day">Introducing international LaTeX update day</a></li>
+        </ul>
+      </li>
+      <li><a href="#text-editors" id="markdown-toc-text-editors">Text editors</a>        <ul>
+          <li><a href="#vscode" id="markdown-toc-vscode">VSCode</a></li>
+        </ul>
+      </li>
+      <li><a href="#texstudio" id="markdown-toc-texstudio">TeXstudio</a></li>
+      <li><a href="#texworks" id="markdown-toc-texworks">TeXworks</a></li>
+      <li><a href="#neovim" id="markdown-toc-neovim">(Neo)Vim</a></li>
+    </ul>
+  </li>
+  <li><a href="#pdf-readers" id="markdown-toc-pdf-readers">PDF readers</a>    <ul>
+      <li><a href="#adobe-acrobat-reader" id="markdown-toc-adobe-acrobat-reader">Adobe Acrobat Reader</a></li>
+      <li><a href="#chromium-pdf-reader" id="markdown-toc-chromium-pdf-reader">Chromium PDF reader</a></li>
+      <li><a href="#pdfjs" id="markdown-toc-pdfjs">pdf.js</a></li>
+      <li><a href="#okular" id="markdown-toc-okular">Okular</a></li>
+      <li><a href="#zotero-built-in-pdf-reader" id="markdown-toc-zotero-built-in-pdf-reader">Zotero built-in PDF reader</a></li>
+    </ul>
+  </li>
+  <li><a href="#compilers" id="markdown-toc-compilers">Compilers</a>    <ul>
+      <li><a href="#tex" id="markdown-toc-tex">TeX</a></li>
+      <li><a href="#latex" id="markdown-toc-latex">LaTeX</a></li>
+      <li><a href="#pdflatex" id="markdown-toc-pdflatex">pdfLaTeX</a></li>
+      <li><a href="#xelatex" id="markdown-toc-xelatex">XeLaTeX</a></li>
+      <li><a href="#lualatex" id="markdown-toc-lualatex">LuaLaTeX</a></li>
+    </ul>
+  </li>
+  <li><a href="#useful-web-tools" id="markdown-toc-useful-web-tools">Useful web tools</a>    <ul>
+      <li><a href="#detexify" id="markdown-toc-detexify">DeTeXify</a></li>
+      <li><a href="#mathcha" id="markdown-toc-mathcha">Mathcha</a></li>
+      <li><a href="#quiver" id="markdown-toc-quiver">quiver</a></li>
+      <li><a href="#tables-generator" id="markdown-toc-tables-generator">Tables generator</a></li>
+    </ul>
+  </li>
+  <li><a href="#tikz-related-trickspackages" id="markdown-toc-tikz-related-trickspackages">TikZ-related tricks/packages</a>    <ul>
+      <li><a href="#memoize" id="markdown-toc-memoize">Memoize</a></li>
+      <li><a href="#implicit-algebraic-curves-using-gnuplot" id="markdown-toc-implicit-algebraic-curves-using-gnuplot">Implicit algebraic curves using gnuplot</a></li>
+    </ul>
+  </li>
+  <li><a href="#bibliography-management" id="markdown-toc-bibliography-management">Bibliography management</a>    <ul>
+      <li><a href="#reference-managers" id="markdown-toc-reference-managers">Reference managers</a></li>
+      <li><a href="#bibliography-package" id="markdown-toc-bibliography-package">Bibliography package</a></li>
+      <li><a href="#bibliography-processor" id="markdown-toc-bibliography-processor">Bibliography processor</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="latex-installation">LaTeX installation</h1>
+<p>This section describes the initial installation of LaTeX. Again, I will only describe the process for Windows machines.</p>
+
+<h2 id="to-overleaf-or-not-to-overleaf">To Overleaf or not to Overleaf</h2>
+<p>My main advice to anyone using LaTeX is to NOT use Overleaf. Here are some reasons why:</p>
+<ul>
+  <li>Overleaf is proprietary and very expensive. It is unknown how much an organisational subscription is, but since the <a href="https://www.overleaf.com/user/subscription/plans?plan=group">group professional subscription</a> is, as of writing this post, €332 per user per year, one can assume your organisation will be paying tens of thousands a year.</li>
+  <li>The free version is extremely limiting in its computation time, currently sitting at 10 seconds.</li>
+  <li>Overleaf requires a paid subscription for Git and Zotero connectivity, both of which are open source pieces of software that don’t require any more computation time than your document itself.</li>
+  <li>Overleaf is online-only: you can’t edit while offline.</li>
+  <li>Overleaf is online-only: if it is ever offline (<a href="https://status.overleaf.com/uptime">which it frequently is</a>), you can’t access your work. You don’t want this to happen on the day of your project deadline. <a href="https://x.com/overleaf/status/1761459759595540646">Overleaf has even been DoS’ed in the past</a>.</li>
+  <li>Overleaf only updates its TeX Live version once a year at irregular times. This means you won’t be able to use new packages until a year later. So you’ll have to import the package yourself, but…</li>
+  <li>Overleaf has no custom package support. If you want to use a custom package or a package not included in Overleaf’s current version of TeX Live, you’ll have to import it in each single project.</li>
+  <li>Overleaf doesn’t have a customisable editor. Most modern editors allow one to install all kinds of plugins, define shortcuts and shorthands, etc.. Overleaf doesn’t permit that.</li>
+  <li>Overleaf doesn’t really explicitly save auxiliary files, which may break some packages. It also makes it impossible to save some computation time (which you have little of, anyway) by generating images in another file.</li>
+  <li>There are probably many other reasons I’m forgetting.</li>
+</ul>
+
+<p>There are only two reasons why one <em>would</em> want to use Overleaf. First, you don’t have to install LaTeX on your local machine. This is valid if you have a computer on which you aren’t allowed to install programs, but in all other situations, this is merely an argument of laziness. LaTeX is a free piece of software that can run on any 21st-century machine. The other reason is that it allows for quite seamless real-time collaboration. Other editors allow a weaker version of this (such as VSCode’s <a href="https://visualstudio.microsoft.com/services/live-share/">Live Share</a>), but none are at the level of Overleaf. Nevertheless, I am of firm belief that using Git is a much better way to collaborate, and it also comes with a much better version history than Overleaf does.</p>
+
+<p>I recommend a local installation to <em>every</em> LaTeX user.</p>
+
+<h2 id="distribution">Distribution</h2>
+<p>The age-old question: should I install <a href="https://miktex.org">MiKTeX</a> or <a href="https://www.tug.org/texlive/">TeX Live</a>? MiKTeX and TeX Live are LaTeX <em>distributions</em>, which means they take care of the actual running of LaTeX documents and package management. Let me compare the pros and cons of both.</p>
+
+<p>The pros of MiKTeX:</p>
+<ul>
+  <li>Automatically installs new packages.</li>
+  <li>Quite compact (1.5 GB, including packages, as of writing).</li>
+  <li>Very nice GUI.</li>
+  <li>Easy installation.</li>
+  <li>Also supports the installation of some fonts.</li>
+</ul>
+
+<p>The cons of MiKTeX:</p>
+<ul>
+  <li>New packages can’t be used without an internet connection.</li>
+  <li>Custom packages require TEXMF root directory, which is a bit engaged.</li>
+  <li><a href="https://github.com/MiKTeX/miktex/issues/22">Slower than TeX Live</a>, especially in big beamer files.</li>
+  <li>Only really maintained by a single person (Christian Schenk).</li>
+  <li>There was at one point a huge bug that broke MiKTeX after updating. <a href="https://tex.stackexchange.com/a/718928">The only way to solve it was by updating MiKTeX using the command line.</a> To my knowledge, fresh installations of MiKTeX should never encounter the bug any more, so it should be fine.</li>
+  <li>Doesn’t ship with Perl, so if you want to use <code class="language-plaintext highlighter-rouge">latexmk</code>, you have to install it manually (Windows users can do so <a href="https://strawberryperl.com">here</a>).</li>
+</ul>
+
+<p>The pros of TeX Live:</p>
+<ul>
+  <li>All packages are installed by default.</li>
+  <li>Straightforward installation of custom packages.</li>
+  <li>Quite a bit faster.</li>
+  <li>Maintained by a big team.</li>
+</ul>
+
+<p>The cons of TeX Live:</p>
+<ul>
+  <li>Installation takes very long.</li>
+  <li>It’s huge (10 GB as of writing).</li>
+  <li>No real GUI.</li>
+  <li>Installation is quite involved, and requires some tech knowledge.</li>
+</ul>
+
+<p>I, myself, prefer MiKTeX over TeXLive due to its on-the-fly package installation. I also find it much easier to keep my packages up-to-date. Updating packages in MiKTeX is as easy as clicking a button, whereas in TeX Live, one has to go through the command prompt, which is quite a dedication to me.</p>
+
+<h3 id="introducing-international-latex-update-day">Introducing international LaTeX update day</h3>
+<p>Whichever distribution you go with, it is very important to keep your packages up-to-date. I tell my peers to check for updates every first Monday of the month at noon (uncoincidentally coinciding with the Dutch <a href="https://en.wikipedia.org/wiki/Civil_defense_siren#Netherlands">air-raid siren tests</a> and <a href="https://www.umcutrecht.nl/nl/over-ons/nieuws/details/het-ballenalarm-aandacht-voor-zaadbalkanker?lang=en">ball alert</a>). That way, your packages remain up-to-date, and you minimise the number of issues you may run into. I have seen way too many people who haven’t updated since their original installation years prior (which is also why people are still encountering the MiKTeX Qt platform error years after it being an issue).</p>
+
+<h2 id="text-editors">Text editors</h2>
+<p>While distributions take care of the actual compilation part of writing LaTeX (i.e., taking a <code class="language-plaintext highlighter-rouge">.tex</code> file and turning it into some output or <code class="language-plaintext highlighter-rouge">.pdf</code> file), you’re going to need something to <em>write</em> the <code class="language-plaintext highlighter-rouge">.tex</code> file. Of course, one could use your OS’s built-in text editor, but that doesn’t have any of the cool tools that come with a proper coding editor, such as custom shortcuts, shorthands, syntax highlighting, and much more. Here is a breakdown of editors I have experience with.</p>
+
+<h3 id="vscode"><a href="https://code.visualstudio.com">VSCode</a></h3>
+<p>My current choice. While it is proprietary, and, even worse, owned by Microsoft, it is very good at what it does. Moreover, it is free and based on a bare-bones open source version. Where it truly shines is its community plugins and seamless Git(Hub) integration. And it can be used for <em>any</em> programming language, so you can edit both LaTeX and Python files in the same window, and there is no need to learn to deal with various code editors.</p>
+
+<p>The most important plugin is James Yu’s <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">LaTeX Workshop</a>. It takes care of everything you need to run LaTeX files. It also supports code snippets: if you type certain shorthands and press Tab, it will change it to some code, and automatically places your cursor in the correct place! For example, <code class="language-plaintext highlighter-rouge">@/</code> evaluates to <code class="language-plaintext highlighter-rouge">\frac{}{}</code> and <code class="language-plaintext highlighter-rouge">bseq</code> evaluates to <code class="language-plaintext highlighter-rouge">\begin{equation*}\end{equation*}</code>. By default, LaTeX Workshop wants you to use <code class="language-plaintext highlighter-rouge">latexmk</code> (make sure you have Perl installed), but if you prefer manually compiling your documents (as I do), you should change the recipes in your <code class="language-plaintext highlighter-rouge">settings.json</code>. Mine are as follows:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="nl">"latex-workshop.latex.tools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdflatex"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdflatex"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"-synctex=1"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"-interaction=nonstopmode"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"-file-line-error"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"-shell-escape"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"%DOC_EXT%"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lualatex"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lualatex"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"-synctex=1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"-interaction=nonstopmode"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"-file-line-error"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"-shell-escape"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"%DOC_EXT%"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biber"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biber"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"%DOCFILE%"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dtx index"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"makeindex -s gind.ist"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"-o"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"%DOCFILE%.ind"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"%DOCFILE%.idx"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dtx change history"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"makeindex -s gglo.ist"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"-o"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"%DOCFILE%.gls"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"%DOCFILE%.glo"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="err">,</span><span class="w">
+    </span><span class="nl">"latex-workshop.latex.recipes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lualatex × 2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"lualatex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lualatex"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lualatex -&gt; Biber -&gt; lualatex × 2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"lualatex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"biber"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lualatex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lualatex"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdflatex × 2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"pdflatex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"pdflatex"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdflatex -&gt; Biber -&gt; pdflatex × 2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"pdflatex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"biber"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"pdflatex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"pdflatex"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dtx compilation"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"pdflatex"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"dtx index"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"dtx change history"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"pdflatex"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+<p>The tools and recipes with <code class="language-plaintext highlighter-rouge">dtx</code> are only relevant for LaTeX developers, so you may want to omit those. Of course, one may replace <code class="language-plaintext highlighter-rouge">biber</code> with <code class="language-plaintext highlighter-rouge">bibtex</code> if you prefer (but consider changing to <code class="language-plaintext highlighter-rouge">biber</code> since it’s more modern).</p>
+
+<p>Use <a href="https://ltex-plus.github.io/ltex-plus/">LTeX+</a> for a grammar/spell checker compatible with LaTeX. It does have a lot of false positives though, so make sure to hide them regularly (you can find issues in the problems tab of VSCode).</p>
+
+<p>I sometimes use the <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions">GitHub Actions</a> plugin to manage my workflow, but since I figured out <a href="https://github.com/JesseStraat/ThesisTemplate/blob/master/.github/workflows/compile.yml">how to compile LaTeX files in a GitHub action</a>, I haven’t touched my workflows.</p>
+
+<p><a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Todo Tree</a> is an amazing extension. You can add to-dos in a comment, and the extension makes a list of all of them. Very useful for large projects.</p>
+
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ymotongpoo.licenser">Licenser</a> is a niche extension that automatically adds licences to your files. It’s very situational and not for everyone.</p>
+
+<p>My favourite extension is <a href="https://marketplace.visualstudio.com/items?itemName=siegebell.prettify-symbols-mode">Prettify Symbols Mode</a>, since it’s able to visually replace certain phrases in your code with custom Unicode. For example, it might replace <code class="language-plaintext highlighter-rouge">\mathbb{N}</code> by <code class="language-plaintext highlighter-rouge">ℕ</code> in your code, or <code class="language-plaintext highlighter-rouge">\alpha</code> by <code class="language-plaintext highlighter-rouge">α</code>. Amazing, right? I no longer use it because I would regularly get harassed by my peers for it. Use at your own risk.</p>
+
+<p>Fun extensions: VSCode have a bunch of extensions that only do fun things. Whether you like having <a href="https://marketplace.visualstudio.com/items?itemName=alvseven.insane-focus-helper">Subway Surfers</a>, <a href="https://marketplace.visualstudio.com/items?itemName=YtMa-Publisher.code-cat">random cat pictures</a>, or a <a href="https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets">small zoo</a> in your window while working on your dissertation, VSCode has it. I should remark that of the above extensions, I have only ever used VSCode Pets; the others are there only for comedic value.</p>
+
+<h2 id="texstudio"><a href="https://www.texstudio.org">TeXstudio</a></h2>
+<p>A vintage LaTeX editor. Since it’s made specifically <em>for</em> LaTeX, it has a lot of buttons and shortcuts to make your life much easier, right out of the box. But I honestly feel VSCode does everything it does but better, unless you like pressing big, colourful buttons. It feels very outdated, as if stuck in Windows Vista. It also doesn’t have the same level of customisation as VSCode. It’s open source, though, and especially not owned by Microsoft.</p>
+
+<h2 id="texworks"><a href="https://tug.org/texworks/">TeXworks</a></h2>
+<p>I have only ever opened TeXworks by accident. It comes packaged with MiKTeX and may be associated with some file extensions by default (hence how I opened it by accident). It has the same vintage feeling as TeXstudio, but with way fewer functionalities. If you want a bare-bones, distraction-free editor that works with LaTeX very well, TeXworks is your go-to.</p>
+
+<h2 id="neovim"><a href="https://neovim.io">(Neo)Vim</a></h2>
+<p>I must be honest: I have never (seriously) used Vim. Despite this, I have heard great things about it, so I <em>had to</em> mention it here. Refer, for example, to <a href="https://castel.dev/post/lecture-notes-1/">these</a> <a href="https://ejmastnak.com/tutorials/vim-latex/intro/">articles</a>.</p>
+
+<h1 id="pdf-readers">PDF readers</h1>
+<p>Now that we have used a code editor to write a <code class="language-plaintext highlighter-rouge">.tex</code> file, and used a distribution to compile it into a <code class="language-plaintext highlighter-rouge">.pdf</code> file, we still need a way to read the <code class="language-plaintext highlighter-rouge">.pdf</code> file. Most code editors will have a PDF reader built-in, but having a dedicated PDF reader remains an essential tool to the LaTeX guru. Beyond just being able to read the document, a good PDF reader also provides valuable metadata, supports annotations, is free, and has a nice “presentation” mode.</p>
+
+<h2 id="adobe-acrobat-reader">Adobe Acrobat Reader</h2>
+<p>This is not <em>a</em> PDF reader but <em>the</em> PDF reader. After all, the PDF was <em>invented</em> by Adobe. Adobe Acrobat Reader has all the functionalities one would wish in a PDF reader… <em>after</em> paying for the premium version, which is incredibly expensive. I highly advise against using it, because it hits you with a paywall at every corner, even for incredibly basis functionalities. It’s a perfect example of shady proprietary software practices.</p>
+
+<p>It should be mentioned that Adobe Acrobat Reader can run JavaScript inside PDFs. More on this in the section on pdf.js.</p>
+
+<p>Adobe Acrobat Reader is incompatible as a LaTeX reader, since it “locks” PDF files that are currently open. This makes it impossible to compile <code class="language-plaintext highlighter-rouge">.tex</code> files whose corresponding <code class="language-plaintext highlighter-rouge">.pdf</code> files are already open.</p>
+
+<h2 id="chromium-pdf-reader">Chromium PDF reader</h2>
+<p>Probably the most common PDF reader, because you likely already have it installed. Not to mention, if you open a PDF in a Chromium-based browser, it automatically opens in this! It has a very bare-bones presentation mode, and provides some metadata. However, it doesn’t have as many functionalities as most other PDF readers.</p>
+
+<p>Since the PDF “lives” in the address bar, it is very easy to navigate to any anchor in the document (these are the internal links used in navigation). These are generated automatically by hyperref, so it works in almost any LaTeX document (try <a href="https://studenttheses.uu.nl/bitstream/handle/20.500.12932/49915/thesis_JesseStraat.pdf#theorem.3.40">this one</a>).</p>
+
+<p>As opposed to Adobe Acrobat Reader, PDF files aren’t locked, so you may freely compile them without any compatibility issues.</p>
+
+<h2 id="pdfjs">pdf.js</h2>
+<p>This is the PDF reader that is included in Mozilla Firefox, and a version of it is included in VSCode’s LaTeX Workshop. It is similar to the Chromium PDF reader (it will likely run in your browser), but it has some extra functionalities. I have found that there sometimes are some rendering issues in pdf.js, especially when two coloured boxes touch. Somehow, there’s always a tiny sliver of white pixels in between them. The presentation mode isn’t anything to write home about, and printing is excruciatingly slow.</p>
+
+<p>Additionally, like Adobe Acrobat Reader, it can run JavaScript in your PDF. As far as I know, these two editors are the only ones that can do this (Adobe Acrobat can do more than pdf.js). It has some cool applications, such as <a href="https://tug.ctan.org/macros/latex/contrib/animate/animate.pdf">animations</a> and <a href="https://github.com/rwarnking/pdf-games">actual interactive games</a>. However, one should remember that neither of these are “intended” LaTeX use, and the portability of a PDF (what the “p” stands for) is jeopardised by writing documents which only render properly in one of two PDF readers. More worryingly, embedded JavaScript can be used to put <a href="https://cloudmersive.com/article/Understanding-Embedded-JavaScript-in-PDF-Documents">actual malware in a PDF document</a>. Only Adobe Acrobat Reader and pdf.js are vulnerable to such attacks. Personally, this is sufficient reasoning to not use them.</p>
+
+<h2 id="okular">Okular</h2>
+<p>This is my personal choice. Okular is open-source and has many of the useful features that Adobe Acrobat Reader does. It has a ton of metadata, no rendering issues (as far as I know), and doesn’t support JavaScript (which is a good thing, as I mentioned). However, the annotations aren’t very intuitive, and it renders a document one page at a time (so no scrolling through!). I remember rendering being very slow, but I haven’t had the issue in years (maybe SSDs fixed it). Both Okular and pdf.js are compatible with PDF layers, which can also be switched on/off manually. This is used by packages such as <code class="language-plaintext highlighter-rouge">ocgx</code> to display optional content, and by <code class="language-plaintext highlighter-rouge">hyperref</code>’s <code class="language-plaintext highlighter-rouge">ocgcolorlinks</code> to make links black when a document is printed. The feature may also be used to remove watermarks from documents, as well as other obstructing things that were wrongfully separated as a layer (recently, <a href="https://allaboutpdf.com/blog/2025/12/23/epstein-files-redaction-fail">the FBI accidentally did this</a>).</p>
+
+<p>A very big advantage of Okular: it automatically reloads PDF files after changing them. So if you rerun a <code class="language-plaintext highlighter-rouge">.tex</code> file, the changes are automatically reflected in Okular.</p>
+
+<p>A big disadvantage of Okular (as of writing) is that it does not yet support any of the new accessibility features included in PDF 2.0. This means it gives no insight into the tagging setup and alt texts. This isn’t a huge deal for regular end users, especially since LaTeX’s accessibility features are used very rarely, but is quite annoying for anyone interested. Especially since all major PDF reader lock these features behind a paywall.</p>
+
+<h2 id="zotero-built-in-pdf-reader">Zotero built-in PDF reader</h2>
+<p>I only put this here because the Zotero reader has reference previews, which are especially useful for citations. I don’t know why the big players haven’t implemented this, yet. It’s absolutely amazing.</p>
+
+<h1 id="compilers">Compilers</h1>
+<p>By default, most people will use pdfLaTeX to compile their documents, but there are way more options. It’s not very difficult to choose which one is best: take the newest one that’s widely supported by the community. Right now, that’s LuaLaTeX. In this section, I will treat some of the big compilers (in historical order) to compare the difference in features.</p>
+
+<h2 id="tex">TeX</h2>
+<p>TeX is the original program that LaTeX is built upon. TeX is very bare-bones and unintuitive to many. Remarkably, its output files are <code class="language-plaintext highlighter-rouge">.dvi</code> files, while modern LaTeX is known for outputting <code class="language-plaintext highlighter-rouge">.pdf</code> files. Some TeX macros (which have since been replaced by LaTeX macros) are still in common use today, such as <code class="language-plaintext highlighter-rouge">$...$</code> and <code class="language-plaintext highlighter-rouge">$$...$$</code>. Realistically, you shouldn’t use this directly, but every LaTeX file is TeX in disguise. It is still under active development by David Knuth.</p>
+
+<h2 id="latex">LaTeX</h2>
+<p>LaTeX is actually not a compiler itself: it is more accurately described as a (huge) collection of TeX macros. Notable inclusions are <code class="language-plaintext highlighter-rouge">\(...\)</code>, <code class="language-plaintext highlighter-rouge">\[...\]</code>, documentclasses (like <code class="language-plaintext highlighter-rouge">article</code>) and the <code class="language-plaintext highlighter-rouge">document</code> environment, itself. Almost all TeX users use the LaTeX macros (mostly without even knowing the difference). The “La” is generally believed to be short for Lamport, the creator of LaTeX. Like TeX, LaTeX only outputs <code class="language-plaintext highlighter-rouge">.dvi</code> files.</p>
+
+<h2 id="pdflatex">pdfLaTeX</h2>
+<p>Whenever a compiler is named “(x)LaTeX”, it means that it is the “(x)TeX” compiler together with the LaTeX macro definitions. But since very few people actually use straight-up pdfTeX or LuaTeX, I will only discuss the LaTeX-variants. As the name implies, the main difference between LaTeX and pdfLaTeX is that pdfLaTeX outputs <code class="language-plaintext highlighter-rouge">.pdf</code> files. It is the most common contemporary compiler, though not necessarily the best one.</p>
+
+<p>For modern use, pdfLaTeX is lacking. Most of the reasons are technical (for example, there is a maximum of 16 write files, and some packages require LuaTeX), but even low-level users will experience the most famous difference: pdfLaTeX has limited font support. The font file system is highly deprecated, so if you want to use a different font, you’re dependent on the user base to create a package that <em>looks like</em> your font of choice.</p>
+
+<p>Do keep in mind that pdfLaTeX is <em>much</em> faster than the modern LaTeX compilers. So what it loses in raw power is gained in speed. If you have no interest in using fonts or packages which require LuaLaTeX, and your computer is on the slower side (or you’re using Overleaf with its compilation time limits), you might want to stick to pdfTeX.</p>
+
+<h2 id="xelatex">XeLaTeX</h2>
+<p>In my experience, XeTeX is something the “cool people” use. Its height of usage was when I, myself, didn’t really understand LaTeX, myself, so I felt like XeLaTeX users must really know what they’re talking about. By the time I actually needed features outside pdfTeX, LuaLaTeX was already starting to supplant XeLaTeX. XeLaTeX’s main new feature is its font support using <code class="language-plaintext highlighter-rouge">fontspec</code>. It supports any TrueType and OpenType font, which are the font files actually used by your computer. Whenever I set a font, I often include a piece of code of the following form, which automatically differentiates between pdfLaTeX and modern <code class="language-plaintext highlighter-rouge">fontspec</code>-compliant engines.</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\RequirePackage</span><span class="p">{</span>iftex<span class="p">}</span>
+<span class="k">\ifpdftex</span>
+    <span class="c">% Deprecated LaTeX compilers use these fonts</span>
+    <span class="k">\renewcommand\rmdefault</span><span class="p">{</span>ppl<span class="p">}</span>
+    <span class="k">\renewcommand\sfdefault</span><span class="p">{</span>phv<span class="p">}</span>
+    <span class="k">\renewcommand\ttdefault</span><span class="p">{</span>cmtt<span class="p">}</span>
+<span class="k">\else</span>
+    <span class="c">% LuaLaTeX and XeLaTeX</span>
+    <span class="k">\RequirePackage</span><span class="p">{</span>fontspec<span class="p">}</span>
+    <span class="k">\setmainfont</span><span class="p">{</span>TeX Gyre Pagella<span class="p">}</span>
+    <span class="k">\setsansfont</span><span class="p">{</span>TeX Gyre Heros<span class="p">}</span>
+    <span class="k">\setmonofont</span><span class="p">{</span>Latin Modern Mono<span class="p">}</span>
+<span class="k">\fi</span>
+</code></pre></div></div>
+<p>Today, XeTeX has two very large downsides. First, it is no longer in active development. Second, it’s not based on pdfTeX. While it does output PDFs, it does so in a quite roundabout way. Not being based on pdfTeX means there are some compatibility issues, such as with <code class="language-plaintext highlighter-rouge">microtype</code>. But its biggest downside is that it is simply not LuaTeX.</p>
+
+<h2 id="lualatex">LuaLaTeX</h2>
+<p>Although historically seen as unstable, modern LuaLaTeX is <em>the</em> LaTeX compiler. It has more or less all features of XeLaTeX, is more compatible with pdfLaTeX, works extraordinarily well with PGF/TikZ, and, best of all, includes the Lua programming language. While completely irrelevant to low-level LaTeX users, package authors use Lua to do a lot of difficult tasks that need a smart model to work through. LaTeX simply isn’t very powerful as a true programming language, even with LaTeX3; Lua is. An example of a package which uses Lua is <a href="https://ctan.org/pkg/tikz-feynman">TikZ-Feynman</a>. Lua calculates the optimal positioning of the diagram, which makes it possible to generate Feynman Diagrams without explicitly positioning each vertex.</p>
+
+<p>LuaLaTeX is, however, very slow. It’s improving and catching up to XeLaTeX, but it will never be as fast as pdfLaTeX. On modern hardware, the difference isn’t that important, but if you’re using an old machine or Overleaf, it might be beneficial to use pdfLaTeX, instead. In all other cases, I recommend LuaLaTeX, which is the future of LaTeX.</p>
+
+<h1 id="useful-web-tools">Useful web tools</h1>
+<p>This is a collection of useful tools I’ve accumulated over the years.</p>
+
+<h2 id="detexify"><a href="https://detexify.kirelabs.org/classify.html">DeTeXify</a></h2>
+<p>DeTeXify is a truly magical website. It uses machine learning to recognise drawings of LaTeX symbols, and tells you what package they’re from and what macro corresponds to them. And it’s written in Haskell, which I respect.</p>
+
+<h2 id="mathcha"><a href="https://www.mathcha.io">Mathcha</a></h2>
+<p>This is a general purpose mathematics editor, but I mainly use it for its drawing functionality. It provides a Microsoft Paint-like UI that can be exported to TikZ. Of course, it won’t be as pixel-perfect as a manual TikZ picture, but it’s great for sketches.</p>
+
+<h2 id="quiver"><a href="https://q.uiver.app">quiver</a></h2>
+<p>Quiver is a website for generating commutative diagrams in TikZ-cd. It’s very easy and intuitive to use. Do make sure to <code class="language-plaintext highlighter-rouge">\usepackage{quiver}</code> to enable all macros. It is under active development, and new features are added all the time. Do make sure you have an up-to-date version of quiver installed if you use such a newer feature. This especially poses an issue for Overleaf users, whose quiver installation may be outdated by up to a year. Since it’s quite new, historical versions of Overleaf might not have quiver <em>at all</em>.</p>
+
+<h2 id="tables-generator"><a href="https://tablesgenerator.com/latex_tables">Tables generator</a></h2>
+<p>The name says what it does. There are many alternatives, but I prefer this one, due to its nice features. It allows importing from LaTeX, CSV, Excel, HTML, etc., and exports to many formats, including LaTeX and Markdown. It has a simple, intuitive user interface, that even allows one to make a custom border grid and set the background colour. I only wish it supported exporting to alternative table types, such as <code class="language-plaintext highlighter-rouge">tabularx</code>, and (mass-)converting cells to math mode.</p>
+
+<h1 id="tikz-related-trickspackages">TikZ-related tricks/packages</h1>
+<p>TikZ is a quite odd package, so I’m always looking for more ways to improve my workflow.</p>
+
+<h2 id="memoize">Memoize</h2>
+<p>TikZ pictures are quite intensive to generate. So if you have many of them in a single document, it takes ages to compile. Memoize makes it so you only have to generate TikZ pictures once, and then imports them into the document. Make sure you have Perl installed. TeXLive ships with it, MiKTeX will have to install it manually (Windows users can do so <a href="https://strawberryperl.com">here</a>).</p>
+
+<h2 id="implicit-algebraic-curves-using-gnuplot">Implicit algebraic curves using gnuplot</h2>
+<p>TikZ only draws parameterised curves. If you want to instead draw an implicit equation \(f(x,y) = 0\), you’ll need to perform some trickery. You can find how to do this on <a href="https://pbelmans.ncag.info/blog/2010/11/11/howto-draw-algebraic-curves-using-pgftikz/">Pieter Belmans’s website</a>. Make sure to install <a href="https://sourceforge.net/projects/gnuplot/">gnuplot</a>, and don’t forget to add it to PATH (you can do this during installation), or it won’t work.</p>
+
+<h1 id="bibliography-management">Bibliography management</h1>
+<p>It is of course possible to manually create the bibliography in a LaTeX document, but modern LaTeX users instead let this be handled by a package. There are generally three relevant programs for bibliographies.</p>
+<ol>
+  <li>Reference manager: a program which collects all references and, preferably, exports them as a <code class="language-plaintext highlighter-rouge">.bib</code> file, which is a list of references.</li>
+  <li>Bibliography package: a package which takes a <code class="language-plaintext highlighter-rouge">.bib</code> file and outputs another file to be analysed by a bibliography processor. It also has macros which display the info from the <code class="language-plaintext highlighter-rouge">.bbl</code> file output by the processor.</li>
+  <li>Bibliography processor: an external program (not part of LaTeX) which turns the output of the bibliography package into a <code class="language-plaintext highlighter-rouge">.bbl</code> file, which is the actual LaTeX code that outputs the list of references.</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">.bib</code> files and <code class="language-plaintext highlighter-rouge">.bbl</code> files can theoretically be created manually, but I recommend using dedicated programs to assure consistent style and accurate links.</p>
+
+<h2 id="reference-managers">Reference managers</h2>
+<p>Of the programs listed above, reference managers are used the least. However, they greatly simplify and even automate the process of collecting references. A good reference manager has the following features:</p>
+<ul>
+  <li>Make reference folders, where one can collect all references for a specific project.</li>
+  <li>A search functionality, where one can search through all their past and present references.</li>
+  <li>Convert all references in a project to a <code class="language-plaintext highlighter-rouge">.bib</code> file, either for <code class="language-plaintext highlighter-rouge">bibtex</code> or <code class="language-plaintext highlighter-rouge">biblatex</code>.</li>
+  <li>Automatically collect reference information from a URL/DOI/ISBN/arXiv ID.</li>
+  <li>Attach <code class="language-plaintext highlighter-rouge">.pdf</code> files to references.</li>
+  <li>Support all the necessary fields that can be used by LaTeX.</li>
+  <li>Make custom fields which will be output in the <code class="language-plaintext highlighter-rouge">.bib</code> file.</li>
+  <li>Shared folders with other users for collaboration.</li>
+</ul>
+
+<p>My recommendation for reference management is <a href="https://www.zotero.org">Zotero</a>. It has all the above features and more, including a browser extension. Make sure to install the <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX</a> plugin for enhanced LaTeX support, and the <a href="https://github.com/wileyyugioh/zotmoov">ZotMoov</a> plugin for moving <code class="language-plaintext highlighter-rouge">.pdf</code> files outside the Zotero cloud (its cloud storage is very limited).</p>
+
+<p>Some people use <a href="https://endnote.com">EndNote</a>, which has most features that Zotero does, but it isn’t nearly as compatible with LaTeX.</p>
+
+<h2 id="bibliography-package">Bibliography package</h2>
+<p>There are two main players in bibliography packages: <code class="language-plaintext highlighter-rouge">natbib</code> and <code class="language-plaintext highlighter-rouge">biblatex</code>. <code class="language-plaintext highlighter-rouge">biblatex</code> is the successor to <code class="language-plaintext highlighter-rouge">natbib</code>, and is superior in almost every way. Here are the pros of using <code class="language-plaintext highlighter-rouge">biblatex</code> over <code class="language-plaintext highlighter-rouge">natbib</code>:</p>
+<ul>
+  <li>It supports <code class="language-plaintext highlighter-rouge">biber</code> (in addition to <code class="language-plaintext highlighter-rouge">bibtex</code>), which I will discuss below.</li>
+  <li>It supports more citation styles.</li>
+  <li>Through <code class="language-plaintext highlighter-rouge">babel</code>, it supports other languages using the <code class="language-plaintext highlighter-rouge">language</code> tag, using correct multilingual typography.</li>
+  <li>Similarly, it has better support for Unicode.</li>
+  <li>You can create multiple bibliographies.</li>
+  <li>It’s even backwards-compatible with <code class="language-plaintext highlighter-rouge">natbib</code> by using the <code class="language-plaintext highlighter-rouge">natbib</code> option.</li>
+</ul>
+
+<p>Nevertheless, <code class="language-plaintext highlighter-rouge">natbib</code> is by far the most used package, and you’ll probably want to use it as well. The reason? Academic journals.</p>
+<ul>
+  <li>Many journals have their own citation style in the form of a <code class="language-plaintext highlighter-rouge">.bst</code> file, used by <code class="language-plaintext highlighter-rouge">natbib</code>. <code class="language-plaintext highlighter-rouge">biblatex</code> is incompatible with these files, and uses <code class="language-plaintext highlighter-rouge">.bbx</code> files.</li>
+  <li>Other journals don’t allow <code class="language-plaintext highlighter-rouge">.bbl</code> files, and require you to put the bibliography directly into your <code class="language-plaintext highlighter-rouge">.tex</code> document using <code class="language-plaintext highlighter-rouge">bibitem</code>s. In <code class="language-plaintext highlighter-rouge">natbib</code>, this is as easy as copying and pasting the contents of your generated <code class="language-plaintext highlighter-rouge">.bbl</code> file. In <code class="language-plaintext highlighter-rouge">biblatex</code>, you need the <code class="language-plaintext highlighter-rouge">biblatex2bibitem</code> package.</li>
+</ul>
+
+<p>If possible, I recommend <code class="language-plaintext highlighter-rouge">biblatex</code> every time. But if you want to publish in a journal that only supports <code class="language-plaintext highlighter-rouge">natbib</code> or <code class="language-plaintext highlighter-rouge">bibitem</code>s, you’ll of course have to switch. If you want to use <code class="language-plaintext highlighter-rouge">biblatex</code>, but might have to change to <code class="language-plaintext highlighter-rouge">natbib</code> down the line, I recommend playing it safe by using the <code class="language-plaintext highlighter-rouge">natbib=true</code> option. This will simplify the conversion, since it’s only necessary to change the package itself.</p>
+
+<h2 id="bibliography-processor">Bibliography processor</h2>
+<p>The discussion on bibliography processors is very similar to the one on bibliography packages above. There are two packages, <code class="language-plaintext highlighter-rouge">bibtex</code> (which confusingly isn’t the predecessor to <code class="language-plaintext highlighter-rouge">biblatex</code>) and <code class="language-plaintext highlighter-rouge">biber</code>. Again, <code class="language-plaintext highlighter-rouge">biber</code> is better in almost every way.</p>
+<ul>
+  <li>It supports non-ASCII characters.</li>
+  <li>It can deal with way more entries in the <code class="language-plaintext highlighter-rouge">.bib</code> file.</li>
+  <li>It unlocks a lot of extra features in <code class="language-plaintext highlighter-rouge">biblatex</code>.</li>
+</ul>
+
+<p>However, <code class="language-plaintext highlighter-rouge">bibtex</code> does have the following advantages.</p>
+<ul>
+  <li>It might be required by a journal.</li>
+  <li>It can theoretically be used without a bibliography packages (which might be required by journals).</li>
+  <li>It is much faster (though realistically, your bibliography processor should take much shorter than your LaTeX document).</li>
+</ul>
+
+<p>I recommend using <code class="language-plaintext highlighter-rouge">biber</code> if possible.</p>
+
+<p>When using a bibliography processor, you should compile a LaTeX document as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LaTeX -&gt; bibliography processor -&gt; LaTeX -&gt; LaTeX
+</code></pre></div></div>
+
+<p>The first LaTeX run generates the file to be analysed by the processor. We then process it into a <code class="language-plaintext highlighter-rouge">.bbl</code> file and run LaTeX twice, to make sure all links work correctly.</p>
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		    <h5>About</h5>	
+            <p>Jesse Straat<br/> Mathematics PhD candidate<br/> Vrije Universiteit Amsterdam
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><i class="fa fa-envelope fa-1x"></i> j.r.h.[surname]&ltat&gtvu.nl <br/> <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Address</h5>	
+            <p>Nieuwe Universiteitsgebouw<br/> De Boelelaan 1111<br/> 1081 HV Amsterdam
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2026 Jesse Straat </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>

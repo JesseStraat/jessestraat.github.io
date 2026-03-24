@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Accessibility standards in LaTeX - Jesse Straat</title>
+  <meta name="description" content="Academic webpage of Jesse Straat">
+  <meta name="keywords" content="Jesse, Straat, mathematics, physics, personal, webpage">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/molokai-style.css">
+  <link rel="stylesheet" href="/assets/codeblock.css">
+  <link rel="stylesheet" href="/assets/tables.css">
+  <link rel="canonical" href="https://jessestraat.github.io/latex/2026/03/16/latex-accessibility.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="https://jessestraat.github.io/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <meta name="google-site-verification" content="yF0MwVgSoJmhDzzSPR6zkRnAaaSMvEroGD1xSPI1lnE" />
+
+
+
+<!-- Google Analytics (original) -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [ ['\\(', '\\)'] ],
+            tags: "ams"
+        }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<style>
+    .math {
+        overflow-x: auto;
+        overflow-y: hidden
+    }
+</style>
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="https://jessestraat.github.io/">
+     <img src="https://jessestraat.github.io/favicon.png" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Jesse Straat
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="https://jessestraat.github.io/">Home</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/about">About</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/talks-conferences">Talks & conferences</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/latex">LaTeX</a>
+                   
+                <a class="nav-item nav-link" href="https://jessestraat.github.io/blog">Blog</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Accessibility standards in LaTeX</h1>
+    <p class="post-meta">
+      <time datetime="2026-03-16T00:00:00+00:00" itemprop="datePublished">Mar 16, 2026</time>
+      (last modified: <time datetime="2026-03-24T00:00:00+00:00" itemprop="datePublished">Mar 24, 2026</time>)
+      
+    </p>
+    <p class="post-meta">Category: 
+      
+      <a href="/blog/categories/#">LaTeX</a>
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>For ages, LaTeX has been largely inaccessible for the visually impaired. The PDFs produced by it simply do not contain the necessary information for a screen reader to work properly. As the <a href="https://pdfa.org/download-area/posters/PDFDaysEurope2025-TechnicalPoster-LaTeX.pdf">2025 PDF days poster by the LaTeX project</a> phrases it, PDFs are evil. <a href="https://nfb.org/sites/default/files/images/nfb/publications/fr/fr31/2/fr310212.htm">A 2012 article by the National Federation of the Blind</a> reveals that the classical way for the visually impaired to read a LaTeX document is simply by reading the source code, which, of course, is not always available. Other solutions, such as <a href="https://arxiv.org/html/2402.08954v1">one used by arXiv</a>, convert LaTeX files into accessible formats, though this is incompatible with a lot of packages, since the program must know how to interpret them; doing it properly amounts to rebuilding (La)TeX from the ground up for your output of choice, and keeping up with all new developments.</p>
+
+<p>There is hope on the horizon: with the advent of <a href="https://pdfa.org/iso-14289-2-pdfua-2/">PDF/UA-2</a>, which is part of PDF 2.0, PDFs now have the necessary metadata to directly be converted/read as an accessible document. Recent work by the LaTeX project, known as the <a href="https://latex3.github.io/tagging-project/">tagging project</a>, has made great strides in creating such PDFs using LaTeX. While still in active development, it is already mostly usable. I also believe it is important to spread awareness about these new features, since they are not yet widely adopted; only a few PDF readers actually support it, so we should push for them to implement it.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#solving-pdf-inaccessibility" id="markdown-toc-solving-pdf-inaccessibility">Solving PDF inaccessibility</a></li>
+  <li><a href="#implementing-the-tagging-project-in-practice" id="markdown-toc-implementing-the-tagging-project-in-practice">Implementing the tagging project in practice</a>    <ul>
+      <li><a href="#formulas" id="markdown-toc-formulas">Formulas</a></li>
+      <li><a href="#images" id="markdown-toc-images">Images</a></li>
+      <li><a href="#tables" id="markdown-toc-tables">Tables</a></li>
+      <li><a href="#lists" id="markdown-toc-lists">Lists</a></li>
+      <li><a href="#artifacts" id="markdown-toc-artifacts">Artifacts</a></li>
+    </ul>
+  </li>
+  <li><a href="#seeing-pdf-structure-trees" id="markdown-toc-seeing-pdf-structure-trees">Seeing PDF structure trees</a></li>
+  <li><a href="#whats-lost" id="markdown-toc-whats-lost">What’s lost</a></li>
+  <li><a href="#the-future-of-pdf-accessibility" id="markdown-toc-the-future-of-pdf-accessibility">The future of PDF accessibility</a></li>
+  <li><a href="#a-full-example" id="markdown-toc-a-full-example">A full example</a></li>
+</ul>
+
+<h1 id="solving-pdf-inaccessibility">Solving PDF inaccessibility</h1>
+
+<p>The three main issues in accessibility of a LaTeX document (or more generally, any PDF) are</p>
+
+<ol>
+  <li>Images aren’t accompanied by an alt text, which describe the image’s contents.</li>
+  <li>Other odd visual structures, such as tables and lists, don’t have any metadata explaining the structure, so a computer can only guess at what it looks like.</li>
+  <li>The maths is often purely visual; there is no underlying metadata about the meaning of a formula. Any attempts by screen readers to read them aloud leads to pure gibberish.</li>
+</ol>
+
+<p>To see how other file formats solve these issues, we shall consider HTML, which is well-known for its accessibility. Below is an example of what an HTML file might look like.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>This is a heading<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is a paragraph, and
+        <span class="nt">&lt;i&gt;</span>this is in italics<span class="nt">&lt;/i&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;figure&gt;</span>
+        Here could be some figure
+    <span class="nt">&lt;/figure&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span> A list item.<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span> Another list item.<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;caption&gt;</span>This is a table<span class="nt">&lt;/caption&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>First row, first column and header<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>First row, second column and header<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second row, first column<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second row, second column<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>The bracketed objects are known as <em>tags</em>. It is then up to the interpreter, i.e., your browser, to interpret the meaning of these tags and display the HTML. This is completely different from how a PDF works: it has static visuals that leave very little up to interpretation.</p>
+
+<p>Maths in HTML can be approached by using <a href="https://en.wikipedia.org/wiki/MathML">MathML</a>. It again works by using tags. For example, \(a^2 + b^2 = c^2\) is written in MathML as below.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;math</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;msup&gt;</span>
+        <span class="nt">&lt;mi&gt;</span>a<span class="nt">&lt;/mi&gt;&lt;mn&gt;</span>2<span class="nt">&lt;/mn&gt;</span>
+    <span class="nt">&lt;/msup&gt;</span>
+    <span class="nt">&lt;mo&gt;</span>+<span class="nt">&lt;/mo&gt;</span>
+    <span class="nt">&lt;msup&gt;</span>
+        <span class="nt">&lt;mi&gt;</span>b<span class="nt">&lt;/mi&gt;&lt;mn&gt;</span>2<span class="nt">&lt;/mn&gt;</span>
+    <span class="nt">&lt;/msup&gt;</span>
+    <span class="nt">&lt;mo&gt;</span>=<span class="nt">&lt;/mo&gt;</span>
+    <span class="nt">&lt;msup&gt;</span>
+        <span class="nt">&lt;mi&gt;</span>c<span class="nt">&lt;/mi&gt;&lt;mn&gt;</span>2<span class="nt">&lt;/mn&gt;</span>
+    <span class="nt">&lt;/msup&gt;</span>
+<span class="nt">&lt;/math&gt;</span>
+</code></pre></div></div>
+<p>PDF/UA-2 works largely in very much the same way as HTML does, by providing a <em>structure tree</em>. This is a collection of tags which are embedded into one another. We consider the following example.</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+    <span class="k">\section</span><span class="p">{</span>Foo<span class="p">}</span>
+    <span class="c">%</span>
+    This is a paragraph and <span class="k">\emph</span><span class="p">{</span>this is in italics<span class="p">}</span>
+    <span class="nt">\begin{figure}</span>
+        <span class="k">\centering</span>
+        <span class="k">\includegraphics</span><span class="na">[width=0.5\textwidth]</span><span class="p">{</span>example-image-a<span class="p">}</span>
+        <span class="k">\caption</span><span class="p">{</span>Here could be some figure<span class="p">}</span>
+    <span class="nt">\end{figure}</span>
+    <span class="nt">\begin{itemize}</span>
+        <span class="k">\item</span> A list item.
+        <span class="k">\item</span> Another list item.
+    <span class="nt">\end{itemize}</span>
+    <span class="nt">\begin{table}</span>
+        <span class="k">\centering</span>
+        <span class="k">\caption</span><span class="p">{</span>This is a table<span class="p">}</span>
+        <span class="nt">\begin{tabular}</span><span class="p">{</span> c | c <span class="p">}</span>
+            First row, first column and header <span class="p">&amp;</span> First row, second column and header<span class="k">\\\hline</span>
+            Second row, first column <span class="p">&amp;</span> Second row, second column
+        <span class="nt">\end{tabular}</span>
+    <span class="nt">\end{table}</span>
+    <span class="nt">\begin{equation}</span>
+        a<span class="p">^</span>2 + b<span class="p">^</span>2 = c<span class="p">^</span>2
+    <span class="nt">\end{equation}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+<p>When set up correctly, and after converting to XML using <code class="language-plaintext highlighter-rouge">show-pdf-tags</code> (see <a href="#seeing-pdf-tags">“Seeing PDF tags”</a>), we find the following structure tree (I’ve heavily trimmed it down; for the full set-up LaTeX file and XML output, refer to <a href="#a-full-example">the final section</a>).</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;PDF&gt;</span>
+   <span class="nt">&lt;StructTreeRoot&gt;</span>
+      <span class="nt">&lt;Document&gt;</span>
+         <span class="nt">&lt;Sect&gt;</span>
+            <span class="nt">&lt;section</span> <span class="na">title=</span><span class="s">"Foo"</span><span class="nt">&gt;</span>
+               Foo
+            <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;text&gt;</span>
+               This is a paragraph and <span class="nt">&lt;Em&gt;</span>this is in italics<span class="nt">&lt;/Em&gt;</span>
+            <span class="nt">&lt;/text&gt;</span>
+            <span class="nt">&lt;itemize&gt;</span>
+               <span class="nt">&lt;LI&gt;</span>
+                  <span class="nt">&lt;text&gt;</span>A list item.<span class="nt">&lt;/text&gt;</span>
+               <span class="nt">&lt;/LI&gt;</span>
+               <span class="nt">&lt;LI&gt;</span>
+                  <span class="nt">&lt;text&gt;</span>Another list item.<span class="nt">&lt;/text&gt;</span>
+               <span class="nt">&lt;/LI&gt;</span>
+            <span class="nt">&lt;/itemize&gt;</span>
+            <span class="nt">&lt;Formula&gt;</span>
+               <span class="nt">&lt;math</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;Lbl&gt;</span>(1)<span class="nt">&lt;/Lbl&gt;</span>
+                  <span class="nt">&lt;msup&gt;</span>
+                     <span class="nt">&lt;mi&gt;</span>a<span class="nt">&lt;/mi&gt;&lt;mn&gt;</span>2<span class="nt">&lt;/mn&gt;</span>
+                  <span class="nt">&lt;/msup&gt;</span>
+                  <span class="nt">&lt;mo&gt;</span>+<span class="nt">&lt;/mo&gt;</span>
+                  <span class="nt">&lt;msup&gt;</span>
+                     <span class="nt">&lt;mi&gt;</span>b<span class="nt">&lt;/mi&gt;&lt;mn&gt;</span>2<span class="nt">&lt;/mn&gt;</span>
+                  <span class="nt">&lt;/msup&gt;</span>
+                  <span class="nt">&lt;mo&gt;</span>=<span class="nt">&lt;/mo&gt;</span>
+                  <span class="nt">&lt;msup&gt;</span>
+                     <span class="nt">&lt;mi&gt;</span>c<span class="nt">&lt;/mi&gt;&lt;mn&gt;</span>2<span class="nt">&lt;/mn&gt;</span>
+                  <span class="nt">&lt;/msup&gt;</span>
+               <span class="nt">&lt;/math&gt;</span>
+            <span class="nt">&lt;/Formula&gt;</span>
+         <span class="nt">&lt;/Sect&gt;</span>
+         <span class="nt">&lt;figures&gt;</span>
+            <span class="nt">&lt;Caption&gt;</span>
+               <span class="nt">&lt;Lbl&gt;</span>Figure 1: <span class="nt">&lt;/Lbl&gt;</span>
+               <span class="nt">&lt;text&gt;</span>Here could be some figure<span class="nt">&lt;/text&gt;</span>
+            <span class="nt">&lt;/Caption&gt;</span>
+            <span class="nt">&lt;Figure</span> 
+               <span class="na">alt=</span><span class="s">"An image with the letter &amp;quot;A&amp;quot;."</span>
+            <span class="nt">&gt;</span>
+            <span class="nt">&lt;/Figure&gt;</span>
+         <span class="nt">&lt;/figures&gt;</span>
+         <span class="nt">&lt;tables&gt;</span>
+            <span class="nt">&lt;Caption&gt;</span>
+               <span class="nt">&lt;Lbl&gt;</span>Table 1: <span class="nt">&lt;/Lbl&gt;</span>
+               <span class="nt">&lt;text&gt;</span>This is a table<span class="nt">&lt;/text&gt;</span>
+            <span class="nt">&lt;/Caption&gt;</span>
+            <span class="nt">&lt;Table&gt;</span>
+               <span class="nt">&lt;TR&gt;</span>
+                  <span class="nt">&lt;TH&gt;</span>First row, first column and header<span class="nt">&lt;/TH&gt;</span>
+                  <span class="nt">&lt;TH&gt;</span>First row, second column and header<span class="nt">&lt;/TH&gt;</span>
+               <span class="nt">&lt;/TR&gt;</span>
+               <span class="nt">&lt;TR&gt;</span>
+                  <span class="nt">&lt;TD&gt;</span>Second row, first column<span class="nt">&lt;/TD&gt;</span>
+                  <span class="nt">&lt;TD&gt;</span>Second row, second column<span class="nt">&lt;/TD&gt;</span>
+               <span class="nt">&lt;/TR&gt;</span>
+            <span class="nt">&lt;/Table&gt;</span>
+         <span class="nt">&lt;/tables&gt;</span>
+      <span class="nt">&lt;/Document&gt;</span>
+   <span class="nt">&lt;/StructTreeRoot&gt;</span>
+<span class="nt">&lt;/PDF&gt;</span>
+</code></pre></div></div>
+<p>Note that this example was highly simplified, and a lot of information was removed. Note also the high similarity to the HTML examples above. One might say that PDF is made accessible by including another HTML-like file standard <em>within</em> the PDF. This also makes it possible to canonically <a href="https://pdfa.org/resource/deriving-html-from-pdf/">convert a PDF to HTML</a>, as implemented by, for example, <a href="https://ngpdf.com">NGPDF</a>. This immediately makes it possible to use all (accessibility) tools developed for HTML.</p>
+
+<p>Beyond just accessibility, there are other amazing features made possible by tags. First, by using the structure tree, it is possible to resize the text to fit a screen. This is particularly useful for reading text on mobile devices, since narrow text is easier to read than the wide text common in PDFs. Another advantage is that readers can recognise tagged tables. Copy-pasting a table from a PDF to a spreadsheet program such as Excel would then preserve the layout. This would make data entry from papers much easier.</p>
+
+<h1 id="implementing-the-tagging-project-in-practice">Implementing the tagging project in practice</h1>
+<p>Official information on the implementation can be found on <a href="https://latex3.github.io/tagging-project/documentation/usage-instructions">the website of the tagging project</a>.</p>
+
+<p>To enable tagging, one adds the following code to the beginning of your LaTeX file (even before the documentclass).</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\DocumentMetadata</span><span class="p">{</span>
+   lang        = en,
+   pdfstandard = ua-2,
+   pdfstandard = a-4f,
+   tagging=on,
+   tagging-setup=<span class="p">{</span>math/setup=mathml-SE<span class="p">}</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Tagging is only supported for pdfLaTeX and LuaLaTeX. However, the authors, and I, highly advise to use LuaLaTeX, since it is necessary for some maths functionality.</p>
+
+<p>Tagging is only available for some document classes. These include, but are not limited to, the following classes and their derivatives:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">article</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">book</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">report</code>.</li>
+</ul>
+
+<p>In particular, tagging is incompatible with the following classes and their derivatives:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">beamer</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">letter</code> (partially),</li>
+  <li><code class="language-plaintext highlighter-rouge">novel</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">standalone</code>.</li>
+</ul>
+
+<p>Most tagging is then performed automatically. For some things, however, one should make some manual adjustments. These are outlined below.</p>
+
+<p>For general accessibility guidelines, one may refer to, for example <a href="https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Accessibility">Wikipedia’s</a> or <a href="https://www.cambridge.org/authorhub/application/files/3417/5344/8763/6738_A4_Accessibility_Proof1.pdf">Cambridge University Press’s</a>. Links and colours, in particular, are not covered by the tagging project, and should be adapted manually.</p>
+
+<h2 id="formulas">Formulas</h2>
+<p>To generate MathML code, it is necessary to use LuaLaTeX. Furthermore, while strictly not required, it is highly recommended to use the <code class="language-plaintext highlighter-rouge">unicode-math</code> package. Without it, a lot of maths will not translate to MathML correctly. It does introduce some incompatibilities; more about that in <a href="#whats-lost">“What’s lost”</a>. Beyond this, the process is automatic.</p>
+
+<h2 id="images">Images</h2>
+<p>Images must be supplied with an alt-text. The alt-text replaces the image, and should describe its content. Generally, it’s different from the caption. A good rule of thumb is that a reader should understand the image from reading just the alt-text. For more information on alt-texts, one may refer to the <a href="https://en.wikipedia.org/wiki/Help:Alt_text">Wikipedia help page</a>.</p>
+
+<p>To add alt-text, one uses the <code class="language-plaintext highlighter-rouge">alt={text goes here}</code> optional parameter in <code class="language-plaintext highlighter-rouge">\includegraphics</code>, <code class="language-plaintext highlighter-rouge">\tikz</code>, <code class="language-plaintext highlighter-rouge">\begin{tikzpicture}</code> or <code class="language-plaintext highlighter-rouge">\begin{picture}</code>. For example,</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{figure}</span>
+   <span class="k">\centering</span>
+   <span class="k">\includegraphics</span><span class="na">[alt={The LaTeX project logo.}]</span><span class="p">{</span>latexproject.pdf<span class="p">}</span>
+   <span class="k">\caption</span><span class="p">{</span>An example of a logo.<span class="p">}</span>
+<span class="nt">\end{figure}</span>
+<span class="nt">\begin{figure}</span>
+   <span class="k">\centering</span>
+   <span class="nt">\begin{tikzpicture}</span>[alt=<span class="p">{</span>A drawing of a duck wearing a cape<span class="p">}</span>]
+      <span class="k">\duck</span><span class="na">[cape]</span>
+   <span class="nt">\end{tikzpicture}</span>
+   <span class="k">\caption</span><span class="p">{</span>An image of a duck.<span class="p">}</span>
+<span class="nt">\end{figure}</span>
+</code></pre></div></div>
+
+<p>Alternatively, an image without any inherent meaning (such as a background) must be tagged as an artifact (see also the <a href="#artifacts">“Artifacts”</a> section below). This makes sure it doesn’t appear in the structure tree at all, and will be ignored by screen readers. It’s implemented by using the <code class="language-plaintext highlighter-rouge">artifact</code> optional parameter, e.g.,</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\includegraphics</span><span class="na">[artifact]</span><span class="p">{</span>background.jpg<span class="p">}</span>
+<span class="nt">\begin{tikzpicture}</span>[artifact]
+   <span class="k">\node</span> at (0,0) <span class="p">{</span>Ignore this<span class="p">}</span>;
+<span class="nt">\end{tikzpicture}</span>
+</code></pre></div></div>
+
+<h2 id="tables">Tables</h2>
+<p>Tables are tagged automatically. However, for proper accessibility, it is necessary to tell LaTeX which rows function as <em>headers</em>, as opposed to ordinary cells. For this, one uses <code class="language-plaintext highlighter-rouge">\tagpdfsetup</code>.</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\tagpdfsetup</span><span class="p">{</span>table/header-rows=<span class="p">{</span>1<span class="p">}}</span>
+<span class="nt">\begin{tabular}</span><span class="p">{</span> c | c <span class="p">}</span>
+   <span class="p">\(</span><span class="nb">x</span><span class="p">\)</span> <span class="p">&amp;</span> <span class="p">\(</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="p">\)</span><span class="k">\\\hline</span>
+   <span class="p">\(</span><span class="m">0</span><span class="p">\)</span> <span class="p">&amp;</span> <span class="p">\(</span><span class="m">0</span><span class="p">\)</span><span class="k">\\</span>
+   <span class="p">\(</span><span class="m">1</span><span class="p">\)</span> <span class="p">&amp;</span> <span class="p">\(</span><span class="m">2</span><span class="p">\)</span><span class="k">\\</span>
+   <span class="p">\(</span><span class="m">2</span><span class="p">\)</span> <span class="p">&amp;</span> <span class="p">\(</span><span class="m">9</span><span class="p">\)</span>
+<span class="nt">\end{tabular}</span>
+</code></pre></div></div>
+<p>The above code makes the first row a header, and all other rows ordinary cells. It’s also possible to use a comma-separated list as header rows, e.g., <code class="language-plaintext highlighter-rouge">\tagpdfsetup{table/header-rows={1,2,4}}</code>, which makes the first, second and fourth rows headers.</p>
+
+<p>If you want to use a table for alignment, i.e., it shouldn’t be labeled as a table, instead use <code class="language-plaintext highlighter-rouge">\tagpdfsetup{table/tagging=presentation}</code>.</p>
+
+<h2 id="lists">Lists</h2>
+<p>Lists are tagged fully automatically, but have been implemented differently from ordinary LaTeX. This includes the option to start an <code class="language-plaintext highlighter-rouge">enumerate</code> environment at a different number, or resume counting from the previous <code class="language-plaintext highlighter-rouge">enumerate</code>. This is then tagged automatically, too. An example is below.</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{enumerate}</span>[start=11]
+   <span class="k">\item</span> Item 11
+   <span class="k">\item</span> Item 12
+<span class="nt">\end{enumerate}</span>
+Bla bla filler text.
+<span class="nt">\begin{enumerate}</span>[resume=true]
+   <span class="k">\item</span> Item 13
+   <span class="k">\item</span> Item 14
+<span class="nt">\end{enumerate}</span>
+</code></pre></div></div>
+<p>As usual, it remains possible to embed lists in one another.</p>
+
+<h2 id="artifacts">Artifacts</h2>
+<p>An artifact is a special type of tag that isn’t part of the structure tree, at all. They are used to tag pieces of meaningless content, such as decorations, page layout or fillers. Using artifacts in the right places is just as important as tagging. Consider, for example, the following common style of table of contents:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Introduction.....................................................3
+2. Methods..........................................................6
+</code></pre></div></div>
+<p>If the dots aren’t tagged as artifacts, a screen reader will read them out, which takes away from the flow of the document. Ordinary end users should realistically only have to tag images as artifacts, which has been described above in the <a href="#images">“Images”</a> section. However, if one (especially as a package author) wants to label something as an artifact, it can be done as follows,</p>
+<div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Introduction
+<span class="k">\tagmcbegin</span><span class="p">{</span>artifact<span class="p">}</span>
+.....................................................
+<span class="k">\tagmcend</span>
+3
+</code></pre></div></div>
+<p>More information can be found in the <a href="https://ctan.org/pkg/tagpdf"><code class="language-plaintext highlighter-rouge">tagpdf</code> documentation</a>. I urge package authors to read it.</p>
+
+<h1 id="seeing-pdf-structure-trees">Seeing PDF structure trees</h1>
+<p>Both MiKTeX and TeX Live ship with <code class="language-plaintext highlighter-rouge">show-pdf-tags.lua</code>. This script makes it possible to display the structure tree of any PDF. Simply run <code class="language-plaintext highlighter-rouge">show-pdf-tags --xml [file location]</code> in your command prompt, and it should show you the tags in XML format.</p>
+
+<p>Some PDF viewers are also able to display the structure tree. The only major PDF readers that support this (as of writing) are Adobe Acrobat and Foxit. For both of these, however, it’s a paid feature! In my opinion, this is ridiculous, since it’s an essential feature for making document accessible. There are some free (though closed-source) PDF viewers that have the feature, as well, but I can’t vouch for them. Currently, <code class="language-plaintext highlighter-rouge">show-pdf-tags</code> is the best solution.</p>
+
+<h1 id="whats-lost">What’s lost</h1>
+<p>The big disadvantage of the tagging project is its incompatibility with some widely-used packages. Full information on compatibility can be found on <a href="https://latex3.github.io/tagging-project/tagging-status/">the tagging project website</a>.</p>
+
+<p>The biggest incompability in my testing is that <code class="language-plaintext highlighter-rouge">unicode-math</code> is incompatible with <code class="language-plaintext highlighter-rouge">amssymb</code> and other common packages which include maths symbols. Examples of these symbols are <code class="language-plaintext highlighter-rouge">\mathbb{...}</code>, <code class="language-plaintext highlighter-rouge">\mathscr{...}</code>, etc., but also objects such as <code class="language-plaintext highlighter-rouge">\lVert</code>. For technical reasons, it overwrites these macros, and displays them as Unicode text instead of fancy-looking ASCII. For example, <code class="language-plaintext highlighter-rouge">\mathbb{Z}</code> literally becomes “ℤ”, while <code class="language-plaintext highlighter-rouge">amsfonts</code> would just have it become the letter “Z” with fancy visuals. What ℤ then looks like is fully determined by the font you’ve selected. While nothing changes <em>functionally</em> — your documents will compile all the same — visually, the mathematical fonts we mathematicians have been used to for decades are changed drastically. In particular, <code class="language-plaintext highlighter-rouge">\mathscr</code> becomes a synonym for <code class="language-plaintext highlighter-rouge">\mathcal</code>. I believe the benefits outweigh the losses. Beyond just the tagging project, Unicode also makes it possible to look up maths in a document. In my opinion, the AMS fonts are heavily outdated, and it’s good that we’re moving away from them (though it would be nice if we had a font that changed the visuals of <code class="language-plaintext highlighter-rouge">unicode-math</code> to that of <code class="language-plaintext highlighter-rouge">amsfonts</code>). I advise importing those packages, anyway, since some of their functionality (such as <code class="language-plaintext highlighter-rouge">\leadsto</code>) is not covered by <code class="language-plaintext highlighter-rouge">unicode-math</code>.</p>
+
+<p>The AMS packages may also produce some issues with tagging. This particularly happens in equations and theorems. However, solving these issues is a high priority of the tagging project, so most issues are patched in no time. Currently, ordinary use should not produce any significant errors.</p>
+
+<p>Speaking of theorems, <code class="language-plaintext highlighter-rouge">thmtools</code> is incompatible. The numbering is simply wrong. This is also high priority, so it might be fixed in the future.</p>
+
+<p><code class="language-plaintext highlighter-rouge">tikz-cd</code> is incompatible. Using it will throw errors.</p>
+
+<p>For those still using it (you shouldn’t!!!), <code class="language-plaintext highlighter-rouge">physics</code> will not be supported. It’s likely that some of its functionalities produce errors.</p>
+
+<p>Macros such as <code class="language-plaintext highlighter-rouge">\textbf</code> and <code class="language-plaintext highlighter-rouge">\bfseries</code> aren’t supported in regular text. Instead, one should use <code class="language-plaintext highlighter-rouge">\emph</code> to emphasise text. Even outside the tagging project, it’s advised to use <code class="language-plaintext highlighter-rouge">\emph</code> for more consistent documents.</p>
+
+<p>Beyond these, I have not (yet) run into any incompatibilities with the packages that I regularly use.</p>
+
+<h1 id="the-future-of-pdf-accessibility">The future of PDF accessibility</h1>
+<p>I think it’s clear that accessibility is something to strive for, but we’re far from it being universally applied (and, to be fair, the project is still in development). In <a href="https://doi.org/10.1007/978-3-031-62846-7_5">(Pierrès et al., 2024)</a>, we read that almost all academic publications aren’t nearly accessible enough. To change this, it is important we spread awareness of these standards, the new tools, and their current poor implementation. Furthermore, at least in my case, most of my LaTeX documents are unpublished, so we should also keep ourselves accountable and make those accessible, too.</p>
+
+<p>As LaTeX developers, we should also consider how accessible our packages are. Are they compatible with the tagging project and <code class="language-plaintext highlighter-rouge">unicode-math</code>? Do the macros produce meaningful text, or are they images disguised as text without any meaningful Unicode? Do the images produced have meaningful alt-texts? Should a piece of code that’s purely for the document layout be tagged as an artifact?</p>
+
+<h1 id="a-full-example">A full example</h1>
+<p>Here is the full, tagged example of the above LaTeX file. First is the LaTeX code.</p>
+<div class="code-with-download">
+
+  <div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\DocumentMetadata</span><span class="p">{</span>
+  lang        = en,
+  pdfstandard = ua-2,
+  pdfstandard = a-4f, <span class="c">%or a-4</span>
+  tagging=on,
+  tagging-setup=<span class="p">{</span>math/setup=mathml-SE<span class="p">}</span> 
+<span class="p">}</span>
+<span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>unicode-math<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+    <span class="k">\section</span><span class="p">{</span>Foo<span class="p">}</span>
+    <span class="c">%</span>
+    This is a paragraph and <span class="k">\emph</span><span class="p">{</span>this is in italics<span class="p">}</span>
+    <span class="nt">\begin{figure}</span>
+        <span class="k">\centering</span>
+        <span class="k">\includegraphics</span><span class="na">[width=0.5\textwidth,alt={An image with the letter "A".}]</span><span class="p">{</span>example-image-a<span class="p">}</span>
+        <span class="k">\caption</span><span class="p">{</span>Here could be some figure<span class="p">}</span>
+    <span class="nt">\end{figure}</span>
+    <span class="nt">\begin{itemize}</span>
+        <span class="k">\item</span> A list item.
+        <span class="k">\item</span> Another list item.
+    <span class="nt">\end{itemize}</span>
+    <span class="nt">\begin{table}</span>
+        <span class="k">\centering</span>
+        <span class="k">\caption</span><span class="p">{</span>This is a table<span class="p">}</span>
+        <span class="k">\tagpdfsetup</span><span class="p">{</span>table/header-rows=<span class="p">{</span>1<span class="p">}}</span>
+        <span class="nt">\begin{tabular}</span><span class="p">{</span> c | c <span class="p">}</span>
+            First row, first column and header <span class="p">&amp;</span> First row, second column and header<span class="k">\\\hline</span>
+            Second row, first column <span class="p">&amp;</span> Second row, second column
+        <span class="nt">\end{tabular}</span>
+    <span class="nt">\end{table}</span>
+    <span class="nt">\begin{equation}</span>
+        a<span class="p">^</span>2 + b<span class="p">^</span>2 = c<span class="p">^</span>2
+    <span class="nt">\end{equation}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div>  </div>
+
+  <p><a href="/code_snippets/latex_accessibility/example.tex" target="_blank">
+  <button class="download-button"><i class="fa fa-solid fa-download"></i> Download</button>
+</a></p>
+</div>
+<p>This leads to the following XML.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;PDF&gt;</span>
+ <span class="nt">&lt;StructTreeRoot&gt;</span>
+  <span class="nt">&lt;Document</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+     <span class="na">id=</span><span class="s">"ID.002"</span>
+    <span class="nt">&gt;</span>
+   <span class="nt">&lt;Sect</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+      <span class="na">id=</span><span class="s">"ID.005"</span>
+     <span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+       <span class="na">id=</span><span class="s">"ID.006"</span>
+       <span class="na">title=</span><span class="s">"Foo"</span>
+       <span class="na">rolemaps-to=</span><span class="s">"H1"</span>
+      <span class="nt">&gt;</span>
+     <span class="nt">&lt;section-number</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+        <span class="na">id=</span><span class="s">"ID.007"</span>
+        <span class="na">rolemaps-to=</span><span class="s">"Span"</span>
+       <span class="nt">&gt;</span>
+      <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>1 
+     <span class="nt">&lt;/section-number&gt;</span>
+     <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>Foo
+    <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;text-unit</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+       <span class="na">id=</span><span class="s">"ID.008"</span>
+       <span class="na">rolemaps-to=</span><span class="s">"Part"</span>
+      <span class="nt">&gt;</span>
+     <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+        <span class="na">id=</span><span class="s">"ID.009"</span>
+        <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+        <span class="na">Layout:TextAlign=</span><span class="s">"Justify"</span>
+        <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+       <span class="nt">&gt;</span>
+      <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>This is a paragraph and 
+      <span class="nt">&lt;Em</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+         <span class="na">id=</span><span class="s">"ID.010"</span>
+        <span class="nt">&gt;</span>
+       <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>this is in italics
+      <span class="nt">&lt;/Em&gt;</span>
+      <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span> 
+     <span class="nt">&lt;/text&gt;</span>
+     <span class="nt">&lt;itemize</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+        <span class="na">id=</span><span class="s">"ID.018"</span>
+        <span class="na">xmlns:List=</span><span class="s">"http://iso.org/pdf/ssn/List"</span>
+        <span class="na">List:ListNumbering=</span><span class="s">"Unordered"</span>
+        <span class="na">rolemaps-to=</span><span class="s">"L"</span>
+       <span class="nt">&gt;</span>
+      <span class="nt">&lt;LI</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+         <span class="na">id=</span><span class="s">"ID.019"</span>
+        <span class="nt">&gt;</span>
+       <span class="nt">&lt;Lbl</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+          <span class="na">id=</span><span class="s">"ID.020"</span>
+         <span class="nt">&gt;</span>
+        <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>•
+       <span class="nt">&lt;/Lbl&gt;</span>
+       <span class="nt">&lt;LBody</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+          <span class="na">id=</span><span class="s">"ID.021"</span>
+         <span class="nt">&gt;</span>
+        <span class="nt">&lt;text-unit</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+           <span class="na">id=</span><span class="s">"ID.022"</span>
+           <span class="na">rolemaps-to=</span><span class="s">"Part"</span>
+          <span class="nt">&gt;</span>
+         <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+            <span class="na">id=</span><span class="s">"ID.023"</span>
+            <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+            <span class="na">Layout:TextAlign=</span><span class="s">"Justify"</span>
+            <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+           <span class="nt">&gt;</span>
+          <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>A list item.
+         <span class="nt">&lt;/text&gt;</span>
+        <span class="nt">&lt;/text-unit&gt;</span>
+       <span class="nt">&lt;/LBody&gt;</span>
+      <span class="nt">&lt;/LI&gt;</span>
+      <span class="nt">&lt;LI</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+         <span class="na">id=</span><span class="s">"ID.024"</span>
+        <span class="nt">&gt;</span>
+       <span class="nt">&lt;Lbl</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+          <span class="na">id=</span><span class="s">"ID.025"</span>
+         <span class="nt">&gt;</span>
+        <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>•
+       <span class="nt">&lt;/Lbl&gt;</span>
+       <span class="nt">&lt;LBody</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+          <span class="na">id=</span><span class="s">"ID.026"</span>
+         <span class="nt">&gt;</span>
+        <span class="nt">&lt;text-unit</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+           <span class="na">id=</span><span class="s">"ID.027"</span>
+           <span class="na">rolemaps-to=</span><span class="s">"Part"</span>
+          <span class="nt">&gt;</span>
+         <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+            <span class="na">id=</span><span class="s">"ID.028"</span>
+            <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+            <span class="na">Layout:TextAlign=</span><span class="s">"Justify"</span>
+            <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+           <span class="nt">&gt;</span>
+          <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>Another list item.
+         <span class="nt">&lt;/text&gt;</span>
+        <span class="nt">&lt;/text-unit&gt;</span>
+       <span class="nt">&lt;/LBody&gt;</span>
+      <span class="nt">&lt;/LI&gt;</span>
+     <span class="nt">&lt;/itemize&gt;</span>
+    <span class="nt">&lt;/text-unit&gt;</span>
+    <span class="nt">&lt;text-unit</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+       <span class="na">id=</span><span class="s">"ID.043"</span>
+       <span class="na">rolemaps-to=</span><span class="s">"Part"</span>
+      <span class="nt">&gt;</span>
+     <span class="nt">&lt;Formula</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+        <span class="na">id=</span><span class="s">"ID.044"</span>
+        <span class="na">title=</span><span class="s">"equation"</span>
+        <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+        <span class="na">Layout:Placement=</span><span class="s">"Block"</span>
+       <span class="nt">&gt;</span>
+      <span class="nt">&lt;math</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+         <span class="na">id=</span><span class="s">"ID.047"</span>
+         <span class="na">display=</span><span class="s">"block"</span>
+        <span class="nt">&gt;</span>
+       <span class="nt">&lt;mtable</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+          <span class="na">id=</span><span class="s">"ID.048"</span>
+          <span class="na">displaystyle=</span><span class="s">"true"</span>
+         <span class="nt">&gt;</span>
+        <span class="nt">&lt;mtr</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+           <span class="na">id=</span><span class="s">"ID.049"</span>
+          <span class="nt">&gt;</span>
+         <span class="nt">&lt;mtd</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+            <span class="na">id=</span><span class="s">"ID.050"</span>
+            <span class="na">intent=</span><span class="s">":equation-label"</span>
+           <span class="nt">&gt;</span>
+          <span class="nt">&lt;mtext</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+             <span class="na">id=</span><span class="s">"ID.045"</span>
+            <span class="nt">&gt;</span>
+           <span class="nt">&lt;Lbl</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+              <span class="na">id=</span><span class="s">"ID.046"</span>
+             <span class="nt">&gt;</span>
+            <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>(1)
+           <span class="nt">&lt;/Lbl&gt;</span>
+          <span class="nt">&lt;/mtext&gt;</span>
+         <span class="nt">&lt;/mtd&gt;</span>
+         <span class="nt">&lt;mtd</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+            <span class="na">id=</span><span class="s">"ID.051"</span>
+            <span class="na">intent=</span><span class="s">":pause-medium"</span>
+           <span class="nt">&gt;</span>
+          <span class="nt">&lt;mrow</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+             <span class="na">id=</span><span class="s">"ID.052"</span>
+            <span class="nt">&gt;</span>
+          <span class="nt">&lt;/mrow&gt;</span>
+          <span class="nt">&lt;msup</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+             <span class="na">id=</span><span class="s">"ID.053"</span>
+            <span class="nt">&gt;</span>
+           <span class="nt">&lt;mi</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+              <span class="na">id=</span><span class="s">"ID.054"</span>
+             <span class="nt">&gt;</span>
+            <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>𝑎
+           <span class="nt">&lt;/mi&gt;</span>
+           <span class="nt">&lt;mn</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+              <span class="na">id=</span><span class="s">"ID.055"</span>
+             <span class="nt">&gt;</span>
+            <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>2
+           <span class="nt">&lt;/mn&gt;</span>
+          <span class="nt">&lt;/msup&gt;</span>
+          <span class="nt">&lt;mo</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+             <span class="na">id=</span><span class="s">"ID.056"</span>
+             <span class="na">lspace=</span><span class="s">"0.222em"</span>
+             <span class="na">rspace=</span><span class="s">"0.222em"</span>
+            <span class="nt">&gt;</span>
+           <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>+
+          <span class="nt">&lt;/mo&gt;</span>
+          <span class="nt">&lt;msup</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+             <span class="na">id=</span><span class="s">"ID.057"</span>
+            <span class="nt">&gt;</span>
+           <span class="nt">&lt;mi</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+              <span class="na">id=</span><span class="s">"ID.058"</span>
+             <span class="nt">&gt;</span>
+            <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>𝑏
+           <span class="nt">&lt;/mi&gt;</span>
+           <span class="nt">&lt;mn</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+              <span class="na">id=</span><span class="s">"ID.059"</span>
+             <span class="nt">&gt;</span>
+            <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>2
+           <span class="nt">&lt;/mn&gt;</span>
+          <span class="nt">&lt;/msup&gt;</span>
+          <span class="nt">&lt;mo</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+             <span class="na">id=</span><span class="s">"ID.060"</span>
+             <span class="na">lspace=</span><span class="s">"0.278em"</span>
+             <span class="na">rspace=</span><span class="s">"0.278em"</span>
+            <span class="nt">&gt;</span>
+           <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>=
+          <span class="nt">&lt;/mo&gt;</span>
+          <span class="nt">&lt;msup</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+             <span class="na">id=</span><span class="s">"ID.061"</span>
+            <span class="nt">&gt;</span>
+           <span class="nt">&lt;mi</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+              <span class="na">id=</span><span class="s">"ID.062"</span>
+             <span class="nt">&gt;</span>
+            <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>𝑐
+           <span class="nt">&lt;/mi&gt;</span>
+           <span class="nt">&lt;mn</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1998/Math/MathML"</span>
+              <span class="na">id=</span><span class="s">"ID.063"</span>
+             <span class="nt">&gt;</span>
+            <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>2
+           <span class="nt">&lt;/mn&gt;</span>
+          <span class="nt">&lt;/msup&gt;</span>
+         <span class="nt">&lt;/mtd&gt;</span>
+        <span class="nt">&lt;/mtr&gt;</span>
+       <span class="nt">&lt;/mtable&gt;</span>
+      <span class="nt">&lt;/math&gt;</span>
+     <span class="nt">&lt;/Formula&gt;</span>
+    <span class="nt">&lt;/text-unit&gt;</span>
+   <span class="nt">&lt;/Sect&gt;</span>
+   <span class="nt">&lt;figures</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+      <span class="na">id=</span><span class="s">"ID.003"</span>
+      <span class="na">rolemaps-to=</span><span class="s">"Sect"</span>
+     <span class="nt">&gt;</span>
+    <span class="nt">&lt;float</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+       <span class="na">id=</span><span class="s">"ID.011"</span>
+       <span class="na">rolemaps-to=</span><span class="s">"Aside"</span>
+      <span class="nt">&gt;</span>
+     <span class="nt">&lt;Caption</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+        <span class="na">id=</span><span class="s">"ID.015"</span>
+       <span class="nt">&gt;</span>
+      <span class="nt">&lt;Lbl</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+         <span class="na">id=</span><span class="s">"ID.016"</span>
+        <span class="nt">&gt;</span>
+       <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>Figure 1: 
+      <span class="nt">&lt;/Lbl&gt;</span>
+      <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+         <span class="na">id=</span><span class="s">"ID.017"</span>
+         <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+         <span class="na">Layout:TextAlign=</span><span class="s">"Center"</span>
+         <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+        <span class="nt">&gt;</span>
+       <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>Here could be some figure
+      <span class="nt">&lt;/text&gt;</span>
+     <span class="nt">&lt;/Caption&gt;</span>
+     <span class="nt">&lt;text-unit</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+        <span class="na">id=</span><span class="s">"ID.012"</span>
+        <span class="na">rolemaps-to=</span><span class="s">"Part"</span>
+       <span class="nt">&gt;</span>
+      <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+         <span class="na">id=</span><span class="s">"ID.013"</span>
+         <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+         <span class="na">Layout:TextAlign=</span><span class="s">"Center"</span>
+         <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+        <span class="nt">&gt;</span>
+       <span class="nt">&lt;Figure</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+          <span class="na">id=</span><span class="s">"ID.014"</span>
+          <span class="na">alt=</span><span class="s">"An image with the letter &amp;quot;A&amp;quot;."</span>
+          <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+          <span class="na">Layout:BBox=</span><span class="s">"{ 219.69614, 538.30307, 391.55169, 667.19801 }"</span>
+         <span class="nt">&gt;</span>
+        <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>
+       <span class="nt">&lt;/Figure&gt;</span>
+      <span class="nt">&lt;/text&gt;</span>
+     <span class="nt">&lt;/text-unit&gt;</span>
+    <span class="nt">&lt;/float&gt;</span>
+   <span class="nt">&lt;/figures&gt;</span>
+   <span class="nt">&lt;tables</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+      <span class="na">id=</span><span class="s">"ID.004"</span>
+      <span class="na">rolemaps-to=</span><span class="s">"Sect"</span>
+     <span class="nt">&gt;</span>
+    <span class="nt">&lt;float</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+       <span class="na">id=</span><span class="s">"ID.029"</span>
+       <span class="na">rolemaps-to=</span><span class="s">"Aside"</span>
+      <span class="nt">&gt;</span>
+     <span class="nt">&lt;Caption</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+        <span class="na">id=</span><span class="s">"ID.030"</span>
+       <span class="nt">&gt;</span>
+      <span class="nt">&lt;Lbl</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+         <span class="na">id=</span><span class="s">"ID.031"</span>
+        <span class="nt">&gt;</span>
+       <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>Table 1: 
+      <span class="nt">&lt;/Lbl&gt;</span>
+      <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+         <span class="na">id=</span><span class="s">"ID.032"</span>
+         <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+         <span class="na">Layout:TextAlign=</span><span class="s">"Center"</span>
+         <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+        <span class="nt">&gt;</span>
+       <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>This is a table
+      <span class="nt">&lt;/text&gt;</span>
+     <span class="nt">&lt;/Caption&gt;</span>
+     <span class="nt">&lt;text-unit</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+        <span class="na">id=</span><span class="s">"ID.033"</span>
+        <span class="na">rolemaps-to=</span><span class="s">"Part"</span>
+       <span class="nt">&gt;</span>
+      <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+         <span class="na">id=</span><span class="s">"ID.034"</span>
+         <span class="na">xmlns:Layout=</span><span class="s">"http://iso.org/pdf/ssn/Layout"</span>
+         <span class="na">Layout:TextAlign=</span><span class="s">"Center"</span>
+         <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+        <span class="nt">&gt;</span>
+      <span class="nt">&lt;/text&gt;</span>
+      <span class="nt">&lt;Table</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+         <span class="na">id=</span><span class="s">"ID.035"</span>
+        <span class="nt">&gt;</span>
+       <span class="nt">&lt;TR</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+          <span class="na">id=</span><span class="s">"ID.036"</span>
+         <span class="nt">&gt;</span>
+        <span class="nt">&lt;TH</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+           <span class="na">id=</span><span class="s">"ID.037"</span>
+           <span class="na">xmlns:Table=</span><span class="s">"http://iso.org/pdf/ssn/Table"</span>
+           <span class="na">Table:Scope=</span><span class="s">"Column"</span>
+          <span class="nt">&gt;</span>
+         <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>First row, first column and header
+        <span class="nt">&lt;/TH&gt;</span>
+        <span class="nt">&lt;TH</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+           <span class="na">id=</span><span class="s">"ID.038"</span>
+           <span class="na">xmlns:Table=</span><span class="s">"http://iso.org/pdf/ssn/Table"</span>
+           <span class="na">Table:Scope=</span><span class="s">"Column"</span>
+          <span class="nt">&gt;</span>
+         <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>First row, second column and header
+        <span class="nt">&lt;/TH&gt;</span>
+       <span class="nt">&lt;/TR&gt;</span>
+       <span class="nt">&lt;TR</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+          <span class="na">id=</span><span class="s">"ID.039"</span>
+         <span class="nt">&gt;</span>
+        <span class="nt">&lt;TD</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+           <span class="na">id=</span><span class="s">"ID.040"</span>
+          <span class="nt">&gt;</span>
+         <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>Second row, first column
+        <span class="nt">&lt;/TD&gt;</span>
+        <span class="nt">&lt;TD</span> <span class="na">xmlns=</span><span class="s">"http://iso.org/pdf2/ssn"</span>
+           <span class="na">id=</span><span class="s">"ID.041"</span>
+          <span class="nt">&gt;</span>
+         <span class="cp">&lt;?MarkedContent page="1" ?&gt;</span>Second row, second column
+        <span class="nt">&lt;/TD&gt;</span>
+       <span class="nt">&lt;/TR&gt;</span>
+      <span class="nt">&lt;/Table&gt;</span>
+      <span class="nt">&lt;text</span> <span class="na">xmlns=</span><span class="s">"https://www.latex-project.org/ns/dflt"</span>
+         <span class="na">id=</span><span class="s">"ID.042"</span>
+         <span class="na">rolemaps-to=</span><span class="s">"P"</span>
+        <span class="nt">&gt;</span>
+      <span class="nt">&lt;/text&gt;</span>
+     <span class="nt">&lt;/text-unit&gt;</span>
+    <span class="nt">&lt;/float&gt;</span>
+   <span class="nt">&lt;/tables&gt;</span>
+  <span class="nt">&lt;/Document&gt;</span>
+ <span class="nt">&lt;/StructTreeRoot&gt;</span>
+<span class="nt">&lt;/PDF&gt;</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		    <h5>About</h5>	
+            <p>Jesse Straat<br/> Mathematics PhD candidate<br/> Vrije Universiteit Amsterdam
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><i class="fa fa-envelope fa-1x"></i> j.r.h.[surname]&ltat&gtvu.nl <br/> <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Address</h5>	
+            <p>Nieuwe Universiteitsgebouw<br/> De Boelelaan 1111<br/> 1081 HV Amsterdam
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2026 Jesse Straat </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>
