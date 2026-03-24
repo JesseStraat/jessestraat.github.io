@@ -2,6 +2,7 @@
 layout: post
 title: "Accessibility standards in LaTeX"
 date: 2026-03-16
+last_modified_at: 2026-03-24
 categories:
 - LaTeX
 ---
@@ -282,7 +283,7 @@ Some PDF viewers are also able to display the structure tree. The only major PDF
 # What's lost
 The big disadvantage of the tagging project is its incompatibility with some widely-used packages. Full information on compatibility can be found on [the tagging project website](https://latex3.github.io/tagging-project/tagging-status/).
 
-The biggest incompability in my testing is that `unicode-math` is incompatible with `amssymb` and other AMS packages which include maths symbols. Examples of these symbols are `\mathbb{...}`, `\mathscr{...}`, etc., but also objects such as `\lVert`. For technical reasons, it overwrites these macros, and displays them as Unicode text instead of fancy-looking ASCII. For example, `\mathbb{Z}` literally becomes “ℤ”, while `amssymb` would just have it become the letter “Z” with fancy visuals. What ℤ then looks like is fully determined by the font you've selected. While nothing changes *functionally* — your documents will compile all the same — visually, the mathematical fonts we mathematicians have been used to for decades are changed drastically. I believe the benefits outweigh the losses. Beyond just the tagging project, Unicode also makes it possible to look up maths in a document. In my opinion, the AMS fonts are heavily outdated, and it's good that we're moving away from them (though it would be nice if we had a font that changed the visuals of `unicode-math` to that of `amssymb`).
+The biggest incompability in my testing is that `unicode-math` is incompatible with `amssymb` and other common packages which include maths symbols. Examples of these symbols are `\mathbb{...}`, `\mathscr{...}`, etc., but also objects such as `\lVert`. For technical reasons, it overwrites these macros, and displays them as Unicode text instead of fancy-looking ASCII. For example, `\mathbb{Z}` literally becomes “ℤ”, while `amssymb` would just have it become the letter “Z” with fancy visuals. What ℤ then looks like is fully determined by the font you've selected. While nothing changes *functionally* — your documents will compile all the same — visually, the mathematical fonts we mathematicians have been used to for decades are changed drastically. In particular, `\mathscr` becomes a synonym for `\mathcal`. I believe the benefits outweigh the losses. Beyond just the tagging project, Unicode also makes it possible to look up maths in a document. In my opinion, the AMS fonts are heavily outdated, and it's good that we're moving away from them (though it would be nice if we had a font that changed the visuals of `unicode-math` to that of `amssymb`).
 
 The AMS packages may also produce some issues with tagging. This particularly happens in equations and theorems. However, solving these issues is a high priority of the tagging project, so most issues are patched in no time. Currently, ordinary use should not produce any significant errors.
 
