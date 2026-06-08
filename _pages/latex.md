@@ -48,6 +48,20 @@ This (work in progress) package automates the process of adapting a LaTeX docume
 </div>
 
 <div class="jumbotron">
+<h4><b>collabcomment</b></h4>
+<a href="https://github.com/JesseStraat/collabcomment" target="_blank"><button class="btn btn-warning btn-sm">GIT</button></a>
+
+Yet another package for adding author comments for collaborative work (work in progress). I believe it's more simple than most "competitors", while not losing any important features. It has notes, to-dos, lists of comments, and support for custom authors, with colours and groups in the comment lists.
+</div>
+
+<div class="jumbotron">
+<h4><b>beamertheme-utrecht</b></h4>
+<a href="https://github.com/JesseStraat/beamertheme-utrecht" target="_blank"><button class="btn btn-warning btn-sm">GIT</button></a>
+
+A custom work-in-progress beamertheme. It has a more modern look than most existing beamertheme (outertheme `ribbons`), features dedicated section slides, and my infamous `TikZducks` questions slide (both in `duckytemplates`). It's based on the `whale` colortheme, so one can easily adapt it to their own custom colours (using, for example, `orgstyle`). It's modular, so one can easily use the `ribbons` outertheme or `duckytemplates` theme for their own beamertheme.
+</div>
+
+<div class="jumbotron">
 <h4><b>morederivatives</b></h4>
 <a href="https://github.com/jessestraat/MoreDerivatives" target="_blank"><button class="btn btn-warning btn-sm">GIT</button></a>
 
