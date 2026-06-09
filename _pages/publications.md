@@ -4,25 +4,18 @@ layout: gridlay
 permalink: /publications/
 ---
 
-<style>
-.jumbotron{
-    padding:3%;
-    padding-bottom:10px;
-    padding-top:10px;
-    margin-top:10px;
-    margin-bottom:30px;
-}
-</style>
-
 ## Publications
+
 There's nothing here yet! Check back later.
 
-<div class="jumbotron">
-### Preprints
-{% bibliography --query @online --query @*[eprinttype=arXiv] %}
-</div>
+<input type="text" class="pub-search" id="pubSearch" placeholder="Filter by title, author, or year...">
 
-<div class="jumbotron">
-### Journal articles
+<div class="section-card" id="pubList">
+<h3>Preprints</h3>
+
+{% bibliography --query @online %}
+
+<h3>Journal articles</h3>
+
 {% bibliography --query @article %}
 </div>

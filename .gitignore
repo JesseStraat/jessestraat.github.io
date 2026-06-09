@@ -6,4 +6,5 @@ _site/
 Gemfile.lock
 package-lock.json
 node_modules/
+.worktrees/
 .vscode/

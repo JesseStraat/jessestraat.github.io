@@ -1,30 +1,29 @@
-# Site settings
-title: Jesse Straat
-# email: richard@university.edu
-description: Academic webpage of Jesse Straat
-url: https://jessestraat.github.io
+# ============================================================
+# STEP 1: Your Identity (required)
+# ============================================================
+name: "Jesse Straat"
+title: "Mathematics PhD candidate"
+institution: "Vrije Universiteit Amsterdam"
+email: j.r.h.[surname]&lt;at&gt;vu.nl
+photo: jesse.jpeg  # place your photo in images/
 
-# Google analytics ID: Uncomment and your own, if you like
-# google_analytics: XX
-# google_analytics_4: XXX
-# google_tag_manager: XXX
+# ============================================================
+# STEP 2: Your Links (optional -- delete any you don't use)
+# ============================================================
+links:
+  github: "https://github.com/JesseStraat"
 
-# Footer info
-affiliation: >
-  Jesse Straat<br/>
-  Mathematics PhD candidate<br/>
-  Vrije Universiteit Amsterdam
+# ============================================================
+# STEP 3: Site Settings
+# ============================================================
+accent_color: "#00ddee"      # theme color for links and buttons
+dark_mode: true              # show dark mode toggle in navbar
+description: "Academic webpage of Jesse Straat"
+url: "https://jessestraat.github.io"
 
-location: >
-  Nieuwe Universiteitsgebouw<br/>
-  De Boelelaan 1111<br/>
-  1081 HV Amsterdam
-
-contact: >
-  <i class="fa fa-envelope fa-1x"></i> j.r.h.[surname]&ltat&gtvu.nl <br/>
-  <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
-
-# Pages shown in navbar
+# ============================================================
+# STEP 4: Choose Your Pages (comment out any you don't need)
+# ============================================================
 nav_pages:
   - name: About
     location: about
@@ -39,18 +38,23 @@ nav_pages:
   - name: Blog
     location: blog
 
+# ============================================================
+# Advanced Settings (you probably don't need to change these)
+# ============================================================
 include:
   - .htaccess
   - _pages
 
-# Conversion
+sass:
+  quiet_deps: true
+  style: compressed
+
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
@@ -60,38 +64,35 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-  parse_block_html: true # default for kramdown is false. This will enable using Markdown links
+  parse_block_html: true
 
-plugins: ["jekyll/scholar","jekyll-sitemap"]
+plugins: ["jekyll/scholar", "jekyll-sitemap"]
 
 scholar:
   style: citesty
   locale: en
-
   source: /assets/
   bibliography: ref.bib
   bibliography_template: bibtemplate
   sort_by: year, month
   order: descending
-
   replace_strings: true
   join_strings: true
-
   details_dir: bibliography
   details_layout: bibtex.html
   details_link: Details
-
   query: "@*"
-
   bibliography_list_attributes:
     reversed: "reversed"
 
 exclude:
   - Gemfile
   - Gemfile.lock
-  - update_boostrap.sh
+  - update_bootstrap.sh
   - switch_theme.sh
   - tags
   - Rakefile
-
-future: true # Necessary because GitHub action may be in different timezone
+  - node_modules
+  - package.json
+  - package-lock.json
+  - docs
