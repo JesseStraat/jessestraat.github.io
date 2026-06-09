@@ -36,7 +36,7 @@
   <!-- Accent color from config -->
   {% if site.accent_color %}
   <style>
-    :root { --accent: {{ site.accent_color }}; --accent-hover: {{ site.accent_color }}; }
+    :root { --accent: {{ site.accent_color }}; --accent-hover: color-mix(in srgb,{{ site.accent_color }} 60%, black 40%); }
   </style>
   {% endif %}
 
