@@ -3,8 +3,8 @@
   }
   
   .download-button {
-    background-color: #403d3d; /* Blue button color */
-    color: #f8f8f2;
+    background-color: var(--accent); /* Blue button color */
+    color: #fff;
     border: none;
     padding: 5px 10px;
     font-size: 10px;
@@ -19,8 +19,8 @@
   }
   
   .download-button:hover {
-    background-color: #2d2b2b; /* Darker blue on hover */
-    color: #c5c592;
+    background-color: var(--accent-hover); /* Darker blue on hover */
+    color: #fff;
   }
   
   .download-link {

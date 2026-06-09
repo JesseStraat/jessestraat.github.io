@@ -1,0 +1,15 @@
+# Optional: detailed education and bio for the About page.
+# Basic info (name, photo, links) now lives in _config.yml.
+# Delete this file if you only need the basics.
+
+# EXAMPLE -- replace or delete
+- education:
+    - "(2025) MSc Mathematical Sciences, Utrecht University"
+    - "(2025) MSc Theoretical Physics, Utrecht University"
+    - "(2022) BSc Physics, Utrecht University"
+    - "(2022) BSc Mathematics, Utrecht University"
+  educationshort:
+    - "(2025) MSc Mathematical Sciences, UU"
+    - "(2025) MSc Theoretical Physics, UU"
+    - "(2022) BSc Physics, UU"
+    - "(2022) BSc Mathematics, UU"

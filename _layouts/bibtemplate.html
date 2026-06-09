@@ -1,92 +1,57 @@
 ---
 ---
 
+<div class="pub-entry" data-pub-searchable>
+  <div class="text-justify">{{ reference }}</div>
 
-<style>
-.btn{
-    margin-bottom:5px;
-    padding-top:0px;
-    padding-bottom:0px;
-    padding-left:15px;
-    padding-right:15px;
-    height:20px
-}
+  <!-- You can use the below to make your name bold -->
+  <!-- <div class="text-justify">{{ reference | replace_first: 'Bryngelson, S. H.', '<b>Bryngelson, S. H.</b>' }}</div> -->
 
-pre{
-    white-space: pre-wrap;  
-    white-space: -moz-pre-wrap; 
-    white-space: -pre-wrap; 
-    white-space: -o-pre-wrap; 
-    word-wrap: break-word; 
-    width:100%; overflow-x:auto;
-}
-</style>
-
-
-<div class="text-justify">{{reference}}</div>
-
-<!-- You can use the below to make your name bold -->
-<!-- {{reference | replace_first: 'Bryngelson, S. H.', '<b>Bryngelson, S. H.</b>' | replace_first: 'Bryngelson, S.', '<b>Bryngelson, S.</b>' }}</div> -->
-
-{% assign bibtest = false %}
-{% if entry.file %}
-{% assign bibfile = "/papers/" | append: entry.file %}
-{% for file in site.static_files %}
-  {% if file.path contains bibfile %}
-   {% assign bibtest = true %}
+  {% assign bibtest = false %}
+  {% if entry.file %}
+  {% assign bibfile = "/papers/" | append: entry.file %}
+  {% for file in site.static_files %}
+    {% if file.path contains bibfile %}
+     {% assign bibtest = true %}
+    {% endif %}
+  {% endfor %}
   {% endif %}
-{% endfor %}
-{% endif %}
 
-{% if bibtest %}
-<a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
-{% endif %}
+  <div class="pub-actions">
+    {% if bibtest %}
+    <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
+    {% endif %}
 
-{% if entry.doi %}
-<a href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank"><button class="btn btn-primary btm-sm">DOI</button></a>
-{% endif %}
+    {% if entry.doi %}
+    <a href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank" class="btn-pill btn-doi">DOI</a>
+    {% endif %}
 
-{% if entry.eprinttype == 'arXiv' %}
-<a href="{{ entry.eprint | prepend: 'https://arxiv.org/abs/' }}" target="_blank"><button class="btn btn-secondary btm-sm">ARXIV</button></a>
-{% endif %}
+    {% if entry.eprinttype == 'arXiv' %}
+    <a href="{{ entry.eprint | prepend: 'https://arxiv.org/abs/' }}" target="_blank" class="btn-pill btn-arxiv">arXiv</a>
+    {% endif %}
 
-{% if entry.type == 'online' or entry.type == 'article' or  entry.type == 'thesis' or entry.type == 'inproceedings' or entry.type == 'report' %}
-<button class="btn btn-danger btm-sm"  onclick="toggleBibtex{{entry.key}}()">BIB</button>
-{% endif %}
+    {% if entry.type == 'online' or entry.type == 'article' or entry.type == 'thesis' or entry.type == 'inproceedings' or entry.type == 'report' %}
+    <button class="btn-pill btn-bib" data-toggle-target="bib-{{ entry.key }}">BIB</button>
+    {% endif %}
 
-{% if entry.abstract %}
-<button class="btn btn-warning btm-sm"  onclick="toggleAbstract{{entry.key}}()">ABSTRACT</button>
-{% endif %}
+    {% if entry.abstract %}
+    <button class="btn-pill btn-abstract" data-toggle-target="abs-{{ entry.key }}">Abstract</button>
+    {% endif %}
+  </div>
 
-{% if entry.abstract %}
-<div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{ entry.bibtex | remove: "entry.abstract" }}</pre>
+  {% if entry.abstract %}
+  <div class="pub-collapse" id="bib-{{ entry.key }}">
+    <pre>{{ entry.bibtex | remove: "entry.abstract" }}</pre>
+  </div>
+  {% else %}
+  <div class="pub-collapse" id="bib-{{ entry.key }}">
+    <pre>{{ entry.bibtex }}</pre>
+  </div>
+  {% endif %}
+
+  {% if entry.abstract %}
+  <div class="pub-collapse" id="abs-{{ entry.key }}">
+    <pre>{{ entry.abstract }}</pre>
+  </div>
+  {% endif %}
 </div>
-{% else %}
-<div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{ entry.bibtex }}</pre>
-</div>
-{% endif %}
-
-<div id="b{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{entry.abstract}}</pre>
-</div>
-
-<script>
-function toggleBibtex{{entry.key}}(parameter) {
-    var x= document.getElementById('a{{entry.key}}');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-function toggleAbstract{{entry.key}}(parameter) {
-    var x= document.getElementById('b{{entry.key}}');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-</script>
