@@ -14,10 +14,10 @@ First, a disclaimer: I personally use Windows for all my machines. Most of the a
 * Table of contents placeholder
 {:toc}
 
-# LaTeX installation
+## LaTeX installation
 This section describes the initial installation of LaTeX. Again, I will only describe the process for Windows machines.
 
-## To Overleaf or not to Overleaf
+### To Overleaf or not to Overleaf
 My main advice to anyone using LaTeX is to NOT use Overleaf. Here are some reasons why:
 - Overleaf is proprietary and very expensive. It is unknown how much an organisational subscription is, but since the [group professional subscription](https://www.overleaf.com/user/subscription/plans?plan=group) is, as of writing this post, €332 per user per year, one can assume your organisation will be paying tens of thousands a year.
 - The free version is extremely limiting in its computation time, currently sitting at 10 seconds.
@@ -34,7 +34,7 @@ There are only two reasons why one *would* want to use Overleaf. First, you don'
 
 I recommend a local installation to *every* LaTeX user.
 
-## Distribution
+### Distribution
 The age-old question: should I install [MiKTeX](https://miktex.org) or [TeX Live](https://www.tug.org/texlive/)? MiKTeX and TeX Live are LaTeX *distributions*, which means they take care of the actual running of LaTeX documents and package management. Let me compare the pros and cons of both.
 
 The pros of MiKTeX:
@@ -66,13 +66,13 @@ The cons of TeX Live:
 
 I, myself, prefer MiKTeX over TeXLive due to its on-the-fly package installation. I also find it much easier to keep my packages up-to-date. Updating packages in MiKTeX is as easy as clicking a button, whereas in TeX Live, one has to go through the command prompt, which is quite a dedication to me.
 
-### Introducing international LaTeX update day
+#### Introducing international LaTeX update day
 Whichever distribution you go with, it is very important to keep your packages up-to-date. I tell my peers to check for updates every first Monday of the month at noon (uncoincidentally coinciding with the Dutch [air-raid siren tests](https://en.wikipedia.org/wiki/Civil_defense_siren#Netherlands) and [ball alert](https://www.umcutrecht.nl/nl/over-ons/nieuws/details/het-ballenalarm-aandacht-voor-zaadbalkanker?lang=en)). That way, your packages remain up-to-date, and you minimise the number of issues you may run into. I have seen way too many people who haven't updated since their original installation years prior (which is also why people are still encountering the MiKTeX Qt platform error years after it being an issue).
 
-## Text editors
+### Text editors
 While distributions take care of the actual compilation part of writing LaTeX (i.e., taking a `.tex` file and turning it into some output or `.pdf` file), you're going to need something to *write* the `.tex` file. Of course, one could use your OS's built-in text editor, but that doesn't have any of the cool tools that come with a proper coding editor, such as custom shortcuts, shorthands, syntax highlighting, and much more. Here is a breakdown of editors I have experience with.
 
-### [VSCode](https://code.visualstudio.com)
+#### [VSCode](https://code.visualstudio.com)
 My current choice. While it is proprietary, and, even worse, owned by Microsoft, it is very good at what it does. Moreover, it is free and based on a bare-bones open source version. Where it truly shines is its community plugins and seamless Git(Hub) integration. And it can be used for *any* programming language, so you can edit both LaTeX and Python files in the same window, and there is no need to learn to deal with various code editors.
 
 The most important plugin is James Yu's [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop). It takes care of everything you need to run LaTeX files. It also supports code snippets: if you type certain shorthands and press Tab, it will change it to some code, and automatically places your cursor in the correct place! For example, `@/` evaluates to `\frac{}{}` and `bseq` evaluates to `\begin{equation*}\end{equation*}`. By default, LaTeX Workshop wants you to use `latexmk` (make sure you have Perl installed), but if you prefer manually compiling your documents (as I do), you should change the recipes in your `settings.json`. Mine are as follows:
@@ -185,64 +185,64 @@ My favourite extension is [Prettify Symbols Mode](https://marketplace.visualstud
 
 Fun extensions: VSCode have a bunch of extensions that only do fun things. Whether you like having [Subway Surfers](https://marketplace.visualstudio.com/items?itemName=alvseven.insane-focus-helper), [random cat pictures](https://marketplace.visualstudio.com/items?itemName=YtMa-Publisher.code-cat), or a [small zoo](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets) in your window while working on your dissertation, VSCode has it. I should remark that of the above extensions, I have only ever used VSCode Pets; the others are there only for comedic value.
 
-## [TeXstudio](https://www.texstudio.org)
+### [TeXstudio](https://www.texstudio.org)
 A vintage LaTeX editor. Since it's made specifically *for* LaTeX, it has a lot of buttons and shortcuts to make your life much easier, right out of the box. But I honestly feel VSCode does everything it does but better, unless you like pressing big, colourful buttons. It feels very outdated, as if stuck in Windows Vista. It also doesn't have the same level of customisation as VSCode. It's open source, though, and especially not owned by Microsoft.
 
-## [TeXworks](https://tug.org/texworks/)
+### [TeXworks](https://tug.org/texworks/)
 I have only ever opened TeXworks by accident. It comes packaged with MiKTeX and may be associated with some file extensions by default (hence how I opened it by accident). It has the same vintage feeling as TeXstudio, but with way fewer functionalities. If you want a bare-bones, distraction-free editor that works with LaTeX very well, TeXworks is your go-to.
 
-## [(Neo)Vim](https://neovim.io)
+### [(Neo)Vim](https://neovim.io)
 I must be honest: I have never (seriously) used Vim. Despite this, I have heard great things about it, so I *had to* mention it here. Refer, for example, to [these](https://castel.dev/post/lecture-notes-1/) [articles](https://ejmastnak.com/tutorials/vim-latex/intro/).
 
-# PDF readers
+## PDF readers
 Now that we have used a code editor to write a `.tex` file, and used a distribution to compile it into a `.pdf` file, we still need a way to read the `.pdf` file. Most code editors will have a PDF reader built-in, but having a dedicated PDF reader remains an essential tool to the LaTeX guru. Beyond just being able to read the document, a good PDF reader also provides valuable metadata, supports annotations, is free, and has a nice “presentation” mode.
 
-## Adobe Acrobat Reader
+### Adobe Acrobat Reader
 This is not *a* PDF reader but *the* PDF reader. After all, the PDF was *invented* by Adobe. Adobe Acrobat Reader has all the functionalities one would wish in a PDF reader… *after* paying for the premium version, which is incredibly expensive. I highly advise against using it, because it hits you with a paywall at every corner, even for incredibly basis functionalities. It's a perfect example of shady proprietary software practices.
 
 It should be mentioned that Adobe Acrobat Reader can run JavaScript inside PDFs. More on this in the section on pdf.js.
 
 Adobe Acrobat Reader is incompatible as a LaTeX reader, since it “locks” PDF files that are currently open. This makes it impossible to compile `.tex` files whose corresponding `.pdf` files are already open.
 
-## Chromium PDF reader
+### Chromium PDF reader
 Probably the most common PDF reader, because you likely already have it installed. Not to mention, if you open a PDF in a Chromium-based browser, it automatically opens in this! It has a very bare-bones presentation mode, and provides some metadata. However, it doesn't have as many functionalities as most other PDF readers.
 
 Since the PDF “lives” in the address bar, it is very easy to navigate to any anchor in the document (these are the internal links used in navigation). These are generated automatically by hyperref, so it works in almost any LaTeX document (try [this one](https://studenttheses.uu.nl/bitstream/handle/20.500.12932/49915/thesis_JesseStraat.pdf#theorem.3.40)).
 
 As opposed to Adobe Acrobat Reader, PDF files aren't locked, so you may freely compile them without any compatibility issues.
 
-## pdf.js
+### pdf.js
 This is the PDF reader that is included in Mozilla Firefox, and a version of it is included in VSCode's LaTeX Workshop. It is similar to the Chromium PDF reader (it will likely run in your browser), but it has some extra functionalities. I have found that there sometimes are some rendering issues in pdf.js, especially when two coloured boxes touch. Somehow, there's always a tiny sliver of white pixels in between them. The presentation mode isn't anything to write home about, and printing is excruciatingly slow.
 
 Additionally, like Adobe Acrobat Reader, it can run JavaScript in your PDF. As far as I know, these two editors are the only ones that can do this (Adobe Acrobat can do more than pdf.js). It has some cool applications, such as [animations](https://tug.ctan.org/macros/latex/contrib/animate/animate.pdf) and [actual interactive games](https://github.com/rwarnking/pdf-games). However, one should remember that neither of these are “intended” LaTeX use, and the portability of a PDF (what the “p” stands for) is jeopardised by writing documents which only render properly in one of two PDF readers. More worryingly, embedded JavaScript can be used to put [actual malware in a PDF document](https://cloudmersive.com/article/Understanding-Embedded-JavaScript-in-PDF-Documents). Only Adobe Acrobat Reader and pdf.js are vulnerable to such attacks. Personally, this is sufficient reasoning to not use them.
 
-## Okular
+### Okular
 This is my personal choice. Okular is open-source and has many of the useful features that Adobe Acrobat Reader does. It has a ton of metadata, no rendering issues (as far as I know), and doesn't support JavaScript (which is a good thing, as I mentioned). However, the annotations aren't very intuitive, and it renders a document one page at a time (so no scrolling through!). I remember rendering being very slow, but I haven't had the issue in years (maybe SSDs fixed it). Both Okular and pdf.js are compatible with PDF layers, which can also be switched on/off manually. This is used by packages such as `ocgx` to display optional content, and by `hyperref`'s `ocgcolorlinks` to make links black when a document is printed. The feature may also be used to remove watermarks from documents, as well as other obstructing things that were wrongfully separated as a layer (recently, [the FBI accidentally did this](https://allaboutpdf.com/blog/2025/12/23/epstein-files-redaction-fail)).
 
 A very big advantage of Okular: it automatically reloads PDF files after changing them. So if you rerun a `.tex` file, the changes are automatically reflected in Okular.
 
 A big disadvantage of Okular (as of writing) is that it does not yet support any of the new accessibility features included in PDF 2.0. This means it gives no insight into the tagging setup and alt texts. This isn't a huge deal for regular end users, especially since LaTeX's accessibility features are used very rarely, but is quite annoying for anyone interested. Especially since all major PDF reader lock these features behind a paywall.
 
-## Zotero built-in PDF reader
+### Zotero built-in PDF reader
 I only put this here because the Zotero reader has reference previews, which are especially useful for citations. I don't know why the big players haven't implemented this, yet. It's absolutely amazing.
 
-# Compilers
+## Compilers
 By default, most people will use pdfLaTeX to compile their documents, but there are way more options. It's not very difficult to choose which one is best: take the newest one that's widely supported by the community. Right now, that's LuaLaTeX. In this section, I will treat some of the big compilers (in historical order) to compare the difference in features.
 
-## TeX
+### TeX
 TeX is the original program that LaTeX is built upon. TeX is very bare-bones and unintuitive to many. Remarkably, its output files are `.dvi` files, while modern LaTeX is known for outputting `.pdf` files. Some TeX macros (which have since been replaced by LaTeX macros) are still in common use today, such as `$...$` and `$$...$$`. Realistically, you shouldn't use this directly, but every LaTeX file is TeX in disguise. It is still under active development by David Knuth.
 
-## LaTeX
+### LaTeX
 LaTeX is actually not a compiler itself: it is more accurately described as a (huge) collection of TeX macros. Notable inclusions are `\(...\)`, `\[...\]`, documentclasses (like `article`) and the `document` environment, itself. Almost all TeX users use the LaTeX macros (mostly without even knowing the difference). The “La” is generally believed to be short for Lamport, the creator of LaTeX. Like TeX, LaTeX only outputs `.dvi` files.
 
-## pdfLaTeX
+### pdfLaTeX
 Whenever a compiler is named “(x)LaTeX”, it means that it is the “(x)TeX” compiler together with the LaTeX macro definitions. But since very few people actually use straight-up pdfTeX or LuaTeX, I will only discuss the LaTeX-variants. As the name implies, the main difference between LaTeX and pdfLaTeX is that pdfLaTeX outputs `.pdf` files. It is the most common contemporary compiler, though not necessarily the best one.
 
 For modern use, pdfLaTeX is lacking. Most of the reasons are technical (for example, there is a maximum of 16 write files, and some packages require LuaTeX), but even low-level users will experience the most famous difference: pdfLaTeX has limited font support. The font file system is highly deprecated, so if you want to use a different font, you're dependent on the user base to create a package that *looks like* your font of choice.
 
 Do keep in mind that pdfLaTeX is *much* faster than the modern LaTeX compilers. So what it loses in raw power is gained in speed. If you have no interest in using fonts or packages which require LuaLaTeX, and your computer is on the slower side (or you're using Overleaf with its compilation time limits), you might want to stick to pdfTeX.
 
-## XeLaTeX
+### XeLaTeX
 In my experience, XeTeX is something the “cool people” use. Its height of usage was when I, myself, didn't really understand LaTeX, myself, so I felt like XeLaTeX users must really know what they're talking about. By the time I actually needed features outside pdfTeX, LuaLaTeX was already starting to supplant XeLaTeX. XeLaTeX's main new feature is its font support using `fontspec`. It supports any TrueType and OpenType font, which are the font files actually used by your computer. Whenever I set a font, I often include a piece of code of the following form, which automatically differentiates between pdfLaTeX and modern `fontspec`-compliant engines.
 ```LaTeX
 \RequirePackage{iftex}
@@ -261,36 +261,36 @@ In my experience, XeTeX is something the “cool people” use. Its height of us
 ```
 Today, XeTeX has two very large downsides. First, it is no longer in active development. Second, it's not based on pdfTeX. While it does output PDFs, it does so in a quite roundabout way. Not being based on pdfTeX means there are some compatibility issues, such as with `microtype`. But its biggest downside is that it is simply not LuaTeX.
 
-## LuaLaTeX
+### LuaLaTeX
 Although historically seen as unstable, modern LuaLaTeX is *the* LaTeX compiler. It has more or less all features of XeLaTeX, is more compatible with pdfLaTeX, works extraordinarily well with PGF/TikZ, and, best of all, includes the Lua programming language. While completely irrelevant to low-level LaTeX users, package authors use Lua to do a lot of difficult tasks that need a smart model to work through. LaTeX simply isn't very powerful as a true programming language, even with LaTeX3; Lua is. An example of a package which uses Lua is [TikZ-Feynman](https://ctan.org/pkg/tikz-feynman). Lua calculates the optimal positioning of the diagram, which makes it possible to generate Feynman Diagrams without explicitly positioning each vertex.
 
 LuaLaTeX is, however, very slow. It's improving and catching up to XeLaTeX, but it will never be as fast as pdfLaTeX. On modern hardware, the difference isn't that important, but if you're using an old machine or Overleaf, it might be beneficial to use pdfLaTeX, instead. In all other cases, I recommend LuaLaTeX, which is the future of LaTeX.
 
-# Useful web tools
+## Useful web tools
 This is a collection of useful tools I've accumulated over the years.
 
-## [DeTeXify](https://detexify.kirelabs.org/classify.html)
+### [DeTeXify](https://detexify.kirelabs.org/classify.html)
 DeTeXify is a truly magical website. It uses machine learning to recognise drawings of LaTeX symbols, and tells you what package they're from and what macro corresponds to them. And it's written in Haskell, which I respect.
 
-## [Mathcha](https://www.mathcha.io)
+### [Mathcha](https://www.mathcha.io)
 This is a general purpose mathematics editor, but I mainly use it for its drawing functionality. It provides a Microsoft Paint-like UI that can be exported to TikZ. Of course, it won't be as pixel-perfect as a manual TikZ picture, but it's great for sketches.
 
-## [quiver](https://q.uiver.app)
+### [quiver](https://q.uiver.app)
 Quiver is a website for generating commutative diagrams in TikZ-cd. It's very easy and intuitive to use. Do make sure to `\usepackage{quiver}` to enable all macros. It is under active development, and new features are added all the time. Do make sure you have an up-to-date version of quiver installed if you use such a newer feature. This especially poses an issue for Overleaf users, whose quiver installation may be outdated by up to a year. Since it's quite new, historical versions of Overleaf might not have quiver *at all*.
 
-## [Tables generator](https://tablesgenerator.com/latex_tables)
+### [Tables generator](https://tablesgenerator.com/latex_tables)
 The name says what it does. There are many alternatives, but I prefer this one, due to its nice features. It allows importing from LaTeX, CSV, Excel, HTML, etc., and exports to many formats, including LaTeX and Markdown. It has a simple, intuitive user interface, that even allows one to make a custom border grid and set the background colour. I only wish it supported exporting to alternative table types, such as `tabularx`, and (mass-)converting cells to math mode.
 
-# TikZ-related tricks/packages
+## TikZ-related tricks/packages
 TikZ is a quite odd package, so I'm always looking for more ways to improve my workflow.
 
-## Memoize
+### Memoize
 TikZ pictures are quite intensive to generate. So if you have many of them in a single document, it takes ages to compile. Memoize makes it so you only have to generate TikZ pictures once, and then imports them into the document. Make sure you have Perl installed. TeXLive ships with it, MiKTeX will have to install it manually (Windows users can do so [here](https://strawberryperl.com)).
 
-## Implicit algebraic curves using gnuplot
+### Implicit algebraic curves using gnuplot
 TikZ only draws parameterised curves. If you want to instead draw an implicit equation \\(f(x,y) = 0\\), you'll need to perform some trickery. You can find how to do this on [Pieter Belmans's website](https://pbelmans.ncag.info/blog/2010/11/11/howto-draw-algebraic-curves-using-pgftikz/). Make sure to install [gnuplot](https://sourceforge.net/projects/gnuplot/), and don't forget to add it to PATH (you can do this during installation), or it won't work.
 
-# Bibliography management
+## Bibliography management
 It is of course possible to manually create the bibliography in a LaTeX document, but modern LaTeX users instead let this be handled by a package. There are generally three relevant programs for bibliographies.
    1. Reference manager: a program which collects all references and, preferably, exports them as a `.bib` file, which is a list of references.
    2. Bibliography package: a package which takes a `.bib` file and outputs another file to be analysed by a bibliography processor. It also has macros which display the info from the `.bbl` file output by the processor.
@@ -298,7 +298,7 @@ It is of course possible to manually create the bibliography in a LaTeX document
 
 `.bib` files and `.bbl` files can theoretically be created manually, but I recommend using dedicated programs to assure consistent style and accurate links.
 
-## Reference managers
+### Reference managers
 Of the programs listed above, reference managers are used the least. However, they greatly simplify and even automate the process of collecting references. A good reference manager has the following features:
    - Make reference folders, where one can collect all references for a specific project.
    - A search functionality, where one can search through all their past and present references.
@@ -313,7 +313,7 @@ My recommendation for reference management is [Zotero](https://www.zotero.org). 
 
 Some people use [EndNote](https://endnote.com), which has most features that Zotero does, but it isn't nearly as compatible with LaTeX.
 
-## Bibliography package
+### Bibliography package
 There are two main players in bibliography packages: `natbib` and `biblatex`. `biblatex` is the successor to `natbib`, and is superior in almost every way. Here are the pros of using `biblatex` over `natbib`:
 - It supports `biber` (in addition to `bibtex`), which I will discuss below.
 - It supports more citation styles.
@@ -328,7 +328,7 @@ Nevertheless, `natbib` is by far the most used package, and you'll probably want
 
 If possible, I recommend `biblatex` every time. But if you want to publish in a journal that only supports `natbib` or `bibitem`s, you'll of course have to switch. If you want to use `biblatex`, but might have to change to `natbib` down the line, I recommend playing it safe by using the `natbib=true` option. This will simplify the conversion, since it's only necessary to change the package itself.
 
-## Bibliography processor
+### Bibliography processor
 The discussion on bibliography processors is very similar to the one on bibliography packages above. There are two packages, `bibtex` (which confusingly isn't the predecessor to `biblatex`) and `biber`. Again, `biber` is better in almost every way.
 - It supports non-ASCII characters.
 - It can deal with way more entries in the `.bib` file.
