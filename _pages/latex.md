@@ -31,11 +31,12 @@ This package solves the issue by making use of the .aux file, and also introduce
 </div>
 
 <div class="section-card">
-<h4><b>orgstyle</b></h4>
+<h4><b>brandstyler</b></h4>
 <div class="pub-actions" style="margin-bottom: var(--space-3);">
-<a href="https://github.com/jessestraat/orgstyle" target="_blank" class="btn-pill btn-git">Git</a>
+<a href="https://ctan.org/pkg/brandstyler" target="_blank" class="btn-pill btn-website">CTAN</a>
+<a href="https://github.com/jessestraat/brandstyler" target="_blank" class="btn-pill btn-git">Git</a>
 </div>
-This (work in progress) package automates the process of adapting a LaTeX document to an organisation's official style. Its modular approach allows the user to add their own organisation styles. I'm planning on publishing to CTAN. Contributions of custom organisation styles are welcome.
+This package automates the process of adapting a LaTeX document to an organisation's official style. Its modular approach allows the user to add their own organisation styles. Contributions of custom organisation styles are welcome.
 </div>
 
 <div class="section-card">
