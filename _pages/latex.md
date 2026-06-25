@@ -20,6 +20,15 @@ This is a collection of projects I have developed in LaTeX. For more information
 </div>
 
 <div class="section-card">
+<h4><b>brandstyler</b></h4>
+<div class="pub-actions" style="margin-bottom: var(--space-3);">
+<a href="https://ctan.org/pkg/brandstyler" target="_blank" class="btn-pill btn-website">CTAN</a>
+<a href="https://github.com/jessestraat/brandstyler" target="_blank" class="btn-pill btn-git">Git</a>
+</div>
+This package automates the process of adapting a LaTeX document to an organisation's official style. Its modular approach allows the user to add their own organisation styles. Contributions of custom organisation styles are welcome.
+</div>
+
+<div class="section-card">
 <h4><b>reptheorem</b></h4>
 <div class="pub-actions" style="margin-bottom: var(--space-3);">
 <a href="https://ctan.org/pkg/reptheorem" target="_blank" class="btn-pill btn-website">CTAN</a>
@@ -28,15 +37,6 @@ This is a collection of projects I have developed in LaTeX. For more information
 When writing a large manuscript, it is sometimes beneficial to repeat a theorem (or lemma or...) at an earlier or later point for didactical purposes. However, thmtools’s built-in restatable only allows replicating theorems after they have been stated, and only in the same document.
 
 This package solves the issue by making use of the .aux file, and also introduces its own file extension, .thm, to replicate theorems in other files.
-</div>
-
-<div class="section-card">
-<h4><b>brandstyler</b></h4>
-<div class="pub-actions" style="margin-bottom: var(--space-3);">
-<a href="https://ctan.org/pkg/brandstyler" target="_blank" class="btn-pill btn-website">CTAN</a>
-<a href="https://github.com/jessestraat/brandstyler" target="_blank" class="btn-pill btn-git">Git</a>
-</div>
-This package automates the process of adapting a LaTeX document to an organisation's official style. Its modular approach allows the user to add their own organisation styles. Contributions of custom organisation styles are welcome.
 </div>
 
 <div class="section-card">
