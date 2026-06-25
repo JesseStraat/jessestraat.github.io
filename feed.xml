@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jesse Straat</title>
+    <description>Academic webpage of Jesse Straat</description>
+    <link>https://jessestraat.github.io/</link>
+    <atom:link href="https://jessestraat.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 25 Jun 2026 09:42:29 +0000</lastBuildDate>
+    
+    <item>
+      <title>Accessibility standards in LaTeX</title>
+      <description>For ages, LaTeX has been largely inaccessible for the visually impaired. The PDFs produced by it simply do not contain the necessary information for a screen reader to work properly. As the 2025 PDF days poster by the LaTeX project phrases it, PDFs are evil. A 2012 article by the National Federation of the Blind reveals that the classical way for the visually impaired to read a LaTeX document is simply by reading the source code, which, of course, is not always available. Other solutions, such as one used by arXiv, convert LaTeX files into accessible formats, though this is...</description>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <link>https://jessestraat.github.io/latex/2026/03/16/latex-accessibility.html</link>
+      <guid isPermaLink="true">https://jessestraat.github.io/latex/2026/03/16/latex-accessibility.html</guid>
+    </item>
+    
+    <item>
+      <title>LaTeX setup and tools</title>
+      <description>I consider myself a LaTeX guru. I’m very comfortable with the language, use it for everything possible and write my own packages. Peers often ask for TeX support, which sadly won’t lead to any co-authorships or citations, but may land me in some acknowledgements, if I’m lucky. Sadly, I am a very forgetful person, so whenever I set up a new PC, I forget what programs I should download, and what websites I should bookmark. This page is a personal reminder of everything useful LaTeX; hopefully it is useful to not just me, but to other people, too. First, a...</description>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <link>https://jessestraat.github.io/latex/2026/03/02/latex-setup-and-tools.html</link>
+      <guid isPermaLink="true">https://jessestraat.github.io/latex/2026/03/02/latex-setup-and-tools.html</guid>
+    </item>
+    
+    <item>
+      <title>Gromov–Witten invariants of a quintic threefold</title>
+      <description>As mentioned in my blog post on the Gromov–Witten invariants of complex projective space, I am currently writing a thesis on Gromov–Witten invariants. I’ll leave an explanation of what they are to that post; in this post, I want to focus on my numerical calculation of the Gromov–Witten invariants of the quintic and a slight nod to the physical application of Gromov–Witten invariants. Gromov–Witten invariants in physics Of course, for the entire story of the relevance of Gromov–Witten in physics, one would have to read my thesis (or any other source). Long story short, the correlators in an A-twisted topological...</description>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <link>https://jessestraat.github.io/appendices/2025/06/07/quintic.html</link>
+      <guid isPermaLink="true">https://jessestraat.github.io/appendices/2025/06/07/quintic.html</guid>
+    </item>
+    
+    <item>
+      <title>Tree-level Gromov–Witten invariants of projective space</title>
+      <description>I am currently writing my master’s thesis on Gromov–Witten invariants \(GW_{g,n,\beta}^X(\gamma_1\otimes\cdots\otimes\gamma_n)\). They roughly correspond to the number of genus \(g\) holomorphic curves in a projective variety \(X\) that map to a \(\beta\in H_2(X;\mathbb{Z})\), together with \(n\) marked points such that the \(i\)-th marked point passes through the rational cohomology class \(\gamma_i\). Thanks to the mapping to a point and divisor axioms (Kontsevich–Manin, 1994), it is possible to simplify the calculation of Gromov–Witten invariants to some countable set of rational numbers \begin{equation} GW_{g,n,\beta}^X(q_1^{\otimes n_1}\otimes\cdots\otimes q_D^{\otimes n_D}) = \prod_{i=1}^r \langle q_i,\beta\rangle^{n_i} N_g(n_{r+2},\dots,n_D;\beta). \end{equation} Here, \(\beta\) is assumed to be nonzero and torsion-free,...</description>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+      <link>https://jessestraat.github.io/appendices/2025/05/01/gromov-witten-calculations.html</link>
+      <guid isPermaLink="true">https://jessestraat.github.io/appendices/2025/05/01/gromov-witten-calculations.html</guid>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <description>Welcome the Blog portion of my (as of writing this post) brand-new website. I intend to use it to share personal news and potentially some discussions about niche topics, such as LaTeX, geometry, or something completely arbitrary.
+
+I have no intention to keep the blog updated, so if there hasn’t been any new posts in a long time, I’m afraid I have abandoned this part of my website.
+</description>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <link>https://jessestraat.github.io/meta/2025/04/30/introduction.html</link>
+      <guid isPermaLink="true">https://jessestraat.github.io/meta/2025/04/30/introduction.html</guid>
+    </item>
+    
+    
+  </channel>
+</rss>
