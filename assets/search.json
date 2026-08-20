@@ -1,0 +1,33 @@
+[{
+  "title": "About",
+  "url": "/about/",
+  "content": "About\n\n\n  \n    \n    \n      Jesse Straat\n      Mathematics PhD candidate, Vrije Universiteit Amsterdam\n      \n        \n\n        \n\n      \n\n      \n\n(2025) MSc Mathematical Sciences, Utrecht University\n\n(2025) MSc Theoretical Physics, Utrecht University\n\n(2022) BSc Physics, Utrecht University\n\n(2022) BSc Mathematics, Utrecht University\n\n\n\n    \n  \n\n"
+},{
+  "title": "Blog",
+  "url": "/blog/",
+  "content": "\n  Sort by category\n  \n    \n      16 Mar 2026: Accessibility standards in LaTeX\n    \n  \n    \n      02 Mar 2026: LaTeX setup and tools\n    \n  \n    \n      07 Jun 2025: Gromov–Witten invariants of a quintic threefold\n    \n  \n    \n      01 May 2025: Tree-level Gromov–Witten invariants of projective space\n    \n  \n    \n      30 Apr 2025: Introduction\n    \n  \n\n"
+},{
+  "title": "Blogs by category",
+  "url": "/blog/categories/",
+  "content": "← Back to blogs by date\n\nList of categories\n\n\n  \n  \n    Meta\n  \n  \n  \n    Appendices\n  \n  \n  \n    LaTeX\n  \n  \n\n\nMeta\n\n  \n  \n    30 Apr 2025: Introduction\n  \n  \n\n\nAppendices\n\n  \n  \n    07 Jun 2025: Gromov–Witten invariants of a quintic threefold\n  \n  \n  \n    01 May 2025: Tree-level Gromov–Witten invariants of projective space\n  \n  \n\n\nLaTeX\n\n  \n  \n    16 Mar 2026: Accessibility standards in LaTeX\n  \n  \n  \n    02 Mar 2026: LaTeX setup and tools\n  \n  \n\n\n"
+},{
+  "title": "Home",
+  "url": "/",
+  "content": "Jesse Straat\nMathematics PhD candidate, Vrije Universiteit Amsterdam\n\nWelcome!\n\nThis is the lander of my personal webpage. Here, you can find information about my research, publications, and my LaTeX projects. Moreover, I (try to) keep up with a blog, where I share discussions about niche topics.\n\nAbout me\n\nI am a mathematics PhD candidate at the Vrije Universiteit Amsterdam, under supervision of Oliver Fabert. I specialise in applying Floer theory methods to quantum mechanics.\n"
+},{
+  "title": "LaTeX",
+  "url": "/latex/",
+  "content": "LaTeX This is a collection of projects I have developed in LaTeX. For more information, refer to my CTAN. Packages aeskwadraat CTAN Git This is a package catalogue for my study association A–Eskwadraat. It consists of packages for meeting notes, invoices, beamer presentations, and much more. I largely rewrote a big chunk of the packages, added documentation and even converted parts to LaTeX3. brandstyler CTAN Git This package automates the process of adapting a LaTeX document to an organisation’s official style. Its modular approach allows the user to add their own organisation styles. Contributions of custom organisation styles are welcome. reptheorem CTAN Git When writing a large manuscript, it is sometimes beneficial to repeat a theorem (or lemma or…) at an earlier or later point for didactical purposes. However, thmtools’s built-in restatable only allows replicating theorems after they have been stated, and only in the same document. This package solves the issue by making use of the .aux file, and also introduces its own file extension, .thm, to replicate theorems in other files. collabcomment Git Yet another package for adding author comments for collaborative work (work in progress). I believe it’s more simple than most “competitors”, while not losing any..."
+},{
+  "title": "Publications",
+  "url": "/publications/",
+  "content": "Publications\n\nThere’s nothing here yet! Check back later.\n\n\n\n\n  Preprints\n\n  \n\n  Journal articles\n\n  \n\n"
+},{
+  "title": "Research",
+  "url": "/research/",
+  "content": "Research\n\n\n\n  \n    \n      Floer theory and quantum mechanics\n      Floer thoery concerns the existence of periodic orbits of (classical) Hamiltonian systems. In particular, it can give a lower bound on the number of periodic orbits, known as cuplength estimates. I aim to expand this formalism to the quantum realm, using new methods and approximations. The ultimate goal is to improve our understanding of quantum mechanics with a dynamical approach.\n    \n  \n\n\n"
+},{
+  "title": "Talks & conferences",
+  "url": "/talks-conferences/",
+  "content": "\nInvited talks\n{% assign attended_conferences = site.data.talks-conferences | where: \"role\", \"invited\" | sort: \"start_date\" | reverse %}\n{% for entry in attended_conferences %}\n\n  ({{ entry.start_date | date: \"%B %Y\" }}) {{ entry.name }} at {{ entry.location }}.{% if entry.talk_title %} {{entry.talk_title}}{% endif %}\n\n{% endfor %}\n\n\n\nAttended events\n{% assign attended_conferences = site.data.talks-conferences | where: \"role\", \"attended\" | sort: \"start_date\" | reverse %}\n{% for entry in attended_conferences %}\n\n  ({{ entry.start_date | date: \"%B %Y\" }}) {{ entry.name }} at {{ entry.location }}.{% if entry.talk_title %} {{entry.talk_title}}{% endif %}\n\n{% endfor %}\n\n\n\nSeminar talks\n{% assign spoken_seminars = site.data.talks-conferences | where: \"role\", \"speaker\" | sort: \"start_date\" | reverse %}\n{% for entry in spoken_seminars %}\n\n  ({{ entry.start_date | date: \"%B %Y\" }}) {{ entry.name }} at {{ entry.location }}.{% if entry.talk_title %} {{entry.talk_title}}{% endif %}\n\n{% endfor %}\n\n\n\nSeminars regularly attended\n{% assign spoken_seminars = site.data.talks-conferences | where: \"role\", \"regular\" | sort: \"start_date\" | reverse %}\n{% for entry in spoken_seminars %}\n\n  ({{ entry.start_date | date: \"%B %Y\" }}–{% if entry.end_date %}{{entry.end_date | date: \"%B %Y\"}}{% else %}current{% endif %}) {{ entry.name }} at {{ entry.location }}.{% if entry.talk_title %} {{entry.talk_title}}{% endif %}\n\n{% endfor %}\n"
+}]

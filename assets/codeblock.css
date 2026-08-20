@@ -1,0 +1,35 @@
+.code-with-download {
+    position: relative; /* Make sure the parent container is positioned */
+  }
+  
+  .download-button {
+    background-color: var(--accent); /* Blue button color */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10; /* Make sure it's above the code */
+  }
+  
+  .download-button:hover {
+    background-color: var(--accent-hover); /* Darker blue on hover */
+    color: #fff;
+  }
+  
+  .download-link {
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .code-with-download a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
