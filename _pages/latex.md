@@ -52,7 +52,9 @@ Yet another package for adding author comments for collaborative work (work in p
 <div class="pub-actions" style="margin-bottom: var(--space-3);">
 <a href="https://github.com/JesseStraat/beamertheme-utrecht" target="_blank" class="btn-pill btn-git">Git</a>
 </div>
-A custom work-in-progress beamertheme. It has a more modern look than most existing beamertheme (outertheme `ribbons`), features dedicated section slides, and my infamous `TikZducks` questions slide (both in `duckytemplates`). It's based on the `whale` colortheme, so one can easily adapt it to their own custom colours (using, for example, `orgstyle`). It's modular, so one can easily use the `ribbons` outertheme or `duckytemplates` theme for their own beamertheme.
+A modern colour-agnostic beamertheme with a lot of rectangles. It has a more modern look than most existing beamertheme (outertheme `ribbons`), features dedicated section slides, and my infamous `TikZducks` questions slide (both in `duckytemplates`). It's based on the `whale` colortheme, so one can easily adapt it to their own custom colours (using, for example, `orgstyle`). It's modular, so one can easily use the `ribbons` outertheme or `duckytemplates` theme for their own beamertheme.
+
+I am planning on releasing it to CTAN if enough people express interest in the theme.
 </div>
 
 <div class="section-card">
