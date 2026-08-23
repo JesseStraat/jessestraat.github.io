@@ -73,6 +73,7 @@ scholar:
   locale: en
   source: /assets/
   bibliography: ref.bib
+  bibtex_filters: [smallcaps, superscript]
   bibliography_template: bibtemplate
   sort_by: year, month
   order: descending
