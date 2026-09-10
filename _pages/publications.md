@@ -16,4 +16,7 @@ permalink: /publications/
 <h3>Journal articles</h3>
 
 {% bibliography --query @article %}
+
+<h3>Theses (available upon request)</h3>
+{% bibliography --query @thesis %}
 </div>
