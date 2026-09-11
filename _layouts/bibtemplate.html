@@ -39,19 +39,13 @@
     {% endif %}
   </div>
 
-  {% if entry.abstract %}
-  <div class="pub-collapse" id="bib-{{ entry.key }}">
-    <pre>{{ entry.bibtex | remove: "entry.abstract" }}</pre>
-  </div>
-  {% else %}
   <div class="pub-collapse" id="bib-{{ entry.key }}">
     <pre>{{ entry.bibtex }}</pre>
   </div>
-  {% endif %}
 
   {% if entry.abstract %}
   <div class="pub-collapse" id="abs-{{ entry.key }}">
-    <pre>{{ entry.abstract }}</pre>
+    {{ entry.abstract }}
   </div>
   {% endif %}
 </div>
