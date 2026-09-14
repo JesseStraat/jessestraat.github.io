@@ -19,7 +19,7 @@ links:
 accent_color: "#00ddee"      # theme color for links and buttons
 dark_mode: true              # show dark mode toggle in navbar
 description: "Academic webpage of Jesse Straat"
-url: "https://jessestraat.github.io"
+url: "https://jessestraat.nl"
 
 # ============================================================
 # STEP 4: Choose Your Pages (comment out any you don't need)
