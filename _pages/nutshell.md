@@ -13,4 +13,4 @@ The audience of the Nutshell consists of our own PhD community. We try to keep t
 I am the current organiser of the Nutshell seminar (dubbed "Nutshell Monarch" by some). Previous organisers of the Nutshell are [Michael Jung](https://mjungmath.github.io/) (2022–2024) and Aafko Boonstra (2024–2026).
 
 ### Schedule
-Due to the setup of the Nutshell, no titles, speakers or abstracts are announced here. However, I do keep up with an (anonimised) online calendar that you can find at `{{ site.url }}{{ site.baseurl }}/nutshell.ics`. You can copy the URL to your favourite calendar app to import it, and get automatic updates on new events.
+Due to the setup of the Nutshell, no titles, speakers or abstracts are announced here. However, I do keep up with an (anonimised) online calendar that you can find at `{{ site.url }}{{ site.baseurl }}/Nutshell.ics`. You can copy the URL to your favourite calendar app to import it, and get automatic updates on new events.

@@ -14,3 +14,5 @@ This is the lander of my personal webpage. Here, you can find information about 
 ### About me
 
 I am a mathematics PhD candidate at the Vrije Universiteit Amsterdam, under supervision of Oliver Fabert. I specialise in applying Floer theory methods to quantum mechanics.
+
+I am the current organiser of the [Nutshell seminar](/nutshell/).
