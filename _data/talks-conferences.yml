@@ -101,3 +101,15 @@
   end_date: 2026-08-28
   role: attended
   location: Universität Augsburg
+- name: Nutshell seminar
+  type: seminar
+  website: /nutshell/
+  start_date: 2026-09-01
+  role: organised
+  location: Vrije Universiteit Amsterdam
+- name: Nutshell seminar
+  website: /nutshell/
+  type: seminar
+  start_date: 2025-09-15
+  role: regular
+  location: Vrije Universiteit Amsterdam
