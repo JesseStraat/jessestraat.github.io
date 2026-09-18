@@ -1,0 +1,37 @@
+\DocumentMetadata{
+  lang        = en,
+  pdfstandard = ua-2,
+  pdfstandard = a-4f, %or a-4
+  tagging=on,
+  tagging-setup={math/setup=mathml-SE} 
+}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{unicode-math}
+
+\begin{document}
+    \section{Foo}
+    %
+    This is a paragraph and \emph{this is in italics}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth,alt={An image with the letter "A".}]{example-image-a}
+        \caption{Here could be some figure}
+    \end{figure}
+    \begin{itemize}
+        \item A list item.
+        \item Another list item.
+    \end{itemize}
+    \begin{table}
+        \centering
+        \caption{This is a table}
+        \tagpdfsetup{table/header-rows={1}}
+        \begin{tabular}{ c | c }
+            First row, first column and header & First row, second column and header\\\hline
+            Second row, first column & Second row, second column
+        \end{tabular}
+    \end{table}
+    \begin{equation}
+        a^2 + b^2 = c^2
+    \end{equation}
+\end{document}
